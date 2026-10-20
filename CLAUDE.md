@@ -30,7 +30,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 ## Prompt list
 
-### Phase 0: Setup and guardrails
+### Phase 0: Setup and guardrails ✅ DONE
 
 - [x] **P00: Repo scaffold.** *Done 2026-10-19: Python 3.12 + uv, all deps import, 4 tests pass, check-env OK; private repo johnpospisil/stackoverflow-decline.* Set up the project: `git init`, `pyproject.toml` with `uv` and pinned dependencies, `Makefile` with targets `ingest build models figures report all test`, the `src/sod/` package layout from the plan, `tests/`, `notebooks/`, `report/`, `app/`, a `.gitignore` that excludes data, and `src/sod/config.py` reading `SOD_RAW_DIR` and `SOD_DATA_DIR`. Add a `make check-env` target that confirms the drive is mounted and reports free space. Create a **private** GitHub repo with `gh` and push to it; it becomes public at launch (P33/P34). **Findings:** environment versions, disk space, and anything that failed to install.
 
@@ -38,7 +38,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P02: Event timeline.** *Done 2026-10-19: 35 sourced events; main break ChatGPT 2022-11-30; exclusion windows COVID (2020-03-11 to 06-30) and moderator strike; Italy block not used.* Build `data/reference/events.csv` (date, event, category, source URL) covering: ChatGPT, GPT-4, Copilot GA, Copilot Chat, Claude and Gemini releases, SO's AI-answer ban, the moderator strike start and end, the OpenAI–SO partnership, SO layoffs, major SO UI or policy changes (e.g. question wizard, staging ground), and dump or SEDE outages. Every row needs a primary source. **Findings:** the table, with any dates that are disputed.
 
-- [ ] **P03: Pre-registration.** Write `PREREGISTRATION.md` before any model is fitted: the primary estimand (log weekly SO questions vs counterfactual, average over 2023-01 to 2026-09), the primary model and comparison group, secondary hypotheses (tag age, question mix, newcomers, answerers), what result would count as a null or would refute the hypothesis, the multiple-comparison approach for tags, and the planned robustness checks. **Findings:** a one-paragraph summary of what we committed to, plus open judgement calls for the user to decide.
+- [x] **P03: Pre-registration.** *Done 2026-10-20: locked at tag `prereg-v1`; primary = monthly synthetic control vs 15 donors, 2017-01 to 2022-11 pre-period, smallest effect of interest −10%.* Write `PREREGISTRATION.md` before any model is fitted: the primary estimand (log weekly SO questions vs counterfactual, average over 2023-01 to 2026-09), the primary model and comparison group, secondary hypotheses (tag age, question mix, newcomers, answerers), what result would count as a null or would refute the hypothesis, the multiple-comparison approach for tags, and the planned robustness checks. **Findings:** a one-paragraph summary of what we committed to, plus open judgement calls for the user to decide.
 
 ### Phase 1: Ingest (XML → Parquet)
 
