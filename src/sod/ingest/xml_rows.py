@@ -10,7 +10,7 @@ import re
 from collections.abc import Iterable, Iterator
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Literal
+from typing import IO, Any, Literal
 
 from lxml import etree
 
@@ -119,13 +119,18 @@ class UnknownColumnError(ValueError):
     """A row has an attribute that is not in SCHEMAS (the dump format changed)."""
 
 
-def iter_rows(path: str | Path, columns: Iterable[str] | None = None) -> Iterator[dict[str, str]]:
+def iter_rows(
+    source: str | Path | IO[bytes], columns: Iterable[str] | None = None
+) -> Iterator[dict[str, str]]:
     """Yield each `<row>` as a dict of raw attribute strings, in file order.
 
+    `source` is a path or a binary file object (e.g. one that counts bytes read).
     With `columns`, only those attributes are returned (absent ones are omitted).
     """
     wanted = tuple(columns) if columns is not None else None
-    context = etree.iterparse(str(path), events=("end",), tag="row", huge_tree=True)
+    if isinstance(source, (str, Path)):
+        source = str(source)
+    context = etree.iterparse(source, events=("end",), tag="row", huge_tree=True)
     for _, el in context:
         attrib = el.attrib
         if wanted is None:

@@ -3,15 +3,22 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest build models figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts progress build models figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
 check-env:
 	$(PY) -m sod.check_env
 
-ingest: check-env
-	@echo "ingest: not yet implemented (P04-P07)"
+ingest: check-env ingest-posts
+	@echo "ingest: remaining tables not yet implemented (P06-P07)"
+
+ingest-posts: check-env
+	$(PY) -m sod.ingest.posts
+
+# Live progress bars for running jobs (any terminal). JOB=posts to pick one.
+progress:
+	@$(PY) -m sod.progress $(JOB)
 
 build:
 	@echo "build: not yet implemented (P10-P13)"
