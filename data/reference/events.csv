@@ -1,5 +1,5 @@
 date,end_date,precision,event,category,role,source_url,confidence,notes
-2020-03-11,,day,WHO declares COVID-19 a pandemic,external_shock,exclusion_window,https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020,primary,Lockdowns briefly raised SO activity in spring 2020; affects the pre-period trend
+2020-03-11,2020-06-30,day,WHO declares COVID-19 a pandemic,external_shock,exclusion_window,https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020,primary,Exclusion window covers the spring 2020 lockdown spike in SO activity (decision 2026-10-19)
 2021-06-02,,day,Prosus agrees to acquire Stack Overflow (~$1.8B),so_company,context,https://techcrunch.com/2021/06/02/stack-overflow-acquired-by-prosus-for-a-reported-1-8-billion/,secondary,
 2021-06-29,,day,GitHub Copilot technical preview,ai_release,context,https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/,primary,Waitlist-only preview
 2022-06-21,,day,GitHub Copilot generally available (paid),ai_release,secondary_break,https://github.blog/news-insights/product-news/github-copilot-is-generally-available-to-all-developers/,primary,Alternative break date in robustness checks (P18)
@@ -10,7 +10,7 @@ date,end_date,precision,event,category,role,source_url,confidence,notes
 2023-03-14,,day,Claude (first public version) released,ai_release,context,https://www.anthropic.com/news/introducing-claude,primary,
 2023-03-21,,day,Google Bard opens to the public (US/UK),ai_release,context,https://blog.google/technology/ai/try-bard/,primary,
 2023-03-28,2023-06-14,day,Stack Exchange data dump upload job disabled; resumed after backlash,data,context,https://wiki.archiveteam.org/index.php/Stack_Exchange,secondary,Affects dump availability only; data for these months is in later dumps
-2023-03-31,2023-04-28,day,Italy's data-protection authority blocks ChatGPT,external_shock,natural_experiment,https://fortune.com/2023/04/28/chatgpt-back-italy-met-regulator-demands-openai,secondary,Possible test: Italian SO activity (by user location) vs other EU countries during the block
+2023-03-31,2023-04-28,day,Italy's data-protection authority blocks ChatGPT,external_shock,context,https://fortune.com/2023/04/28/chatgpt-back-italy-met-regulator-demands-openai,secondary,"Not used as a test: the dump has no country field, only free-text locations (decision 2026-10-19)"
 2023-05-10,,day,Stack Overflow lays off ~10% of staff,so_company,context,https://news.ycombinator.com/item?id=35891157,secondary,Date from the HN thread on the CEO announcement
 2023-06-05,2023-08-02,day,Moderator strike across the Stack Exchange network,so_policy,exclusion_window,https://openletter.mousetail.nl,secondary,Strike over the company's AI-content moderation policy; agreement reached 2023-08-02; formal end date disputed
 2023-07-27,,day,Stack Overflow announces OverflowAI,so_company,context,https://stackoverflow.blog/2023/07/27/announcing-overflowai/,primary,

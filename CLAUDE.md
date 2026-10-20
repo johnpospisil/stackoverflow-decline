@@ -14,7 +14,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
    - **Data issues / surprises:** anything odd, and how it was handled
    - **Decisions for you:** choices that need the user's input (keep it to 0–3)
    - **Next:** the next prompt ID and anything to check before running it
-5. When a prompt is finished and its findings are approved, tick its box in the list below and add a one-line result next to it.
+5. When a prompt is finished and its findings are approved, tick its box in the list below and add a one-line result next to it. When every prompt in a phase is ticked, add "✅ DONE" to the phase heading.
 6. Pre-registration (P03) is locked before any model is fitted on post-2022 data. Later changes go in a dated "Deviations" section of `PREREGISTRATION.md`, never as silent edits.
 
 ## Project facts
@@ -36,7 +36,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P01: Dump integrity and watermarking.** *Done 2026-10-19: 27/27 SHA-256 match the community list (no official list yet); no watermarks in the 26 smaller sites; XML rows are unordered.* Compute SHA-256 hashes of the original `.7z` files (or the extracted XML if the archives are gone). Compare them against the official checksum answer on Meta and the community-maintained hash mirror. Check whether the 2026-Q3 dump is on the community list of watermarked or poisoned dumps, and research what the watermarking changes (text, dates, IDs, counts?). **Findings:** match or no match for each site, watermark status, which of our measures could be affected, and the result written into DATA.md.
 
-- [ ] **P02: Event timeline.** Build `data/reference/events.csv` (date, event, category, source URL) covering: ChatGPT, GPT-4, Copilot GA, Copilot Chat, Claude and Gemini releases, SO's AI-answer ban, the moderator strike start and end, the OpenAI–SO partnership, SO layoffs, major SO UI or policy changes (e.g. question wizard, staging ground), and dump or SEDE outages. Every row needs a primary source. **Findings:** the table, with any dates that are disputed.
+- [x] **P02: Event timeline.** *Done 2026-10-19: 35 sourced events; main break ChatGPT 2022-11-30; exclusion windows COVID (2020-03-11 to 06-30) and moderator strike; Italy block not used.* Build `data/reference/events.csv` (date, event, category, source URL) covering: ChatGPT, GPT-4, Copilot GA, Copilot Chat, Claude and Gemini releases, SO's AI-answer ban, the moderator strike start and end, the OpenAI–SO partnership, SO layoffs, major SO UI or policy changes (e.g. question wizard, staging ground), and dump or SEDE outages. Every row needs a primary source. **Findings:** the table, with any dates that are disputed.
 
 - [ ] **P03: Pre-registration.** Write `PREREGISTRATION.md` before any model is fitted: the primary estimand (log weekly SO questions vs counterfactual, average over 2023-01 to 2026-09), the primary model and comparison group, secondary hypotheses (tag age, question mix, newcomers, answerers), what result would count as a null or would refute the hypothesis, the multiple-comparison approach for tags, and the planned robustness checks. **Findings:** a one-paragraph summary of what we committed to, plus open judgement calls for the user to decide.
 
