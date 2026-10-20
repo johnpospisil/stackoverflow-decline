@@ -100,6 +100,9 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 - **Closed questions are under-represented.** Only 4.6% of Stack Overflow questions in the dump are closed, because many closed questions are later deleted and deleted posts are not in the dump. Close and duplicate rates must be read as "closed and still visible"; P09 (SEDE `PostsWithDeleted`) estimates the gap.
 - **`FavoriteCount` is always empty** (the feature was replaced by Saves in late 2022). The column is kept in Parquet but carries no information.
 - **Questions dated before a site existed** (e.g. ru.stackoverflow from 2010, Super User and Server Fault from 2008-08) are questions migrated from older sites or other Stack Exchange sites. The pre-period starts in 2017, so this does not affect the main analysis.
+- **Votes carry no voter and no time of day (P06).** `UserId` is present on only 0.12% of Stack Overflow votes (bounties and old favourites), and `CreationDate` is a date with the time removed. Votes support per-post counts by day, not voter-level analysis.
+- **Close votes after 2013-06-25 are not in Votes** (vote type 6 stops then); closures come from PostHistory (P07).
+- **PostLinks start in 2010-04** on Stack Overflow; earlier duplicate links are not recorded there. Use PostHistory close reasons for duplicates.
 - **Removed users.** `OwnerUserId` is missing for posts whose author was deleted, which affects user-cohort analysis.
 
 ## 3. Reconciliation checks (to do)
