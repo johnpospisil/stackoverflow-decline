@@ -1,0 +1,58 @@
+[project]
+name = "sod"
+version = "0.1.0"
+description = "What happened to Stack Overflow? Measuring the post-ChatGPT decline with the Stack Exchange data dump."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # ingest + storage
+    "lxml>=5.3",
+    "pyarrow>=18",
+    "duckdb>=1.1",
+    "polars>=1.12",
+    "pandas>=2.2",
+    "numpy>=2.0",
+    # models
+    "statsmodels>=0.14",
+    "scipy>=1.14",
+    "pysyncon>=1.4",
+    "prophet>=1.1.6",
+    "bambi>=0.15",
+    "pymc>=5.19",
+    "arviz>=0.20",
+    "lifelines>=0.30",
+    # viz
+    "matplotlib>=3.9",
+    # misc
+    "requests>=2.32",
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.8",
+    "jupyterlab>=4.3",
+    "ipykernel>=6.29",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sod"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "data: needs the real dump on the external drive (skipped if not mounted)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

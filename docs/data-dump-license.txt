@@ -1,0 +1,38 @@
+﻿All content contributed to Stack Exchange sites is licensed under the
+Creative Commons CC BY-SA license (various versions, including 2.5, 3.0,
+and 4.0). We also provide data for non-beta sites as part of the data
+dump, which is licensed as a whole under CC BY-SA 4.0:
+
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Some of the content may have initially been contributed under earlier
+versions of the license (2.5 or 3.0):
+
+https://creativecommons.org/licenses/by-sa/2.5/
+https://creativecommons.org/licenses/by-sa/3.0/
+
+The CC BY-SA licensing, while intentionally permissive, does require
+attribution:
+
+Attribution — You must attribute the work in the manner specified by 
+the author or licensor (but not in any way that suggests that they 
+endorse you or your use of the work). If you republish this content, 
+we require that you:
+
+1. Visually indicate that the content is from the Stack Exchange site 
+   it had originated from in some way.
+2. Hyperlink directly to the original question on the source site (e.g. 
+   https://stackoverflow.com/questions/12345).
+3. Show the author name for every question and answer.
+4. Hyperlink each author name directly back to their user profile page
+   on the source site (e.g. https://stackoverflow.com/users/123/username).
+
+By "directly," we mean each hyperlink must point directly to our domain
+in standard HTML visible even with JavaScript disabled, and not use a 
+tinyurl or any other form of obfuscation or redirection. Furthermore, 
+the links cannot be marked with the nofollow attribute.
+
+This is about the spirit of fair attribution: to the website and, more
+importantly, to the individuals who generously contributed their time
+and knowledge to create that content in the first place.
+
