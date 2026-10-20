@@ -8,7 +8,7 @@ Sources, licences, retrieval details and known gaps for every dataset used in th
 |---|---|
 | Release | 2026-Q3 quarterly dump ("Global data dump", all Stack Exchange sites) |
 | Uploaded by Stack Exchange | 2026-10-06 |
-| Data cut-off | 2026-09-30. Last SO post: `2026-09-30T08:36:56` (UTC) from the tail of `Posts.xml`. Treat 2026-09-30 as a partial day |
+| Data cut-off | 2026-09-30 (the date in the dump's name and on the community hash list). **Not yet checked against the data:** rows in `Posts.xml` are not in ID or date order (see section 2), so the last rows of the file are not the newest posts. Confirm with max `CreationDate` over all rows in P05 |
 | Downloaded | 2026-10-19 |
 | Download size | 91.9 GB (Global dump, 364 site archives) |
 | Access | stackoverflow.com → profile → Settings → Access → **Data dump access** (login required) |
@@ -93,7 +93,9 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 ## 2. Known gaps and caveats
 
 - **Deleted posts are missing.** The dump excludes deleted posts and many deleted users. If deletion rates changed after 2022, declines may be slightly understated. Compare against SEDE where possible.
-- **Possible watermarking or data poisoning.** Community reports say Stack Exchange began watermarking or poisoning dumps starting with the 2025-06-30 release. **TODO:** check this dump against the official checksums and the community list of affected dumps, and record the result here. Count-based metrics should be less exposed than text features (body length, code blocks), but check both against SEDE.
+- **Integrity check (P01, 2026-10-19): passed.** SHA-256 hashes of all 27 archives ([data/reference/dump_checksums.csv](data/reference/dump_checksums.csv)) match the community-generated list for the 2026-09-30 dump ([data/reference/community_sha256_2026-09-30.txt](data/reference/community_sha256_2026-09-30.txt), from LunarWatcher/se-data-dump-transformer `docs/meta/Hashes.md`, citing meta.stackexchange.com/revisions/402072/22). Stack Exchange had not posted official checksums for this release on the date checked (Meta could not be fetched automatically; re-check by hand before publishing).
+- **Watermarking (P01): none found.** The only documented watermark ("v1", 2025-06-30 dumps only) added fake posts with IDs 1000000001 (question) and 1000000010 (answer), owned by user -1 and missing from PostHistory. The community "Known watermarks" list records no watermarks in any later dump. A full scan of `Posts.xml` for the 26 smaller sites found no IDs ≥ 1,000,000,000. Questions or answers owned by user -1: 0 on 25 sites and 12 on Meta Stack Overflow (about one a year since 2013, legitimate community posts). The P05 ingest scans Stack Overflow fully and fails if any row matches the v1 signature.
+- **Rows are not in ID order.** In 26 of 27 sites (all except Mathematics), `Posts.xml` rows are not sorted by `Id` or by date (no duplicate IDs; checked on Cooking). This doesn't affect analysis, which keys on IDs and dates, but never treat the last row of a file as the newest post.
 - **Last quarter may be incomplete.** Posts from the final days before the cut-off may not yet have answers, votes or closures. Trim the panel or flag the last 4–8 weeks for outcomes that take time to arrive (time to first answer, close rate).
 - **Removed users.** `OwnerUserId` is missing for posts whose author was deleted, which affects user-cohort analysis.
 
@@ -101,9 +103,9 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 
 - [ ] Monthly question counts for SO compared with SEDE for overlapping months
 - [ ] No duplicate `Post.Id` values
-- [x] Max `CreationDate` matches the stated cut-off (SO 2026-09-30, Math 2026-09-30; small sites end earlier because they post less often)
+- [ ] Max `CreationDate` over all rows matches the stated cut-off (an earlier check read only the end of each file, which is not valid because rows are unordered; redo in P05)
 - [x] All XML files complete (closing root tag present)
-- [ ] Watermarking check (see section 2)
+- [x] Watermarking and checksum check (P01; see section 2)
 
 ## 4. Other sources (not yet retrieved)
 
