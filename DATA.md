@@ -8,7 +8,7 @@ Sources, licences, retrieval details and known gaps for every dataset used in th
 |---|---|
 | Release | 2026-Q3 quarterly dump ("Global data dump", all Stack Exchange sites) |
 | Uploaded by Stack Exchange | 2026-10-06 |
-| Data cut-off | 2026-09-30 (the date in the dump's name and on the community hash list). **Not yet checked against the data:** rows in `Posts.xml` are not in ID or date order (see section 2), so the last rows of the file are not the newest posts. Confirm with max `CreationDate` over all rows in P05 |
+| Data cut-off | 2026-09-30, **confirmed in P05** from all rows: the latest Stack Overflow question is `2026-09-30T22:40:33` UTC, so September 2026 is a complete month (per PREREGISTRATION.md section 2, the post-period runs to 2026-09) |
 | Downloaded | 2026-10-19 |
 | Download size | 91.9 GB (Global dump, 364 site archives) |
 | Access | stackoverflow.com → profile → Settings → Access → **Data dump access** (login required) |
@@ -94,16 +94,19 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 
 - **Deleted posts are missing.** The dump excludes deleted posts and many deleted users. If deletion rates changed after 2022, declines may be slightly understated. Compare against SEDE where possible.
 - **Integrity check (P01, 2026-10-19): passed.** SHA-256 hashes of all 27 archives ([data/reference/dump_checksums.csv](data/reference/dump_checksums.csv)) match the community-generated list for the 2026-09-30 dump ([data/reference/community_sha256_2026-09-30.txt](data/reference/community_sha256_2026-09-30.txt), from LunarWatcher/se-data-dump-transformer `docs/meta/Hashes.md`, citing meta.stackexchange.com/revisions/402072/22). Stack Exchange had not posted official checksums for this release on the date checked (Meta could not be fetched automatically; re-check by hand before publishing).
-- **Watermarking (P01): none found.** The only documented watermark ("v1", 2025-06-30 dumps only) added fake posts with IDs 1000000001 (question) and 1000000010 (answer), owned by user -1 and missing from PostHistory. The community "Known watermarks" list records no watermarks in any later dump. A full scan of `Posts.xml` for the 26 smaller sites found no IDs ≥ 1,000,000,000. Questions or answers owned by user -1: 0 on 25 sites and 12 on Meta Stack Overflow (about one a year since 2013, legitimate community posts). The P05 ingest scans Stack Overflow fully and fails if any row matches the v1 signature.
+- **Watermarking (P01): none found.** The only documented watermark ("v1", 2025-06-30 dumps only) added fake posts with IDs 1000000001 (question) and 1000000010 (answer), owned by user -1 and missing from PostHistory. The community "Known watermarks" list records no watermarks in any later dump. A full scan of `Posts.xml` for the 26 smaller sites found no IDs ≥ 1,000,000,000. Questions or answers owned by user -1: 0 on 25 sites and 12 on Meta Stack Overflow (about one a year since 2013, legitimate community posts). **P05 full scan of all 27 sites (73.1M posts, including all 60.3M Stack Overflow posts): 0 rows with Id ≥ 1,000,000,000 and 0 Stack Overflow questions or answers owned by user -1.**
 - **Rows are not in ID order.** In 26 of 27 sites (all except Mathematics), `Posts.xml` rows are not sorted by `Id` or by date (no duplicate IDs; checked on Cooking). This doesn't affect analysis, which keys on IDs and dates, but never treat the last row of a file as the newest post.
 - **Last quarter may be incomplete.** Posts from the final days before the cut-off may not yet have answers, votes or closures. Trim the panel or flag the last 4–8 weeks for outcomes that take time to arrive (time to first answer, close rate).
+- **Closed questions are under-represented.** Only 4.6% of Stack Overflow questions in the dump are closed, because many closed questions are later deleted and deleted posts are not in the dump. Close and duplicate rates must be read as "closed and still visible"; P09 (SEDE `PostsWithDeleted`) estimates the gap.
+- **`FavoriteCount` is always empty** (the feature was replaced by Saves in late 2022). The column is kept in Parquet but carries no information.
+- **Questions dated before a site existed** (e.g. ru.stackoverflow from 2010, Super User and Server Fault from 2008-08) are questions migrated from older sites or other Stack Exchange sites. The pre-period starts in 2017, so this does not affect the main analysis.
 - **Removed users.** `OwnerUserId` is missing for posts whose author was deleted, which affects user-cohort analysis.
 
 ## 3. Reconciliation checks (to do)
 
 - [ ] Monthly question counts for SO compared with SEDE for overlapping months
-- [ ] No duplicate `Post.Id` values
-- [ ] Max `CreationDate` over all rows matches the stated cut-off (an earlier check read only the end of each file, which is not valid because rows are unordered; redo in P05)
+- [x] Max `CreationDate` over all rows matches the stated cut-off (P05: every site's latest question is between 2026-09-21 and 2026-09-30; Stack Overflow 2026-09-30T22:40)
+- [x] No duplicate `Post.Id` values within any site (P05)
 - [x] All XML files complete (closing root tag present)
 - [x] Watermarking and checksum check (P01; see section 2)
 
