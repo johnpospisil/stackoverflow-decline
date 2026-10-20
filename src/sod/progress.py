@@ -3,8 +3,9 @@
 Jobs write `<DATA_DIR>/progress/<job>/<task>.json` every few seconds. The viewer
 reads them, so it works from any terminal while the job runs elsewhere:
 
-    make progress            # all jobs
-    make progress JOB=posts  # one job
+    make progress                     # one overall line per job
+    make progress JOB=posts           # one job
+    make progress DETAIL=1            # also list every task
 """
 
 from __future__ import annotations
@@ -100,7 +101,7 @@ def _fmt_secs(s: float) -> str:
     return f"{h}h{m:02d}m" if h else f"{m}m{sec:02d}s"
 
 
-def render(job_dir: Path) -> tuple[str, bool]:
+def render(job_dir: Path, detail: bool = False) -> tuple[str, bool]:
     manifest = json.loads((job_dir / "_manifest.json").read_text())
     tasks: dict[str, int] = manifest["tasks"]
     states = {}
@@ -116,19 +117,23 @@ def render(job_dir: Path) -> tuple[str, bool]:
     done = sum(
         s["total_bytes"] if s["status"] == "done" else s["done_bytes"] for s in states.values()
     )
-    elapsed = time.time() - manifest["started"]
-    rate = done / elapsed if elapsed > 0 else 0
-    eta = (total - done) / rate if rate > 0 else float("nan")
     n_done = sum(1 for s in states.values() if s["status"] == "done")
     failed = [n for n, s in states.items() if s["status"] == "failed"]
-
-    lines = [f"Job: {manifest['job']}   ({n_done}/{len(tasks)} tasks done)"]
+    finished = n_done + len(failed) == len(tasks)
+    end = max((s["updated"] for s in states.values()), default=time.time())
+    elapsed = (end if finished else time.time()) - manifest["started"]
+    rate = done / elapsed if elapsed > 0 else 0
+    eta = (total - done) / rate if rate > 0 else float("nan")
     eta_txt = _fmt_secs(eta) if eta == eta else "—"
-    lines.append(
-        f"  {'OVERALL':<40} {_bar(done / total if total else 1)} {100 * done / max(total, 1):5.1f}%"
-        f"  {total / 1e9:6.1f} GB  elapsed {_fmt_secs(elapsed)}  left ~{eta_txt}"
+    summary = (
+        f"{manifest['job']:<8} {_bar(done / total if total else 1, 40)} "
+        f"{100 * done / max(total, 1):5.1f}%  {n_done}/{len(tasks)} tasks  "
+        f"elapsed {_fmt_secs(elapsed)}  left ~{'0m00s' if finished else eta_txt}"
+        + (f"  FAILED: {len(failed)}" if failed else "")
     )
-    lines.append("")
+    if not detail:
+        return summary, finished
+    lines = [summary, ""]
     running = [n for n, s in states.items() if s["status"] == "running"]
     order = running + [n for n in tasks if n not in running]
     for name in order:
@@ -145,30 +150,43 @@ def render(job_dir: Path) -> tuple[str, bool]:
         lines.append(f"{mark} {name:<40} {_bar(frac)} {100 * frac:5.1f}%  {extra}")
     if failed:
         lines.append(f"\nFAILED: {', '.join(failed)}")
-    finished = n_done + len(failed) == len(tasks)
     return "\n".join(lines), finished
 
 
 def main(argv: list[str]) -> int:
-    job = argv[0] if argv else None
+    detail = "--detail" in argv
+    args = [a for a in argv if a != "--detail"]
+    job = args[0] if args else None
     if not PROGRESS_DIR.exists():
         print(f"No progress files yet in {PROGRESS_DIR}")
         return 1
     try:
         while True:
-            job_dirs = sorted(
-                d for d in PROGRESS_DIR.iterdir() if d.is_dir() and (job is None or d.name == job)
-            )
-            screens = [render(d) for d in job_dirs if (d / "_manifest.json").exists()]
-            sys.stdout.write("\033[2J\033[H")  # clear screen
-            if not screens:
-                print("Waiting for a job to start...")
-            for text, _ in screens:
-                print(text + "\n")
+            job_dirs = [
+                d
+                for d in PROGRESS_DIR.iterdir()
+                if (d / "_manifest.json").exists() and (job is None or d.name == job)
+            ]
+            screens = [render(d, detail) for d in job_dirs]
+            if job is None and screens:
+                # Show only the job(s) still running; if none, the most recently started.
+                running = [s for s in screens if not s[1]]
+                if running:
+                    screens = running
+                else:
+                    latest = max(job_dirs, key=lambda d: (d / "_manifest.json").stat().st_mtime)
+                    screens = [render(latest, detail)]
+            if detail:
+                sys.stdout.write("\033[2J\033[H")  # clear screen
+                print("\n\n".join(t for t, _ in screens) or "Waiting for a job to start...")
+            else:
+                # one line per job, redrawn in place
+                text = "  |  ".join(t for t, _ in screens) or "Waiting for a job to start..."
+                sys.stdout.write("\r\033[K" + text)
+                sys.stdout.flush()
             if screens and all(fin for _, fin in screens):
-                print("All done.")
+                print("\nAll done.")
                 return 0
-            print("(refreshes every 2s — Ctrl-C to close; the job keeps running)")
             time.sleep(2)
     except KeyboardInterrupt:
         return 0

@@ -19,9 +19,10 @@ ingest-posts: check-env
 ingest-tables: check-env
 	$(PY) -m sod.ingest.tables
 
-# Live progress bars for running jobs (any terminal). JOB=posts to pick one.
+# Live progress for running jobs (any terminal): one overall line.
+# JOB=tables to pick a job; DETAIL=1 to list every task.
 progress:
-	@$(PY) -m sod.progress $(JOB)
+	@$(PY) -m sod.progress $(JOB) $(if $(DETAIL),--detail,)
 
 build:
 	@echo "build: not yet implemented (P10-P13)"
