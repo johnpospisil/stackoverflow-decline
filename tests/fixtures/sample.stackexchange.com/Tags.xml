@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tags>
+  <row Id="1" TagName="python" Count="2" ExcerptPostId="4" WikiPostId="3" />
+  <row Id="2" TagName="c++" Count="1" />
+  <row Id="3" TagName="c#" Count="1" IsModeratorOnly="True" IsRequired="False" />
+  <row Id="4" TagName="python-3.x" Count="1" />
+</tags>

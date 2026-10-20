@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+  <row Id="-1" Reputation="1" CreationDate="2010-07-19T00:00:00.000" DisplayName="Community" LastAccessDate="2010-07-19T00:00:00.000" WebsiteUrl="https://meta.stackexchange.com/" Location="on the server farm" AboutMe="&lt;p&gt;Hi, I'm not really a person.&lt;/p&gt;" Views="0" UpVotes="5000" DownVotes="9000" AccountId="-1" />
+  <row Id="2" Reputation="101" CreationDate="2010-07-20T10:00:00.000" DisplayName="Zoë Ünicode 李" LastAccessDate="2026-09-29T12:00:00.000" Location="Zürich, Switzerland" Views="12" UpVotes="3" DownVotes="0" AccountId="1001" />
+  <row Id="3" Reputation="25000" CreationDate="2010-07-20T11:00:00.000" DisplayName="expert" LastAccessDate="2026-09-30T23:00:00.000" Views="999" UpVotes="1000" DownVotes="50" />
+  <row Id="4" Reputation="1" CreationDate="2022-11-30T22:00:00.000" DisplayName="newbie" LastAccessDate="2022-11-30T23:59:00.000" Views="0" UpVotes="0" DownVotes="0" AccountId="1004" />
+  <row Id="5" Reputation="15" CreationDate="2026-09-01T00:00:00.000" DisplayName="&quot;quoted&quot; &amp; escaped" LastAccessDate="2026-09-30T08:40:00.000" Location="" Views="1" UpVotes="0" DownVotes="0" AccountId="1005" />
+</users>

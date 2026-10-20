@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<posthistory>
+  <row Id="1" PostHistoryTypeId="2" PostId="5" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000001" CreationDate="2010-07-20T19:18:01.250" UserId="2" Text="How do I reverse a list in Python?&#xD;&#xA;&#xD;&#xA;    x = [1, 2, 3]" ContentLicense="CC BY-SA 2.5" />
+  <row Id="2" PostHistoryTypeId="1" PostId="5" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000001" CreationDate="2010-07-20T19:18:01.250" UserId="2" Text="How do I reverse a list?" ContentLicense="CC BY-SA 2.5" />
+  <row Id="3" PostHistoryTypeId="3" PostId="5" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000001" CreationDate="2010-07-20T19:18:01.250" UserId="2" Text="|python|list|" ContentLicense="CC BY-SA 2.5" />
+  <row Id="4" PostHistoryTypeId="6" PostId="5" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000002" CreationDate="2011-01-02T03:04:05.006" UserId="3" Comment="edited tags" Text="|python|list|reverse|" ContentLicense="CC BY-SA 2.5" />
+  <row Id="5" PostHistoryTypeId="10" PostId="7" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000003" CreationDate="2010-07-22T10:00:00.000" UserId="3" Comment="101" Text="{&quot;OriginalQuestionIds&quot;:[5],&quot;Voters&quot;:[{&quot;Id&quot;:3,&quot;DisplayName&quot;:&quot;expert&quot;,&quot;BindingReason&quot;:&quot;GoldTagBadge&quot;,&quot;BindingTagName&quot;:&quot;python&quot;}]}" />
+  <row Id="6" PostHistoryTypeId="11" PostId="7" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000004" CreationDate="2010-07-23T10:00:00.000" UserId="2" Text="{&quot;Voters&quot;:[{&quot;Id&quot;:2,&quot;DisplayName&quot;:&quot;Zoë Ünicode 李&quot;}]}" />
+  <row Id="7" PostHistoryTypeId="10" PostId="12" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000005" CreationDate="2022-12-02T10:00:00.000" UserId="-1" Comment="103" Text="{&quot;Voters&quot;:[{&quot;Id&quot;:-1,&quot;DisplayName&quot;:&quot;Community&quot;}]}" />
+  <row Id="8" PostHistoryTypeId="5" PostId="9" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000006" CreationDate="2010-08-01T00:00:00.000" UserDisplayName="removed user" Comment="fixed typo" Text="Use slicing" ContentLicense="CC BY-SA 2.5" />
+  <row Id="9" PostHistoryTypeId="10" PostId="20" RevisionGUID="0b1c2d3e-0000-0000-0000-000000000007" CreationDate="2026-09-30T09:00:00.000" UserId="3" Comment="1" Text="{&quot;Voters&quot;:[]}" />
+</posthistory>
