@@ -3,21 +3,23 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables progress build models figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build models figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
 check-env:
 	$(PY) -m sod.check_env
 
-ingest: check-env ingest-posts ingest-tables
-	@echo "ingest: PostHistory not yet implemented (P07)"
+ingest: check-env ingest-posts ingest-tables ingest-posthistory
 
 ingest-posts: check-env
 	$(PY) -m sod.ingest.posts
 
 ingest-tables: check-env
 	$(PY) -m sod.ingest.tables
+
+ingest-posthistory: check-env
+	$(PY) -m sod.ingest.posthistory
 
 # Live progress for running jobs (any terminal): one overall line.
 # JOB=tables to pick a job; DETAIL=1 to list every task.
