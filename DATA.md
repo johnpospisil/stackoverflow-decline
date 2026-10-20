@@ -115,10 +115,11 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 | Stack Exchange API (data after the dump cut-off) | https://api.stackexchange.com | CC BY-SA | — |
 | Stack Overflow Developer Survey | https://survey.stackoverflow.co | ODbL | — |
 | GH Archive (optional) | https://www.gharchive.org | — | — |
-| Event dates (`data/reference/events.csv`) | Hand-curated, cited per row | — | — |
+| Event dates (`data/reference/events.csv`) | Hand-curated, cited per row (35 events; `confidence` = primary or secondary source) | — | 2026-10-19 |
 
 ## 5. Before publishing
 
 - [ ] Re-read the Data dump access terms. Note any change since 2026-10-19.
+- [ ] Check https://meta.stackexchange.com/a/402072 for official 2026-09-30 checksums and compare with `data/reference/dump_checksums.csv`.
 - [ ] Confirm published datasets contain derived metrics only (no post text or user names).
 - [ ] Include CC BY-SA 4.0 attribution to Stack Exchange on every published dataset and chart.
