@@ -118,3 +118,9 @@
 - **What:** tag-level analyses (H2, tag × week panels, the tag taxonomy) use each question's **tags at the time of asking**: the initial-tags event, PostHistory type 3. Current `Posts.Tags` is used only as a fallback for the 214 Stack Overflow questions (0.001%) without that event.
 - **Why:** questions keep being retagged for years (5.26M retag events on Stack Overflow). Older questions have had more time to be retagged than recent ones, so current tags would create a time trend in tag counts unrelated to ChatGPT.
 - **When:** decided **before any outcome data was examined**. At this point only ingest counts and missing-value rates had been computed (P05–P07); no counts by time period.
+
+### 2026-10-20: "Platform-wide decline" test moved to the log scale (deviation)
+
+- **What changed:** section 4's last decision row ("comparison sites fall by within 10 percentage points of SO's fall") is replaced by a log-scale rule, the same scale as the primary estimand. For each donor site, fit the section 5.1 interrupted time series on monthly log questions and take its average post-period log gap against its own pre-trend. The decline is called **platform-wide** if the **median donor log gap is at least 0.8 × Stack Overflow's log gap** (both measured the same way). Otherwise it is **programming-specific**. The percentage-point version as originally written is also reported, labelled "original rule".
+- **Why:** percentage-point differences compress near −100%. In the raw counts (Sep–Nov 2022 vs Jul–Sep 2026), Stack Overflow fell 98-fold (−99.0%) and Mathematics 10-fold (−90.0%), only 9 percentage points apart. The original rule would therefore call almost any large decline "platform-wide", whatever the relative size.
+- **When:** decided **after seeing descriptive monthly counts in P08** (raw before/after changes per site), **before any model was fitted** and before any trend-adjusted estimate was computed.
