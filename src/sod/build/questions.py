@@ -11,6 +11,8 @@ Fields
 - ever_closed / first_close_reason / closed_as_duplicate: from PostHistory close events
   of posts still in the dump.
 - asker_account_age_days, asker_first_post: NULL when the asker's account is deleted.
+  An account created < 1 day after the question (asked, then registered) counts as 0 days;
+  created > 1 day after (migrated or merged questions, 0.1% on Stack Overflow) is NULL.
   asker_first_post means no earlier question or answer by that user on the site.
 - Score, ViewCount, n_answers, CommentCount are as of the dump date, so older questions
   have had longer to accumulate them.
@@ -89,7 +91,8 @@ SELECT
     q.OwnerUserId,
     q.owner_deleted,
     CASE WHEN usr.user_created IS NULL THEN NULL
-         ELSE date_diff('millisecond', usr.user_created, q.CreationDate) / 86400000.0
+         WHEN usr.user_created > q.CreationDate + INTERVAL 1 DAY THEN NULL  -- migrated/merged
+         ELSE greatest(0, date_diff('millisecond', usr.user_created, q.CreationDate) / 86400000.0)
     END AS asker_account_age_days,
     CASE WHEN fp.first_post_at IS NULL THEN NULL
          ELSE fp.first_post_at >= q.CreationDate
