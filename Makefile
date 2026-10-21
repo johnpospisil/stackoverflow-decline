@@ -91,7 +91,7 @@ models-github:
 	$(PY) -m sod.models.github
 
 figures:
-	@echo "figures: not yet implemented (P26-P27)"
+	$(PY) -m sod.viz.hero
 
 report:
 	@echo "report: not yet implemented (P30)"

@@ -76,7 +76,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P18: Robustness.** _Done 2026-10-21: all 15 pre-registered variants keep H1 (synthetic control −60% to −74%; supporting −79% to −83%); no pre-fit failures; no drop at the Copilot date; deleted posts don't change the estimate._ Alternative break dates (Copilot GA 2022-06, GPT-4 2023-03); excluding the June–Aug 2023 strike; adding the deleted-post correction from P09; monthly vs weekly data; answers and new users as outcomes. **Findings:** a forest plot of all the estimates, and which conclusions hold up.
 
-### Phase 4: Who, what and which tags
+### Phase 4: Who, what and which tags ✅ DONE
 
 - [x] **P19: Tag-level effects.** *Done 2026-10-21: all 300 tags fell vs own trend (median −86%); bigger and better-documented tags fell more, older tags fell less (partly a pre-trend artefact); retired tags found → excluded by rule (deviation).* For each of the top 300 tags, estimate the post-2022 change vs its own trend (or vs the comparison group), then fit a hierarchical model (bambi or PyMC) that pools small tags toward the average. Explain the differences with tag family, age, size and documentation maturity. **Findings:** the top and bottom 15 tags with intervals, which tag characteristics matter, and shrinkage diagnostics.
 
@@ -90,7 +90,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P24: Responsiveness.** *Done 2026-10-21: SO answered-in-24h 67% → ~55% (step down in 2023, then flat); answer speed 0.7 h → 2.8 h; answers shifted to old questions (13% → 37% to questions >1 yr old); Oct 2025 opinion-question change breaks acceptance series.* Track time to first answer, % answered within 24h, and % with an accepted answer over time, with bands; account for the incomplete final weeks. **Findings:** whether the community that remains is still responsive.
 
-- [ ] **P25: Where did help-seeking go?** (Needs a Google Cloud account with BigQuery; the free tier should cover it.) GH Archive via BigQuery: issues and Discussions opened per month for the top languages, compared with SO tag trends; plus Stack Overflow Developer Survey AI-use shares by year as context. **Findings:** whether there is evidence of displacement to GitHub, and survey AI-adoption figures.
+- [x] **P25: Where did help-seeking go?** *Done 2026-10-21: no displacement to GitHub issues: flagship-repo issue activity drifted down (median index 55 by 2025-05) while SO tags fell to 9 and GitHub overall grew 40%; GH Archive unreliable after mid-2025; survey AI use 44% (2023) → 79% (2025).* (Needs a Google Cloud account with BigQuery; the free tier should cover it.) GH Archive via BigQuery: issues and Discussions opened per month for the top languages, compared with SO tag trends; plus Stack Overflow Developer Survey AI-use shares by year as context. **Findings:** whether there is evidence of displacement to GitHub, and survey AI-adoption figures.
 
 ### Phase 5: Figures and reproducibility
 
