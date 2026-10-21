@@ -54,7 +54,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P09: SEDE reconciliation.** *Done 2026-10-20: dump matches SEDE (median diff 0.001%); SO deleted share of questions rose 33.5% (2017) → 52.9% (2026); dump slightly overstates SO decline (−4.59 vs −4.33 log points), gap to donors unchanged.* Write SEDE SQL for monthly question and answer counts per site (2019–present). Give the user the queries to run and the CSV names to save into `data/reference/sede/`. Compare those counts with the dump totals, and use SEDE's `PostsWithDeleted` to estimate how many deleted posts are missing per month. **Findings:** differences by month (%), whether the deleted-post share changed after 2022, and what that means for the size of the estimated decline.
 
-### Phase 2: Analysis tables
+### Phase 2: Analysis tables ✅ DONE
 
 - [x] **P10: Question features.** *Done 2026-10-21: 29.4M question rows (1.6 GB); account-age rule for post-question accounts; SO post-period questions longer, slower to be answered, more first-time askers (descriptive).* Build `questions.parquet`, one row per question: site, week, tags, body length, code blocks, title length, score, views, accepted answer (yes/no), answer count, time to first answer, time to accepted answer, closed and duplicate flags with dates, asker account age at the time of asking, whether it's the asker's first post, and asker reputation (current reputation only; note the bias). **Findings:** summary statistics before vs after 2022 for SO, missing-data rates, and known biases.
 
@@ -64,7 +64,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P13: Weekly panels.** *Done 2026-10-21: 4 panels (site/tag × week/month, Parquet+CSV) with fixed-window outcomes and zero-filled periods; totals reconcile; tag counts now sparse → H2 uses a count model (deviation).* Build site × week and tag × week panels: questions, answers, new users, active askers, active answerers, % answered, median time to first answer, duplicate rate. Note that the final 8 weeks are not fully observed (answers and closures may still arrive). **Fixed-window outcomes (decided 2026-10-21):** answered within 24 h, answered within 7 days, accepted within 30 days; questions without the full window before the 2026-09-30 cut-off are excluded from those measures. Publish these as Parquet and CSV. **Findings:** panel sizes, coverage, and the incomplete weeks that were flagged.
 
-- [ ] **P14: Exploratory analysis.** In `notebooks/01_eda.ipynb`: long-run trends (indexed to 2019 = 100) for each site group, seasonality (weekday, holidays, academic calendar), the pre-2022 slope for each site, and how the comparison sites tracked SO before 2022. Stay descriptive, with no causal claims yet. **Findings:** 4–6 charts, the pre-trend picture, and whether the comparison sites look usable.
+- [x] **P14: Exploratory analysis.** *Done 2026-10-21: SO pre-trend −7.8%/yr inside the donor range (−31% to +2%); declines sped up after COVID everywhere → exploratory post-COVID ITS sensitivity added; strong weekday and Christmas effects on SO.* In `notebooks/01_eda.ipynb`: long-run trends (indexed to 2019 = 100) for each site group, seasonality (weekday, holidays, academic calendar), the pre-2022 slope for each site, and how the comparison sites tracked SO before 2022. Stay descriptive, with no causal claims yet. **Findings:** 4–6 charts, the pre-trend picture, and whether the comparison sites look usable.
 
 ### Phase 3: Headline effect
 

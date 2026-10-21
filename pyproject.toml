@@ -49,6 +49,8 @@ testpaths = ["tests"]
 markers = [
     "data: needs the real dump on the external drive (skipped if not mounted)",
 ]
+# pandas Timestamp +/- Timedelta under NumPy 2 (library-internal, harmless)
+filterwarnings = ["ignore:The 'generic' unit for NumPy timedelta is deprecated:DeprecationWarning"]
 
 [tool.ruff]
 line-length = 100

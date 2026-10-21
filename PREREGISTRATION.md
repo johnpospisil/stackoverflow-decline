@@ -150,3 +150,9 @@
 - **What changed:** H2's per-tag outcome is monthly question **counts** in a hierarchical **negative binomial** model (log link) with each tag's own intercept and pre-trend, a post-2022 level change per tag partially pooled across tags, and the same predictors as section 6. The estimand is unchanged: each tag's post-period percentage change against its own extended pre-trend (exp(coefficient) − 1). The decision rule is unchanged. The original log-outcome model (log(count + 1)) is reported as a sensitivity check, labelled "original".
 - **Why:** in 2026, 15% of top-300 tag-months and 71% of new-tag months have **zero** questions, and the median top-300 tag has about 4 questions a month. log(0) is undefined, and log(count + 1) or dropping zero months biases small counts.
 - **When:** decided **after seeing aggregate sparsity in the P13 panels** (zero shares and median counts across all tags), **before any per-tag decline was estimated or ranked**.
+
+### 2026-10-21: Post-COVID pre-trend sensitivity for the interrupted time series (addition)
+
+- **What:** the interrupted time series (section 5.1) is also fitted with the sample starting **2020-07-06** (the first full week after the COVID exclusion window), so the counterfactual trend comes only from the post-COVID pre-period. Labelled **exploratory**; it is reported next to the pre-registered fit and does not replace it.
+- **Why:** P14 (descriptive) showed Stack Overflow's pre-ChatGPT decline speeding up from about −9% a year (2017–2019) to −14% a year (2020-07 to 2022-11). A single trend from 2017 would then understate the counterfactual decline and overstate the effect.
+- **When:** decided after the descriptive P14 slopes, **before any interrupted time series or other model was fitted on post-period data**.
