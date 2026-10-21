@@ -1,0 +1,314 @@
+{
+  "index_2019_100_latest_full_month": {
+    "context": 11.95,
+    "donor": 8.63,
+    "so_language": 0.94,
+    "tech_exposed": 4.77,
+    "treated": 0.71
+  },
+  "latest_full_month": "2026-09-01",
+  "pre_slopes_pct_per_year": [
+    {
+      "site": "pt.stackoverflow.com",
+      "group": "so_language",
+      "pct_per_year": -35.61,
+      "low": -39.79,
+      "high": -31.13,
+      "n_months": 67
+    },
+    {
+      "site": "movies.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -30.79,
+      "low": -33.88,
+      "high": -27.55,
+      "n_months": 67
+    },
+    {
+      "site": "travel.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -25.54,
+      "low": -31.44,
+      "high": -19.12,
+      "n_months": 67
+    },
+    {
+      "site": "biology.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -21.37,
+      "low": -22.92,
+      "high": -19.78,
+      "n_months": 67
+    },
+    {
+      "site": "meta.stackoverflow.com",
+      "group": "context",
+      "pct_per_year": -21.2,
+      "low": -22.25,
+      "high": -20.13,
+      "n_months": 67
+    },
+    {
+      "site": "softwareengineering.stackexchange.com",
+      "group": "tech_exposed",
+      "pct_per_year": -19.78,
+      "low": -23.19,
+      "high": -16.22,
+      "n_months": 67
+    },
+    {
+      "site": "english.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -19.45,
+      "low": -22.99,
+      "high": -15.75,
+      "n_months": 67
+    },
+    {
+      "site": "rpg.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -18.03,
+      "low": -22.68,
+      "high": -13.11,
+      "n_months": 67
+    },
+    {
+      "site": "history.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -16.84,
+      "low": -19.21,
+      "high": -14.39,
+      "n_months": 67
+    },
+    {
+      "site": "gaming.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -16.55,
+      "low": -20.98,
+      "high": -11.88,
+      "n_months": 67
+    },
+    {
+      "site": "cooking.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -16.14,
+      "low": -20.36,
+      "high": -11.69,
+      "n_months": 67
+    },
+    {
+      "site": "scifi.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -13.5,
+      "low": -15.75,
+      "high": -11.18,
+      "n_months": 67
+    },
+    {
+      "site": "chemistry.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -13.42,
+      "low": -18.52,
+      "high": -8.01,
+      "n_months": 67
+    },
+    {
+      "site": "serverfault.com",
+      "group": "tech_exposed",
+      "pct_per_year": -12.43,
+      "low": -14.36,
+      "high": -10.46,
+      "n_months": 67
+    },
+    {
+      "site": "dba.stackexchange.com",
+      "group": "tech_exposed",
+      "pct_per_year": -12.36,
+      "low": -14.98,
+      "high": -9.67,
+      "n_months": 67
+    },
+    {
+      "site": "math.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -10.08,
+      "low": -12.94,
+      "high": -7.13,
+      "n_months": 67
+    },
+    {
+      "site": "superuser.com",
+      "group": "tech_exposed",
+      "pct_per_year": -9.78,
+      "low": -12.23,
+      "high": -7.27,
+      "n_months": 67
+    },
+    {
+      "site": "askubuntu.com",
+      "group": "tech_exposed",
+      "pct_per_year": -9.76,
+      "low": -11.58,
+      "high": -7.91,
+      "n_months": 67
+    },
+    {
+      "site": "unix.stackexchange.com",
+      "group": "tech_exposed",
+      "pct_per_year": -8.89,
+      "low": -10.12,
+      "high": -7.63,
+      "n_months": 67
+    },
+    {
+      "site": "stackoverflow.com",
+      "group": "treated",
+      "pct_per_year": -7.84,
+      "low": -8.78,
+      "high": -6.89,
+      "n_months": 67
+    },
+    {
+      "site": "ja.stackoverflow.com",
+      "group": "so_language",
+      "pct_per_year": -7.02,
+      "low": -10.25,
+      "high": -3.67,
+      "n_months": 67
+    },
+    {
+      "site": "ru.stackoverflow.com",
+      "group": "so_language",
+      "pct_per_year": -6.97,
+      "low": -9.43,
+      "high": -4.45,
+      "n_months": 67
+    },
+    {
+      "site": "philosophy.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -4.34,
+      "low": -8.52,
+      "high": 0.03,
+      "n_months": 67
+    },
+    {
+      "site": "bicycles.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -2.97,
+      "low": -6.97,
+      "high": 1.2,
+      "n_months": 67
+    },
+    {
+      "site": "es.stackoverflow.com",
+      "group": "so_language",
+      "pct_per_year": -2.87,
+      "low": -6.43,
+      "high": 0.83,
+      "n_months": 67
+    },
+    {
+      "site": "physics.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": -0.51,
+      "low": -3.81,
+      "high": 2.91,
+      "n_months": 67
+    },
+    {
+      "site": "diy.stackexchange.com",
+      "group": "donor",
+      "pct_per_year": 2.18,
+      "low": -1.38,
+      "high": 5.87,
+      "n_months": 67
+    }
+  ],
+  "so_slope_rank_among_donors": 11,
+  "weekend_share_pre": {
+    "context": 0.1787,
+    "donor": 0.2644,
+    "so_language": 0.2043,
+    "tech_exposed": 0.2017,
+    "treated": 0.1805
+  },
+  "weekend_share_2025_26": {
+    "context": 0.1446,
+    "donor": 0.2713,
+    "so_language": 0.2183,
+    "tech_exposed": 0.201,
+    "treated": 0.1766
+  },
+  "so_month_profile_pct": {
+    "1": 0.3,
+    "2": -2.2,
+    "3": 8.8,
+    "4": 1.1,
+    "5": 3.1,
+    "6": -2.5,
+    "7": 3.7,
+    "8": 0.5,
+    "9": -4.3,
+    "10": 0.9,
+    "11": -0.4,
+    "12": -8.1
+  },
+  "donor_month_profile_pct": {
+    "1": 3.5,
+    "2": -5.8,
+    "3": 5.8,
+    "4": 1.1,
+    "5": 3.3,
+    "6": -3.7,
+    "7": 0.4,
+    "8": 1.8,
+    "9": -5.5,
+    "10": -1.1,
+    "11": -7.1,
+    "12": -0.8
+  },
+  "so_vs_donor_month_profile_corr": 0.631,
+  "holiday_ratio_median": {
+    "context": {
+      "christmas": 0.548,
+      "new_year": 0.92
+    },
+    "donor": {
+      "christmas": 0.891,
+      "new_year": 0.905
+    },
+    "so_language": {
+      "christmas": 0.709,
+      "new_year": 0.677
+    },
+    "tech_exposed": {
+      "christmas": 0.777,
+      "new_year": 0.897
+    },
+    "treated": {
+      "christmas": 0.67,
+      "new_year": 0.758
+    }
+  },
+  "equal_weight_rmspe_log": 0.15007875482974387,
+  "gap_start_log": -0.12144798672633245,
+  "gap_end_log": 0.21252392064100267,
+  "donor_change_corr": {
+    "physics.stackexchange.com": 0.537,
+    "math.stackexchange.com": 0.496,
+    "biology.stackexchange.com": 0.4,
+    "scifi.stackexchange.com": 0.338,
+    "gaming.stackexchange.com": 0.287,
+    "cooking.stackexchange.com": 0.268,
+    "chemistry.stackexchange.com": 0.249,
+    "bicycles.stackexchange.com": 0.228,
+    "movies.stackexchange.com": 0.215,
+    "english.stackexchange.com": 0.201,
+    "rpg.stackexchange.com": 0.192,
+    "travel.stackexchange.com": 0.185,
+    "diy.stackexchange.com": 0.146,
+    "history.stackexchange.com": 0.017,
+    "philosophy.stackexchange.com": -0.002
+  }
+}

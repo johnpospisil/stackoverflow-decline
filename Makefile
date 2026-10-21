@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels models figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -39,6 +39,10 @@ build-panels:
 
 build-questions:
 	$(PY) -m sod.build.questions
+
+# P14: descriptive charts + report/qa/eda_summary.json; re-executes the notebook.
+eda:
+	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
 models:
 	@echo "models: not yet implemented (P15-P24)"

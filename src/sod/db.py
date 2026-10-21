@@ -11,7 +11,10 @@ TABLES = ("posts", "users", "votes", "comments", "postlinks", "tags", "posthisto
 
 def connect(memory_limit: str = "8GB") -> duckdb.DuckDBPyConnection:
     con = duckdb.connect()
-    con.execute("SET enable_progress_bar = false")
+    try:
+        con.execute("SET enable_progress_bar = false")
+    except duckdb.InvalidInputException:
+        pass  # inside Jupyter without ipywidgets the bar is already off
     con.execute(f"SET memory_limit = '{memory_limit}'")
     tmp = config.DATA_DIR / "duckdb_tmp"
     tmp.mkdir(parents=True, exist_ok=True)
