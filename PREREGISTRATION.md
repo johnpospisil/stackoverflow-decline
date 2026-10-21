@@ -132,3 +132,9 @@
 - **Files:** `data/reference/tag_families.csv` (300 tags, 11 families), `data/reference/tag_features.csv`, `data/reference/tags_new_post2021.csv` (69 tags first used after 2021-09-30 with ≥ 200 questions).
 - **Note on power:** 177 of the 300 tags (59%) were in use when Stack Overflow launched, so their age is capped at about 14.3 years. The age test therefore has limited variation, and the new-tag comparison carries more of the H2 "thin training data" test.
 - **When:** fixed **before any tag-level outcome was examined**. No tag counts after 2021 were computed except each new tag's total question count, which the pre-registered ≥ 200 threshold requires.
+
+### 2026-10-21: H2 secondary split of new tags (addition)
+
+- **What:** the pre-registered new-tag comparison (all 69 tags first used after 2021-09-30 with ≥ 200 questions) stays the **primary** H2 new-tag test. A **secondary** comparison is added: `kind = new` (30 tags of genuinely new technology) vs `kind in (version, feature)` (39 tags for new versions or features of existing technology), as classified in `data/reference/tags_new_post2021.csv`. Prediction: genuinely new technology declines less than new versions/features.
+- **Why:** new versions of well-known technology (e.g. `.net-8.0`, `python-3.11`) are not "thin training data" in the intended sense.
+- **When:** decided **before any tag-level outcome was examined**.
