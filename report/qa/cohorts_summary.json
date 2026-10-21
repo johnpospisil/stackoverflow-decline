@@ -1,0 +1,282 @@
+{
+  "so_core_answerers": 11156,
+  "so_core_min_answers_2019_2021": 69,
+  "so_new_posters_by_year": [
+    {
+      "y": 2015,
+      "new_posters": 517657,
+      "pct_first_post_is_question": 73.0,
+      "pct_return_90d": 39.6,
+      "pct_return_365d": 49.6
+    },
+    {
+      "y": 2016,
+      "new_posters": 518456,
+      "pct_first_post_is_question": 72.7,
+      "pct_return_90d": 38.2,
+      "pct_return_365d": 48.2
+    },
+    {
+      "y": 2017,
+      "new_posters": 518621,
+      "pct_first_post_is_question": 73.8,
+      "pct_return_90d": 36.7,
+      "pct_return_365d": 46.3
+    },
+    {
+      "y": 2018,
+      "new_posters": 475233,
+      "pct_first_post_is_question": 74.2,
+      "pct_return_90d": 34.9,
+      "pct_return_365d": 44.5
+    },
+    {
+      "y": 2019,
+      "new_posters": 474778,
+      "pct_first_post_is_question": 74.7,
+      "pct_return_90d": 34.1,
+      "pct_return_365d": 43.8
+    },
+    {
+      "y": 2020,
+      "new_posters": 520546,
+      "pct_first_post_is_question": 74.1,
+      "pct_return_90d": 34.3,
+      "pct_return_365d": 43.1
+    },
+    {
+      "y": 2021,
+      "new_posters": 459207,
+      "pct_first_post_is_question": 73.3,
+      "pct_return_90d": 31.7,
+      "pct_return_365d": 40.3
+    },
+    {
+      "y": 2022,
+      "new_posters": 439217,
+      "pct_first_post_is_question": 71.6,
+      "pct_return_90d": 29.5,
+      "pct_return_365d": 36.8
+    },
+    {
+      "y": 2023,
+      "new_posters": 284928,
+      "pct_first_post_is_question": 68.5,
+      "pct_return_90d": 23.0,
+      "pct_return_365d": 28.8
+    },
+    {
+      "y": 2024,
+      "new_posters": 165775,
+      "pct_first_post_is_question": 62.6,
+      "pct_return_90d": 18.9,
+      "pct_return_365d": 22.8
+    },
+    {
+      "y": 2025,
+      "new_posters": 46733,
+      "pct_first_post_is_question": 52.5,
+      "pct_return_90d": 15.1,
+      "pct_return_365d": 17.4
+    },
+    {
+      "y": 2026,
+      "new_posters": 9727,
+      "pct_first_post_is_question": 54.1,
+      "pct_return_90d": 14.5,
+      "pct_return_365d": NaN
+    }
+  ],
+  "so_answer_concentration": [
+    {
+      "site": "stackoverflow.com",
+      "year": 2008,
+      "answerers": 15649,
+      "answers": 198054,
+      "gini": 0.7063,
+      "top1pct_share": 0.1916,
+      "core_answerers_active": 185,
+      "core_answer_share": 0.0636
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2009,
+      "answerers": 55546,
+      "answers": 890660,
+      "gini": 0.7944,
+      "top1pct_share": 0.2926,
+      "core_answerers_active": 517,
+      "core_answer_share": 0.0748
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2010,
+      "answerers": 124112,
+      "answers": 1426905,
+      "gini": 0.8181,
+      "top1pct_share": 0.3668,
+      "core_answerers_active": 870,
+      "core_answer_share": 0.093
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2011,
+      "answerers": 204685,
+      "answers": 2223475,
+      "gini": 0.8098,
+      "top1pct_share": 0.3559,
+      "core_answerers_active": 1336,
+      "core_answer_share": 0.1
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2012,
+      "answerers": 299786,
+      "answers": 2776296,
+      "gini": 0.7908,
+      "top1pct_share": 0.3517,
+      "core_answerers_active": 1926,
+      "core_answer_share": 0.1105
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2013,
+      "answerers": 398269,
+      "answers": 3255373,
+      "gini": 0.7772,
+      "top1pct_share": 0.3571,
+      "core_answerers_active": 2632,
+      "core_answer_share": 0.1184
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2014,
+      "answerers": 450148,
+      "answers": 3143410,
+      "gini": 0.7561,
+      "top1pct_share": 0.3505,
+      "core_answerers_active": 3282,
+      "core_answer_share": 0.1378
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2015,
+      "answerers": 493057,
+      "answers": 3086931,
+      "gini": 0.7405,
+      "top1pct_share": 0.3377,
+      "core_answerers_active": 4018,
+      "core_answer_share": 0.1537
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2016,
+      "answerers": 517407,
+      "answers": 3017844,
+      "gini": 0.7298,
+      "top1pct_share": 0.3354,
+      "core_answerers_active": 4865,
+      "core_answer_share": 0.18
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2017,
+      "answerers": 523377,
+      "answers": 2850260,
+      "gini": 0.7227,
+      "top1pct_share": 0.3432,
+      "core_answerers_active": 5820,
+      "core_answer_share": 0.2154
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2018,
+      "answerers": 497028,
+      "answers": 2505058,
+      "gini": 0.7138,
+      "top1pct_share": 0.3518,
+      "core_answerers_active": 7098,
+      "core_answer_share": 0.285
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2019,
+      "answerers": 488956,
+      "answers": 2357172,
+      "gini": 0.7076,
+      "top1pct_share": 0.3527,
+      "core_answerers_active": 9102,
+      "core_answer_share": 0.3953
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2020,
+      "answerers": 520374,
+      "answers": 2399776,
+      "gini": 0.7058,
+      "top1pct_share": 0.3765,
+      "core_answerers_active": 10277,
+      "core_answer_share": 0.4239
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2021,
+      "answerers": 466933,
+      "answers": 1959972,
+      "gini": 0.6902,
+      "top1pct_share": 0.3782,
+      "core_answerers_active": 9911,
+      "core_answer_share": 0.4122
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2022,
+      "answerers": 444417,
+      "answers": 1696372,
+      "gini": 0.6717,
+      "top1pct_share": 0.3753,
+      "core_answerers_active": 8590,
+      "core_answer_share": 0.3008
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2023,
+      "answerers": 331525,
+      "answers": 1017027,
+      "gini": 0.6192,
+      "top1pct_share": 0.3579,
+      "core_answerers_active": 6997,
+      "core_answer_share": 0.2627
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2024,
+      "answerers": 220947,
+      "answers": 563260,
+      "gini": 0.5613,
+      "top1pct_share": 0.3248,
+      "core_answerers_active": 5384,
+      "core_answer_share": 0.2343
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2025,
+      "answerers": 86467,
+      "answers": 187379,
+      "gini": 0.4991,
+      "top1pct_share": 0.2744,
+      "core_answerers_active": 3439,
+      "core_answer_share": 0.2386
+    },
+    {
+      "site": "stackoverflow.com",
+      "year": 2026,
+      "answerers": 18418,
+      "answers": 39901,
+      "gini": 0.4993,
+      "top1pct_share": 0.2446,
+      "core_answerers_active": 1614,
+      "core_answer_share": 0.3367
+    }
+  ]
+}
