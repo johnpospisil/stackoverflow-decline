@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -44,7 +44,7 @@ build-questions:
 eda:
 	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
-models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers
+models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness
 
 # P15: interrupted time series (weekly Stack Overflow)
 models-its:
@@ -81,6 +81,10 @@ models-newcomers:
 # P23: H5 answerers (placebo cohorts), core activity, emerging top answerers
 models-answerers:
 	$(PY) -m sod.models.answerers
+
+# P24: responsiveness (exploratory E1)
+models-responsiveness:
+	$(PY) -m sod.models.responsiveness
 
 figures:
 	@echo "figures: not yet implemented (P26-P27)"
