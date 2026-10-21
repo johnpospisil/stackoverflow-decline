@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -44,7 +44,7 @@ build-questions:
 eda:
 	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
-models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix
+models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers
 
 # P15: interrupted time series (weekly Stack Overflow)
 models-its:
@@ -73,6 +73,10 @@ models-thin-data:
 # P21: H3 question mix, 2021 vs 2025 (tag-mix reweighting, bootstrap, Lee bounds)
 models-question-mix:
 	$(PY) -m sod.models.question_mix
+
+# P22: H4 newcomers (synthetic control on first-time share; Kaplan-Meier return)
+models-newcomers:
+	$(PY) -m sod.models.newcomers
 
 figures:
 	@echo "figures: not yet implemented (P26-P27)"
