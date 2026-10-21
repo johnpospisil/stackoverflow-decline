@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -44,7 +44,7 @@ build-questions:
 eda:
 	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
-models: models-its models-forecast models-synth
+models: models-its models-forecast models-synth models-robustness
 
 # P15: interrupted time series (weekly Stack Overflow)
 models-its:
@@ -57,6 +57,10 @@ models-forecast:
 # P17: synthetic control (primary), placebos, sensitivity, DiD vs ru, platform-wide test
 models-synth:
 	$(PY) -m sod.models.synth
+
+# P18: pre-registered robustness checks + forest plot (needs P15-P17 outputs)
+models-robustness:
+	$(PY) -m sod.models.robustness
 
 figures:
 	@echo "figures: not yet implemented (P26-P27)"

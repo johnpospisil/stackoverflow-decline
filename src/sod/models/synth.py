@@ -58,11 +58,12 @@ ALPHA = 0.05
 # --- data ------------------------------------------------------------------------------
 
 
-def load_logs() -> pd.DataFrame:
-    """Wide log monthly questions, months x sites, 2017-01..2026-09."""
-    m = pd.read_parquet(config.PANEL_DIR / "site_month.parquet")
-    w = m.pivot(index="period", columns="site", values="questions").sort_index()
-    w = w.loc[START:END]
+def load_logs(start=START, value: str = "questions", panel: str = "site_month") -> pd.DataFrame:
+    """Wide log counts, periods x sites, from `start` to the last full period (2026-09)."""
+    m = pd.read_parquet(config.PANEL_DIR / f"{panel}.parquet")
+    m = m[~m["partial_period"]]
+    w = m.pivot(index="period", columns="site", values=value).sort_index()
+    w = w.loc[pd.Timestamp(start) :]
     return np.log(w.clip(lower=1).astype(float))
 
 
@@ -158,10 +159,10 @@ def windows(index: pd.DatetimeIndex, post: np.ndarray):
 # --- pysyncon per-month conformal intervals ----------------------------------------------
 
 
-def pysyncon_fit_and_ci(D, pre, post, rep=None):
+def pysyncon_fit_and_ci(D, pre, post, rep=None, treated=TREATED, donors=DONORS):
     from pysyncon import Synth
 
-    Z0, Z1 = D[DONORS], D[TREATED]
+    Z0, Z1 = D[donors], D[treated]
     pre_idx, post_idx = list(D.index[pre]), list(D.index[post])
     X0, X1 = Z0.loc[pre_idx], Z1.loc[pre_idx]
     # pysyncon rescales each predictor (month) by its sd across units; V = sd^2 undoes that,
@@ -169,7 +170,7 @@ def pysyncon_fit_and_ci(D, pre, post, rep=None):
     V = pd.concat([X0, X1], axis=1).std(axis=1).to_numpy() ** 2
     s = Synth()
     s.fit(X0=X0, X1=X1, Z0=Z0, Z1=Z1, custom_V=V)
-    weights = dict(zip(DONORS, (float(x) for x in s.W), strict=True))
+    weights = dict(zip(donors, (float(x) for x in s.W), strict=True))
     rows = []
     for i, t in enumerate(post_idx, start=1):
         with warnings.catch_warnings():
@@ -195,10 +196,10 @@ def pysyncon_fit_and_ci(D, pre, post, rep=None):
 # --- supporting analyses ---------------------------------------------------------------
 
 
-def placebo_space(D, pre, post) -> pd.DataFrame:
+def placebo_space(D, pre, post, treated=TREATED, donors=DONORS) -> pd.DataFrame:
     rows = []
-    for unit in [TREATED, *DONORS]:
-        pool = [d for d in DONORS if d != unit]
+    for unit in [treated, *donors]:
+        pool = [d for d in donors if d != unit]
         r = synth(D, unit, pool, pre, post)
         rows.append(
             {

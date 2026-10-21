@@ -1,0 +1,20 @@
+id,group,label,att_pct,pre_rmspe,prefit_ok,rank,n_units,low,high,top_weights,share_months_excl_zero,range_not_ci,lambda,h1_holds
+0,Primary,"Primary: synthetic control, 15 donors",-72.3108,0.0589,True,1.0,16.0,-75.6962,-68.473,"physics 0.32, scifi 0.14, math 0.13, biology 0.12, bicycles 0.11",0.913,,,True
+1a,1 Break date,Break at Copilot GA (2022-06),-67.0425,0.0591,True,1.0,16.0,-70.8432,-62.7526,"physics 0.34, scifi 0.13, biology 0.13, math 0.12",0.8077,,,True
+1b,1 Break date,Break at GPT-4 (2023-03),-73.6471,0.0592,True,1.0,16.0,-77.0993,-69.6802,"physics 0.31, math 0.16, scifi 0.15, bicycles 0.13, biology 0.10",0.9767,,,True
+2,2 Strike,Strike months (2023-06..08) excluded,-73.8127,0.0589,True,1.0,16.0,-77.0142,-70.1827,"physics 0.32, scifi 0.14, math 0.13, biology 0.12, bicycles 0.11",0.907,,,True
+3,3 Pre-period,Pre-period from 2014-01,-69.9215,0.0799,True,1.0,16.0,-74.1872,-64.9525,"physics 0.36, math 0.12, gaming 0.12, bicycles 0.10",0.913,,,True
+4,4 Weekly,Weekly data,-70.7857,0.0764,True,1.0,16.0,-74.9271,-65.9571,"physics 0.29, math 0.24, scifi 0.11",0.92,,,True
+5a,5 Donors,Without Mathematics,-72.9554,0.0605,True,1.0,15.0,-76.2537,-69.1962,"physics 0.40, biology 0.16, scifi 0.14",0.9348,,,True
+5b,5 Donors,Leave one donor out (median; bar = range),-72.3108,,,,,-74.0747,-70.1453,,,True,,
+5c,5 Donors,Tech sites added as donors (21),-65.3993,0.0495,True,1.0,22.0,-68.6709,-61.7748,"unix 0.50, physics 0.21",0.9348,,,True
+6,6 Augmented,Augmented synthetic control (ridge),-71.9165,,,,,,,,,,95.1659,
+7,7 Late period,Post-period ends 2025-09,-59.6404,0.0589,True,1.0,16.0,-64.5744,-54.0457,"physics 0.32, scifi 0.14, math 0.13, biology 0.12, bicycles 0.11",0.8824,,,True
+8,8 Deleted posts,Deleted questions included (SEDE),-71.524,0.0624,True,1.0,16.0,-74.5502,-68.1353,"physics 0.49, bicycles 0.16, philosophy 0.14, scifi 0.10",0.9348,,,True
+9a,9 Outcomes,Outcome: answers,-66.4197,0.0654,True,1.0,16.0,-71.1818,-60.872,"physics 0.36, biology 0.12, bicycles 0.10, travel 0.10",0.913,,,True
+9n,9 Outcomes,Outcome: new posters,-64.058,0.0995,True,1.0,16.0,-70.3791,-56.3893,"physics 0.71, diy 0.16",0.913,,,True
+10,10 Nov 2022,November 2022 dropped from pre-period,-72.1468,0.0572,True,1.0,16.0,-75.5523,-68.2863,"physics 0.33, scifi 0.14, biology 0.12, math 0.12, bicycles 0.11",0.913,,,True
+S-its-preregistered,Supporting,"ITS, trend from 2017 (weekly)",-83.3919,,,,,-84.2239,-82.5562,,,,,
+S-its-post_covid,Supporting,"ITS, trend from 2020-07 (exploratory)",-79.2631,,,,,-82.025,-75.8014,,,,,
+S-ets,Supporting,Forecast: ETS,-82.7172,,,,,-85.0461,-79.9328,,,,,
+S-prophet,Supporting,Forecast: Prophet,-81.08,,,,,-86.1036,-74.44,,,,,
