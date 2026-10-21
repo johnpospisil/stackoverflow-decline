@@ -1,0 +1,256 @@
+{
+  "pre_period": [
+    "2017-01-01",
+    "2022-11-01"
+  ],
+  "post_period": [
+    "2022-12-01",
+    "2026-09-01"
+  ],
+  "weights": {
+    "math.stackexchange.com": 0.1328,
+    "physics.stackexchange.com": 0.3209,
+    "biology.stackexchange.com": 0.117,
+    "philosophy.stackexchange.com": 0.0818,
+    "history.stackexchange.com": 0.0282,
+    "diy.stackexchange.com": 0.0425,
+    "travel.stackexchange.com": 0.0283,
+    "bicycles.stackexchange.com": 0.1061,
+    "scifi.stackexchange.com": 0.1424
+  },
+  "weights_pysyncon": {
+    "math.stackexchange.com": 0.13348468078370596,
+    "physics.stackexchange.com": 0.3194080492380133,
+    "biology.stackexchange.com": 0.11704426687040369,
+    "philosophy.stackexchange.com": 0.0820607244990188,
+    "history.stackexchange.com": 0.028028167451093964,
+    "diy.stackexchange.com": 0.04329092153312615,
+    "travel.stackexchange.com": 0.028157857484318875,
+    "bicycles.stackexchange.com": 0.10615032173488968,
+    "scifi.stackexchange.com": 0.1423750104054297
+  },
+  "max_weight_difference_vs_pysyncon": 0.0015243415828675722,
+  "pre_rmspe": 0.058882453680035245,
+  "median_donor_placebo_pre_rmspe": 0.1433191637264068,
+  "prefit_ok": true,
+  "primary_estimator": "synthetic control",
+  "att": {
+    "all_post": {
+      "months": 46,
+      "att_log": -1.2841289230317978,
+      "att_pct": -72.3108327428118,
+      "log_ci": [
+        -0.16,
+        0.48
+      ],
+      "pct_ci": [
+        -14.785621103378865,
+        61.607440219289344
+      ],
+      "contiguous": true,
+      "at_grid_edge": false,
+      "p_at_zero": 0.19469026548672566
+    },
+    "2022": {
+      "months": 1,
+      "att_log": 0.007633767890466658,
+      "att_pct": 0.7662979380504531,
+      "log_ci": [
+        -0.14,
+        0.16
+      ],
+      "pct_ci": [
+        -13.064176460119414,
+        17.35108709918103
+      ],
+      "contiguous": true,
+      "at_grid_edge": false,
+      "p_at_zero": 0.8823529411764706
+    },
+    "2023": {
+      "months": 12,
+      "att_log": -0.4226674781447383,
+      "att_pct": -34.47035027054754,
+      "log_ci": [
+        -1.64,
+        0.22
+      ],
+      "pct_ci": [
+        -80.6019957709108,
+        24.60767305873808
+      ],
+      "contiguous": false,
+      "at_grid_edge": false,
+      "p_at_zero": 0.02531645569620253
+    },
+    "2024": {
+      "months": 12,
+      "att_log": -0.9306202339296311,
+      "att_pct": -60.56909293518622,
+      "log_ci": [
+        -0.44,
+        -0.23
+      ],
+      "pct_ci": [
+        -35.59635789168586,
+        -20.546639749666596
+      ],
+      "contiguous": true,
+      "at_grid_edge": false,
+      "p_at_zero": 0.012658227848101266
+    },
+    "2025": {
+      "months": 12,
+      "att_log": -1.6833723473618167,
+      "att_pct": -81.42534831471716,
+      "log_ci": [
+        -3.19,
+        -0.72
+      ],
+      "pct_ci": [
+        -95.88281290609324,
+        -51.324774404002824
+      ],
+      "contiguous": false,
+      "at_grid_edge": false,
+      "p_at_zero": 0.012658227848101266
+    },
+    "2026": {
+      "months": 9,
+      "att_log": -2.5152937237909945,
+      "att_pct": -91.91608356665921,
+      "log_ci": [
+        -1.68,
+        -1.6
+      ],
+      "pct_ci": [
+        -81.362602396059,
+        -79.81034820053446
+      ],
+      "contiguous": true,
+      "at_grid_edge": false,
+      "p_at_zero": 0.013157894736842105
+    },
+    "to_2025_09": {
+      "months": 34,
+      "att_log": -0.9073420159310661,
+      "att_pct": -59.64044498383646,
+      "log_ci": [
+        -3.1,
+        0.48
+      ],
+      "pct_ci": [
+        -95.49507976064422,
+        61.607440219289344
+      ],
+      "contiguous": false,
+      "at_grid_edge": false,
+      "p_at_zero": 0.2079207920792079
+    }
+  },
+  "placebo_space": {
+    "so_rank": 1,
+    "n": 16,
+    "p_value": 0.0625
+  },
+  "placebo_time": [
+    {
+      "fake_break": "2019-11-01",
+      "att_log": 0.2124,
+      "att_pct": 23.6645,
+      "pre_rmspe": 0.0433,
+      "ratio": 5.7652
+    },
+    {
+      "fake_break": "2020-11-01",
+      "att_log": 0.1784,
+      "att_pct": 19.536,
+      "pre_rmspe": 0.0424,
+      "ratio": 4.9102
+    },
+    {
+      "fake_break": "2021-11-01",
+      "att_log": 0.1361,
+      "att_pct": 14.575,
+      "pre_rmspe": 0.0505,
+      "ratio": 2.834
+    }
+  ],
+  "att_interval_readings_pct": {
+    "constant_effect": [
+      -14.785621103378865,
+      61.607440219289344
+    ],
+    "monthly_average": [
+      -75.69617493896678,
+      -68.47296937697914
+    ]
+  },
+  "months_interval_excludes_zero": 42,
+  "h1_checks": {
+    "constant_effect": {
+      "att_le_minus10": true,
+      "so_ranks_first": true,
+      "no_time_placebo_as_large": true,
+      "ci_excludes_zero": false
+    },
+    "monthly_average": {
+      "att_le_minus10": true,
+      "so_ranks_first": true,
+      "no_time_placebo_as_large": true,
+      "ci_excludes_zero": true
+    }
+  },
+  "h1_supported_by_reading": {
+    "constant_effect": false,
+    "monthly_average": true
+  },
+  "did_ru": {
+    "did_log": -0.23154810467247394,
+    "did_pct": -20.669546706949614,
+    "did_pct_ci": [
+      -32.520446991298215,
+      -6.737366519465581
+    ],
+    "pre_trend_diff_log_per_year": -0.01076246283614813,
+    "pre_trend_diff_ci": [
+      -0.03835627378922401,
+      0.016831348116927748
+    ],
+    "by_year_pct": {
+      "2022": -15.415867039452536,
+      "2023": -5.578614184341268,
+      "2024": -15.135254757392346,
+      "2025": -26.642559657191978,
+      "2026": -36.64471026003021
+    }
+  },
+  "platform_wide": {
+    "own_trend_gap_log": {
+      "stackoverflow": -1.8029116049923137,
+      "math": -0.7408808065462794,
+      "physics": -0.8828127013311934,
+      "chemistry": -0.40878844535718845,
+      "biology": -0.2706953621519262,
+      "english": -0.5602828461941144,
+      "philosophy": 0.30243921882083913,
+      "history": -0.2782661438517987,
+      "cooking": -0.3781831073888299,
+      "diy": -0.6514370078058606,
+      "travel": 0.33717786255470356,
+      "bicycles": -0.7422193018879283,
+      "gaming": -0.29698642785905965,
+      "scifi": -0.05544052229215973,
+      "movies": 0.8576453869631342,
+      "rpg": -0.4237516701238889
+    },
+    "so_gap_log": -1.8029116049923137,
+    "median_donor_gap_log": -0.3781831073888299,
+    "ratio_donor_to_so": 0.20976242337207773,
+    "platform_wide_log_rule": false,
+    "so_gap_pct": -83.51816968700962,
+    "median_donor_gap_pct": -31.489495861524198,
+    "original_rule_pp_difference": 52.02867382548542,
+    "platform_wide_original_rule": false
+  }
+}
