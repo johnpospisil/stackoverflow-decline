@@ -138,3 +138,9 @@
 - **What:** the pre-registered new-tag comparison (all 69 tags first used after 2021-09-30 with ≥ 200 questions) stays the **primary** H2 new-tag test. A **secondary** comparison is added: `kind = new` (30 tags of genuinely new technology) vs `kind in (version, feature)` (39 tags for new versions or features of existing technology), as classified in `data/reference/tags_new_post2021.csv`. Prediction: genuinely new technology declines less than new versions/features.
 - **Why:** new versions of well-known technology (e.g. `.net-8.0`, `python-3.11`) are not "thin training data" in the intended sense.
 - **When:** decided **before any tag-level outcome was examined**.
+
+### 2026-10-21: H5 tested with placebo cohorts (deviation)
+
+- **What changed:** H5 no longer compares 2023–2026 core-answerer activity with a 2017–2021 trend line. Instead, for every 3-year window W from 2014–2016 to 2019–2021, define that window's core answerers (top 1% of answerers by answer count in W) and measure the share still active (≥ 1 answer) 1, 2 and 3 years after W ends. Windows ending 2016–2019 (follow-up entirely before ChatGPT) give the normal attrition at each distance. H5 is **supported** if the 2019–2021 cohort's share active at distances 2 and 3 (2023, 2024) falls below the range of the pre-ChatGPT cohorts at the same distances. The 2020–2022 and 2021–2023 windows are also shown, as partly treated. The original version is reported, labelled "original".
+- **Why:** core answerers are selected for high activity in 2019–2021, so their activity falls afterwards even if nothing changes (regression to the mean). The original comparison builds that fall in.
+- **When:** decided **after seeing descriptive P12 counts** (core answerers active per year), **before any H5 model or test was run**.
