@@ -77,7 +77,10 @@ def new_tags(con) -> pd.DataFrame:
                 UNION ALL SELECT unnest(tags_current) AS tag, CreationDate FROM soq
             ) GROUP BY 1
         ),
-        n AS (SELECT tag, count(*) AS n_questions FROM (SELECT unnest(tags) AS tag FROM soq) GROUP BY 1)
+        n AS (
+            SELECT tag, count(*) AS n_questions
+            FROM (SELECT unnest(tags) AS tag FROM soq) GROUP BY 1
+        )
         SELECT f.tag, f.first_seen, n.n_questions
         FROM first_any f JOIN n USING (tag)
         WHERE f.first_seen >= '{TRAINING_CUTOFF}' AND n.n_questions >= {NEW_TAG_MIN_QUESTIONS}
