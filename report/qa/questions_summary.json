@@ -1,0 +1,32 @@
+{
+  "rows_all_sites": 29385924,
+  "so_account_age_null_pct": 2.324,
+  "so_pre_post": [
+    {
+      "period": "pre (2017-01 to 2022-11)",
+      "n": 10358186,
+      "median_text_chars": 427.0,
+      "pct_with_code": 77.8,
+      "pct_answered": 82.5,
+      "pct_accepted": 45.3,
+      "median_hours_to_first_answer": 0.88,
+      "pct_ever_closed": 5.0,
+      "pct_closed_duplicate": 3.64,
+      "pct_first_time_asker": 20.8,
+      "median_account_age_days": 651.0
+    },
+    {
+      "period": "post (2022-12 to 2026-09)",
+      "n": 1410203,
+      "median_text_chars": 515.0,
+      "pct_with_code": 78.0,
+      "pct_answered": 76.1,
+      "pct_accepted": 36.2,
+      "median_hours_to_first_answer": 2.51,
+      "pct_ever_closed": 5.3,
+      "pct_closed_duplicate": 3.36,
+      "pct_first_time_asker": 25.3,
+      "median_account_age_days": 1157.0
+    }
+  ]
+}
