@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -44,7 +44,7 @@ build-questions:
 eda:
 	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
-models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness
+models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github
 
 # P15: interrupted time series (weekly Stack Overflow)
 models-its:
@@ -85,6 +85,10 @@ models-answerers:
 # P24: responsiveness (exploratory E1)
 models-responsiveness:
 	$(PY) -m sod.models.responsiveness
+
+# P25: GitHub issue activity vs SO tags (uses the cached GH Archive extract; --refresh re-queries BigQuery)
+models-github:
+	$(PY) -m sod.models.github
 
 figures:
 	@echo "figures: not yet implemented (P26-P27)"

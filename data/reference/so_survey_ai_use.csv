@@ -1,0 +1,5 @@
+year,using_pct,planning_pct,using_or_planning_pct,respondents,comparable,source_url,notes
+2023,44,26,70,~90000,true,https://stackoverflow.blog/2023/06/12/developer-survey-sentiment-ai-ml/,"Do you currently use AI tools in your development process?" (rounded in the official highlights)
+2024,61.8,13.8,75.6,60907,true,https://survey.stackoverflow.co/2024/ai,"Same question"
+2025,78.5,5.3,83.8,33662,true,https://survey.stackoverflow.co/2025/ai,"Question asks frequency; using = daily 47.1 + weekly 17.7 + monthly/infrequently 13.7"
+2026,,,,,false,https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/,"Questions reworded; no comparable use share. 73% of AI coding-assistant users use them daily; 31% of daily users 4+ hours a day"
