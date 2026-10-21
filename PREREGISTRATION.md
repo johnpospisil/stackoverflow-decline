@@ -186,3 +186,15 @@
 - **Calibration check:** the same method applied before ChatGPT (tags first used 2017-06 to 2018-11, followed to 2022-11, references 2014-01 to 2016-12) should give a median gap near 0.
 - **Caveat stated in advance:** the two groups' counterfactuals are built differently (lifecycle benchmark vs own pre-trend), so the comparison is approximate.
 - **When:** decided **before any new-tag outcome was computed**. P19's top-300 results (median −86%) were known at the time.
+
+### 2026-10-21: H3 measures defined, plus a deleted-question bound (clarification and addition)
+
+- **Measures** (the section 6 wording, made exact):
+  - body length = median `body_chars` (whole body, code included)
+  - code = share with at least one code block (`n_code_blocks` ≥ 1)
+  - duplicate-close rate = share **first closed as a duplicate (close reason 101) within 30 days** of asking, the same window for both years
+  - first-time askers = share of questions that are the asker's first post on Stack Overflow, among questions whose asker is not deleted
+- **Tag-mix reweighting:** each question spreads weight 1/n_tags over its tags (top-300 tags, plus one "other" bucket). 2025 questions are reweighted so the tag shares equal 2021's. Within-tag change = reweighted 2025 minus 2021; composition change = actual 2025 minus reweighted 2025.
+- **Intervals:** 95% Poisson bootstrap, 200 replicates. The section 6 decision rule is unchanged (at least 3 of 4 within-tag changes in the predicted direction with intervals excluding 0).
+- **Addition (sensitivity, not part of the decision rule):** the share of Stack Overflow questions later deleted rose from 41.8% (2021) to 50.8% (2025), and deleted questions are missing from the dump. **Lee bounds** trim the 2021 sample by the survival difference, (0.582 − 0.492) / 0.582 = 15.5%, from each end of each measure, to show how much of each change could come from the extra deletions.
+- **When:** decided **before any 2021-vs-2025 comparison was computed for P21**. P10's descriptive before/after summaries (2019–22 vs 2023–26; e.g. first-time askers 20.8% → 25.3%) had been seen.

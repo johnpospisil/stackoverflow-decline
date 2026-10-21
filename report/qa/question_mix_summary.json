@@ -1,0 +1,296 @@
+{
+  "n_questions": {
+    "2021": 1534152,
+    "2025": 109033
+  },
+  "tag_buckets": 300,
+  "lee_trim_share_2021": 0.15463917525773208,
+  "measures": [
+    {
+      "measure": "body_length",
+      "label": "Median body length (characters)",
+      "predicted": 1,
+      "y2021": 1177.0,
+      "y2025": 1678.0,
+      "y2025_tagmix2021": 1695.0,
+      "total": 501.0,
+      "within": 518.0,
+      "composition": -17.0,
+      "within_ci": [
+        508.975,
+        533.025
+      ],
+      "total_ci": [
+        492.0,
+        512.025
+      ],
+      "composition_ci": [
+        -22.0,
+        -12.974999999999994
+      ],
+      "within_lee_bounds": [
+        309.0,
+        695.0
+      ],
+      "moves_as_predicted": true,
+      "lee_bounds_same_sign": true
+    },
+    {
+      "measure": "code_share",
+      "label": "Share with a code block",
+      "predicted": 1,
+      "y2021": 0.7853126678451678,
+      "y2025": 0.807021727366944,
+      "y2025_tagmix2021": 0.8268674264961511,
+      "total": 0.021709059521776153,
+      "within": 0.04155475865098324,
+      "composition": -0.019845699129207084,
+      "within_ci": [
+        0.03930941663239936,
+        0.043742474000400565
+      ],
+      "total_ci": [
+        0.019534125267446294,
+        0.02403141846597726
+      ],
+      "composition_ci": [
+        -0.020626104754194567,
+        -0.018944996862211797
+      ],
+      "within_lee_bounds": [
+        -0.10209999766215727,
+        0.08082683160613546
+      ],
+      "moves_as_predicted": true,
+      "lee_bounds_same_sign": false
+    },
+    {
+      "measure": "dup_share",
+      "label": "Share closed as duplicate within 30 days",
+      "predicted": -1,
+      "y2021": 0.036063571275857936,
+      "y2025": 0.03610833417405739,
+      "y2025_tagmix2021": 0.04183418350844383,
+      "total": 4.476289819945606e-05,
+      "within": 0.005770612232585896,
+      "composition": -0.00572584933438644,
+      "within_ci": [
+        0.004326060034422591,
+        0.007343784449271271
+      ],
+      "total_ci": [
+        -0.0010907777941372668,
+        0.0012443956259642081
+      ],
+      "composition_ci": [
+        -0.006320297403299014,
+        -0.0052465964166074726
+      ],
+      "within_lee_bounds": [
+        -0.0008263825129978669,
+        0.04183418350844383
+      ],
+      "moves_as_predicted": false,
+      "lee_bounds_same_sign": false
+    },
+    {
+      "measure": "first_time_share",
+      "label": "Share from first-time askers",
+      "predicted": -1,
+      "y2021": 0.22483001917458487,
+      "y2025": 0.22630807116571208,
+      "y2025_tagmix2021": 0.23313724041530157,
+      "total": 0.001478051991127216,
+      "within": 0.0083072212407167,
+      "composition": -0.006829169249589484,
+      "within_ci": [
+        0.0051996675980119965,
+        0.01098800259673547
+      ],
+      "total_ci": [
+        -0.001357303185688985,
+        0.003963281857963528
+      ],
+      "composition_ci": [
+        -0.007955698856952255,
+        -0.00567854189201294
+      ],
+      "within_lee_bounds": [
+        -0.032820214794993835,
+        0.15010658557935608
+      ],
+      "moves_as_predicted": false,
+      "lee_bounds_same_sign": false
+    },
+    {
+      "measure": "text_length",
+      "label": "Median text length (excl. code)",
+      "predicted": null,
+      "y2021": 425.0,
+      "y2025": 616.0,
+      "y2025_tagmix2021": 604.0,
+      "total": 191.0,
+      "within": 179.0,
+      "composition": 12.0,
+      "within_ci": [
+        177.0,
+        183.0
+      ],
+      "total_ci": [
+        188.975,
+        195.0
+      ],
+      "composition_ci": [
+        10.0,
+        13.0
+      ],
+      "within_lee_bounds": [
+        123.0,
+        228.0
+      ]
+    },
+    {
+      "measure": "title_length",
+      "label": "Median title length",
+      "predicted": null,
+      "y2021": 56.0,
+      "y2025": 63.0,
+      "y2025_tagmix2021": 63.0,
+      "total": 7.0,
+      "within": 7.0,
+      "composition": 0.0,
+      "within_ci": [
+        7.0,
+        7.0
+      ],
+      "total_ci": [
+        7.0,
+        7.0
+      ],
+      "composition_ci": [
+        0.0,
+        0.0
+      ],
+      "within_lee_bounds": [
+        3.0,
+        11.0
+      ]
+    },
+    {
+      "measure": "closed_share",
+      "label": "Share closed within 30 days",
+      "predicted": null,
+      "y2021": 0.051331941033222264,
+      "y2025": 0.07957223959718618,
+      "y2025_tagmix2021": 0.08992871747468481,
+      "total": 0.028240298563963914,
+      "within": 0.038596776441462546,
+      "composition": -0.010356477877498632,
+      "within_ci": [
+        0.0367094695332145,
+        0.04042792839480969
+      ],
+      "total_ci": [
+        0.026785369876346388,
+        0.029789167622524267
+      ],
+      "composition_ci": [
+        -0.011118008939039093,
+        -0.009634673075268411
+      ],
+      "within_lee_bounds": [
+        0.02920678722806823,
+        0.08992871747468481
+      ]
+    },
+    {
+      "measure": "answered_7d",
+      "label": "Share answered within 7 days",
+      "predicted": null,
+      "y2021": 0.7357862845402542,
+      "y2025": 0.6733741160932929,
+      "y2025_tagmix2021": 0.6918644556168819,
+      "total": -0.06241216844696129,
+      "within": -0.043921828923372264,
+      "composition": -0.018490339523589028,
+      "within_ci": [
+        -0.04659874214142027,
+        -0.04124916782686806
+      ],
+      "total_ci": [
+        -0.06520077233165447,
+        -0.059646542799101206
+      ],
+      "composition_ci": [
+        -0.019481735912119803,
+        -0.017341520126880068
+      ],
+      "within_lee_bounds": [
+        -0.17851688097341878,
+        0.0044099482948739555
+      ]
+    },
+    {
+      "measure": "positive_score",
+      "label": "Share with score > 0 (as of 2026-09)",
+      "predicted": null,
+      "y2021": 0.4074635368594507,
+      "y2025": 0.4476259481074537,
+      "y2025_tagmix2021": 0.44333651728110135,
+      "total": 0.040162411248003016,
+      "within": 0.03587298042165066,
+      "composition": 0.004289430826352358,
+      "within_ci": [
+        0.03266025949583679,
+        0.03897865022026802
+      ],
+      "total_ci": [
+        0.036718081597399345,
+        0.043156744668892924
+      ],
+      "composition_ci": [
+        0.003166775109921016,
+        0.005325503276886305
+      ],
+      "within_lee_bounds": [
+        -0.03866303241849278,
+        0.1442637968497999
+      ]
+    },
+    {
+      "measure": "account_age",
+      "label": "Median asker account age (days)",
+      "predicted": null,
+      "y2021": 641.1905275810185,
+      "y2025": 2014.0725402083333,
+      "y2025_tagmix2021": 1908.0050028935186,
+      "total": 1372.882012627315,
+      "within": 1266.8144753125002,
+      "composition": 106.06753731481467,
+      "within_ci": [
+        1246.5380588052662,
+        1289.7396727126736
+      ],
+      "total_ci": [
+        1353.1724473425927,
+        1394.8657376267363
+      ],
+      "composition_ci": [
+        95.18109454861107,
+        116.57804507523153
+      ],
+      "within_lee_bounds": [
+        944.9071040162038,
+        1506.8994728819446
+      ]
+    }
+  ],
+  "h3_measures_as_predicted": {
+    "body_length": true,
+    "code_share": true,
+    "dup_share": false,
+    "first_time_share": false
+  },
+  "h3_n_as_predicted": 2,
+  "h3_supported": false
+}
