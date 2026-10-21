@@ -168,3 +168,21 @@
 - **What:** in the H2 negative binomial model, each tag's post-period term is a line (level + slope, both partially pooled) instead of a single level shift. The line is centred at the middle of the post-period, so the tag's coefficient is its **average log gap against its own pre-trend**, the same measure as the headline estimate, reported as exp(coefficient) − 1. The predictors (age, size, documentation maturity, family) act on that coefficient, as before.
 - **Why:** with a single level term, the tag's trend parameter is also fitted to post-period months. The decline kept steepening after 2022, so post-period data pulled each tag's "pre-trend" down and shrank its estimated change (Python: −50% instead of −92%). The pre-registered wording is "the tag's own pre-trend, extended into the post-period"; only a free post-period line keeps the trend fitted on pre-period data alone. Per-tag results now match a simple per-tag interrupted time series (e.g. Python −92% vs −92%, Java −80% vs −80%).
 - **When:** found in a **30-tag smoke test** (sampler check) before the full model was run, after seeing the estimates for 10 of the largest tags. No predictor effects, rankings or H2 tests had been computed.
+
+### 2026-10-21: Retired tags excluded from H2 (data-quality rule)
+
+- **What:** a tag is excluded from H2 analyses if, at some month, its mean over the previous 6 months was at least 20 questions and **every one of the next 6 months is below 5% of that mean**. That is the signature of Stack Overflow retiring, merging or renaming a tag, not of askers leaving. Excluded: `excel-vba` (2020-08), `flutter-layout` (2022-12), `dockerfile` (2025-06) from the top 300; `apache-age` (2023-11), `apache-iotdb` (2024-05) from the 69 post-2021 tags. Results with them included are reported as a sensitivity check.
+- **Why:** an abrupt drop to zero is a tag-system event. flutter-layout, for example, went from 2,804 questions in 2022 to zero in every later month and topped the "fell most" list at −100%.
+- **When:** decided after the P19 tag model (which showed flutter-layout as the extreme), **before the H2 test (P20)**: no age, new-tag or version/feature comparison had been computed.
+
+### 2026-10-21: How the post-2021 tags' decline is measured (clarification)
+
+- **What:** section 6 says the post-2021 tag group must decline less than the average tag but does not say how a tag without a pre-period is measured. Decided method, a **lifecycle benchmark**:
+  - **Reference tags:** Stack Overflow tags first used 2014-01 to 2017-11, so their first 60 months end before ChatGPT.
+  - **For each post-2021 tag:** its follow-up F runs from its first full month to 2026-09, and its **anchor** is its mean questions in months 1–3 of life (month 0 is partial). The matched references are tags with at least 200 questions within their own first F months (the same selection as the new-tag sample) and an anchor within ×/÷2 of the new tag's (widened to ×/÷3 if fewer than 10 match).
+  - **Counterfactual at month k ≥ 4:** anchor × the geometric mean of the references' month-k / anchor ratios.
+  - **Tag's gap:** log(Σ actual / Σ counterfactual) over months 4 to F−1, reported as exp(gap) − 1.
+- **Test:** the group statistic is the median new-tag gap. It is compared with the median top-300 tag's gap from the H2 model (each against its own counterfactual), using a bootstrap 95% interval (new tags resampled; top-300 median from the posterior draws). Part (b) of H2 is supported if the new tags' median gap is **smaller in magnitude** and the interval for the difference excludes 0. The secondary split (kind = new vs version/feature) uses the same gaps.
+- **Calibration check:** the same method applied before ChatGPT (tags first used 2017-06 to 2018-11, followed to 2022-11, references 2014-01 to 2016-12) should give a median gap near 0.
+- **Caveat stated in advance:** the two groups' counterfactuals are built differently (lifecycle benchmark vs own pre-trend), so the comparison is approximate.
+- **When:** decided **before any new-tag outcome was computed**. P19's top-300 results (median −86%) were known at the time.

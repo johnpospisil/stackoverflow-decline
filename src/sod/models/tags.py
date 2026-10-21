@@ -58,8 +58,36 @@ PREDICTORS = ["z_log_age", "z_log_size", "z_dup_share"]
 # --- data ------------------------------------------------------------------------------
 
 
-def load_features() -> pd.DataFrame:
+RETIRE_MIN_MEAN, RETIRE_SHARE, RETIRE_WINDOW = 20, 0.05, 6
+
+
+def retired(q: pd.Series) -> pd.Timestamp | None:
+    """First month of an abrupt retirement (deviation 2026-10-21): the previous 6 months
+    average >= 20 questions and each of the next 6 months is below 5% of that average."""
+    v = q.sort_index().to_numpy(dtype=float)
+    w = RETIRE_WINDOW
+    for i in range(w, len(v) - w + 1):
+        prev = v[i - w : i].mean()
+        if prev >= RETIRE_MIN_MEAN and v[i : i + w].max() < RETIRE_SHARE * prev:
+            return q.sort_index().index[i]
+    return None
+
+
+def retired_tags(groups=("top300", "new_post2021")) -> dict[str, pd.Timestamp]:
+    t = pd.read_parquet(config.PANEL_DIR / "tag_month.parquet")
+    t = t[t["tag_group"].isin(groups) & ~t["partial_period"]]
+    out = {}
+    for tag, g in t.groupby("tag"):
+        when = retired(g.set_index("period")["questions"])
+        if when is not None:
+            out[tag] = when
+    return out
+
+
+def load_features(exclude_retired: bool = True) -> pd.DataFrame:
     f = pd.read_csv(config.REFERENCE_DIR / "tag_features.csv", parse_dates=["first_seen"])
+    if exclude_retired:
+        f = f[~f["tag"].isin(retired_tags(("top300",)))]
     f["log_age"] = np.log(f["age_years_at_break"])
     f["log_size"] = np.log(f["size_2019_2021"])
     for src, z in (
