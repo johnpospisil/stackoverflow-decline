@@ -106,10 +106,13 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 - **PostHistory covers surviving posts only (P07).** Of 1,184,476 Stack Overflow questions with a close event, only 1 is missing from Posts, so the edit history of deleted posts is not in the dump either. Delete/undelete events (514k/522k) are for posts that were later restored.
 - **Moderator closures cannot be identified.** `BindingReason` records gold-tag-badge closures (481k on Stack Overflow) and duplicates accepted by the asker (66k), but never moderators.
 - **Tags at time of asking are available.** The initial-tags event (PostHistory type 3) exists for 24,133,761 of 24,133,975 Stack Overflow questions (99.999%). Questions have been retagged 5.26M times, so current `Posts.Tags` can differ from the tags used when the question was asked.
+- **Votes on deleted posts are kept (P08).** 45.5M votes across all sites (35.2M on Stack Overflow) point to posts that are not in Posts. They identify **14.4M deleted Stack Overflow posts** (questions and answers, not distinguishable). This gives P09 a second, lower-bound source on deletions, alongside SEDE.
+- **Small comparison sites are thin by 2026.** In Jul–Sep 2026 History averaged ~10 questions/month and Cooking ~16; Portuguese Stack Overflow had 0–4 a month from late 2025 (still open, still answered). Monthly totals for treated and donor sites are never zero since 2017, so the pre-registered log transform is defined.
 - **Removed users.** `OwnerUserId` is missing for posts whose author was deleted, which affects user-cohort analysis.
 
 ## 3. Reconciliation checks (to do)
 
+- [x] Data-quality profile (P08): see [report/qa/quality.json](report/qa/quality.json) and `tests/test_data_quality.py`
 - [ ] Monthly question counts for SO compared with SEDE for overlapping months
 - [x] Max `CreationDate` over all rows matches the stated cut-off (P05: every site's latest question is between 2026-09-21 and 2026-09-30; Stack Overflow 2026-09-30T22:40)
 - [x] No duplicate `Post.Id` values within any site (P05)
