@@ -57,3 +57,21 @@ def test_site_month_and_tags(built):
     assert m.loc[pd.Timestamp("2010-07-01"), "questions"] == 2
     # fixture tags are not in the top-300/new tag lists, so the tag panel is empty
     assert built["tag_week"].empty
+
+
+def test_complete_fills_zero_periods_to_cutoff():
+    df = pd.DataFrame(
+        {
+            "tag": ["a", "a"],
+            "tag_group": ["top300", "top300"],
+            "tag_kind": ["web", "web"],
+            "period": pd.to_datetime(["2026-06-01", "2026-08-01"]),
+            "questions": [3, 1],
+            "median_hours_to_first_answer": [1.0, 2.0],
+        }
+    )
+    out = panels.complete(df, "tag", "month")
+    assert list(out["period"].dt.strftime("%Y-%m")) == ["2026-06", "2026-07", "2026-08", "2026-09"]
+    assert list(out["questions"]) == [3, 0, 1, 0]
+    assert out["tag_kind"].eq("web").all()
+    assert out["median_hours_to_first_answer"].isna().sum() == 2

@@ -157,10 +157,41 @@ def _flag_series(periods: pd.Series, period: str, kind: str) -> pd.Series:
     start = pd.to_datetime(periods).astype("datetime64[ns]")
     if start.empty:
         return pd.Series([], dtype=bool, index=periods.index)
-    end = start + (pd.Timedelta(days=7) if period == "week" else pd.DateOffset(months=1))
+    end = start + (pd.DateOffset(days=7) if period == "week" else pd.DateOffset(months=1))
     if kind == "partial":
         return end > pd.Timestamp(CUTOFF_END)
     return end > pd.Timestamp(FINAL_8W_START)
+
+
+def complete(df: pd.DataFrame, key: str, period: str) -> pd.DataFrame:
+    """One row per key x period from the key's first period to the last full or partial
+    period before the cut-off, with zero counts where nothing happened. Medians stay NaN."""
+    if df.empty:
+        return df
+    freq = "W-MON" if period == "week" else "MS"
+    last = pd.Timestamp(config.DUMP_CUTOFF).to_period("W" if period == "week" else "M")
+    last = last.start_time.normalize()
+    static = [c for c in ("tag_group", "tag_kind") if c in df.columns]
+    parts = []
+    for k, g in df.groupby(key, sort=False):
+        idx = pd.date_range(g["period"].min(), last, freq=freq, name="period")
+        g = g.set_index("period").reindex(idx).reset_index()
+        g[key] = k
+        for c in static:
+            g[c] = g[c].dropna().iloc[0]
+        parts.append(g)
+    out = pd.concat(parts, ignore_index=True)
+    counts = [
+        c
+        for c in out.columns
+        if out[c].dtype.kind in "iuf"
+        and c != "median_hours_to_first_answer"
+        and c != "questions_incl_deleted"
+    ]
+    out[counts] = out[counts].fillna(0).astype("int64")
+    out["partial_period"] = _flag_series(out["period"], period, "partial")
+    out["final_8_weeks"] = _flag_series(out["period"], period, "final")
+    return out.sort_values([key, "period"]).reset_index(drop=True)
 
 
 def add_sede(site_month: pd.DataFrame) -> pd.DataFrame:
@@ -184,7 +215,7 @@ def build(out_dir: Path, job: str = JOB, with_sede: bool = True) -> dict[str, pd
             kind, period = name.split("_")
             df = site_panel(con, period) if kind == "site" else tag_panel(con, period)
             df["period"] = pd.to_datetime(df["period"]).astype("datetime64[ns]")
-            panels[name] = df
+            panels[name] = complete(df, kind, period)
             rep._last = 0
             rep.update(i, sum(len(p) for p in panels.values()))
         if with_sede:
