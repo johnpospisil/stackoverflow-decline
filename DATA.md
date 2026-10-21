@@ -103,6 +103,9 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 - **Votes carry no voter and no time of day (P06).** `UserId` is present on only 0.12% of Stack Overflow votes (bounties and old favourites), and `CreationDate` is a date with the time removed. Votes support per-post counts by day, not voter-level analysis.
 - **Close votes after 2013-06-25 are not in Votes** (vote type 6 stops then); closures come from PostHistory (P07).
 - **PostLinks start in 2010-04** on Stack Overflow; earlier duplicate links are not recorded there. Use PostHistory close reasons for duplicates.
+- **PostHistory covers surviving posts only (P07).** Of 1,184,476 Stack Overflow questions with a close event, only 1 is missing from Posts, so the edit history of deleted posts is not in the dump either. Delete/undelete events (514k/522k) are for posts that were later restored.
+- **Moderator closures cannot be identified.** `BindingReason` records gold-tag-badge closures (481k on Stack Overflow) and duplicates accepted by the asker (66k), but never moderators.
+- **Tags at time of asking are available.** The initial-tags event (PostHistory type 3) exists for 24,133,761 of 24,133,975 Stack Overflow questions (99.999%). Questions have been retagged 5.26M times, so current `Posts.Tags` can differ from the tags used when the question was asked.
 - **Removed users.** `OwnerUserId` is missing for posts whose author was deleted, which affects user-cohort analysis.
 
 ## 3. Reconciliation checks (to do)
