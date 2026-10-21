@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -44,7 +44,7 @@ build-questions:
 eda:
 	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
-models: models-its models-forecast models-synth models-robustness
+models: models-its models-forecast models-synth models-robustness models-tags
 
 # P15: interrupted time series (weekly Stack Overflow)
 models-its:
@@ -61,6 +61,10 @@ models-synth:
 # P18: pre-registered robustness checks + forest plot (needs P15-P17 outputs)
 models-robustness:
 	$(PY) -m sod.models.robustness
+
+# P19: hierarchical negative binomial tag model (about 10 min; `make progress`)
+models-tags:
+	$(PY) -m sod.models.tags
 
 figures:
 	@echo "figures: not yet implemented (P26-P27)"

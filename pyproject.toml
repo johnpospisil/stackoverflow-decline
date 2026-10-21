@@ -27,6 +27,7 @@ dependencies = [
     # misc
     "requests>=2.32",
     "tqdm>=4.66",
+    "nutpie>=0.15",
 ]
 
 [dependency-groups]

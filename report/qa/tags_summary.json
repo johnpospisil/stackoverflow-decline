@@ -1,0 +1,584 @@
+{
+  "n_tags": 300,
+  "n_rows": 34964,
+  "sampling_seconds": {
+    "negbin_s": 337.966403917002,
+    "original_s": 58.86364579095971
+  },
+  "diagnostics": {
+    "max_rhat": 1.004869912180774,
+    "min_ess_bulk": 1140.5077854506708,
+    "worst_ess": "sigma_family",
+    "divergences": 0,
+    "ess_by_param": {
+      "g0": 2289,
+      "gamma": 6336,
+      "sigma_delta": 5007,
+      "sigma_family": 1141,
+      "family_effect": 2277,
+      "beta0": 9807,
+      "sigma_b": 8048,
+      "a": 2224,
+      "b": 1147,
+      "delta": 1194,
+      "kappa": 1901,
+      "season": 8131,
+      "covid": 8599
+    },
+    "rhat_by_param": {
+      "g0": 1.0011,
+      "gamma": 1.0028,
+      "sigma_delta": 1.0003,
+      "sigma_family": 1.002,
+      "family_effect": 1.0014,
+      "beta0": 1.0018,
+      "sigma_b": 1.0001,
+      "a": 1.0049,
+      "b": 1.0038,
+      "delta": 1.0045,
+      "kappa": 1.004,
+      "season": 1.0034,
+      "covid": 1.001
+    }
+  },
+  "diagnostics_original": {
+    "max_rhat": 1.2136714287343924,
+    "min_ess_bulk": 1302.8910346919945,
+    "worst_ess": "sigma_family",
+    "divergences": 0,
+    "ess_by_param": {
+      "g0": 2313,
+      "gamma": 4959,
+      "sigma_delta": 4981,
+      "sigma_family": 1303,
+      "family_effect": 2477,
+      "beta0": 7106,
+      "sigma_b": 5686,
+      "a": 2560,
+      "b": 1814,
+      "delta": 1794,
+      "kappa": 2959,
+      "season": 6032,
+      "covid": 6679
+    },
+    "rhat_by_param": {
+      "g0": 1.002,
+      "gamma": 1.0021,
+      "sigma_delta": 1.0029,
+      "sigma_family": 1.0044,
+      "family_effect": 1.0027,
+      "beta0": 1.0022,
+      "sigma_b": 1.0004,
+      "a": 1.2137,
+      "b": 1.0054,
+      "delta": 1.0061,
+      "kappa": 1.0055,
+      "season": 1.0042,
+      "covid": 1.0025
+    }
+  },
+  "median_tag_pct": -85.51993292818999,
+  "tag_pct_range": [
+    -99.95172455361997,
+    -28.94638812211009
+  ],
+  "share_tags_ci_below_zero": 1.0,
+  "effects": {
+    "g0_pct": -86.89387423720574,
+    "gamma_per_sd": {
+      "z_log_age": {
+        "median": 0.47436173724845143,
+        "ci95": [
+          0.391892646689883,
+          0.5587232948139302
+        ],
+        "p_negative": 0.0
+      },
+      "z_log_size": {
+        "median": -0.13676742930815505,
+        "ci95": [
+          -0.20976650619407444,
+          -0.06526706771391463
+        ],
+        "p_negative": 1.0
+      },
+      "z_dup_share": {
+        "median": -0.10982423735766772,
+        "ci95": [
+          -0.1891446576108089,
+          -0.03101281995896061
+        ],
+        "p_negative": 0.99725
+      }
+    },
+    "family_effect": {
+      "cloud": {
+        "median": -0.07444520988512959,
+        "ci95": [
+          -0.36566786272044705,
+          0.16148539536020165
+        ]
+      },
+      "concept": {
+        "median": -0.14594258613716768,
+        "ci95": [
+          -0.37120701524353017,
+          0.04116651668415941
+        ]
+      },
+      "data_ml": {
+        "median": -0.16094165632210938,
+        "ci95": [
+          -0.4263518364872391,
+          0.047775216285902374
+        ]
+      },
+      "database": {
+        "median": -0.02715494365779516,
+        "ci95": [
+          -0.2734200922371362,
+          0.20385862174306282
+        ]
+      },
+      "devops": {
+        "median": 0.06282148292795338,
+        "ci95": [
+          -0.16323321025758847,
+          0.34959225367344277
+        ]
+      },
+      "framework": {
+        "median": 0.02920107830068882,
+        "ci95": [
+          -0.14251620169231333,
+          0.21648176542953326
+        ]
+      },
+      "language": {
+        "median": 0.16807738662013683,
+        "ci95": [
+          -0.035548890955828756,
+          0.40898753277778277
+        ]
+      },
+      "mobile": {
+        "median": 0.0441690930827419,
+        "ci95": [
+          -0.17659499567749287,
+          0.3008443745698148
+        ]
+      },
+      "office": {
+        "median": -0.09264074534478192,
+        "ci95": [
+          -0.4627350254093192,
+          0.17281161234030049
+        ]
+      },
+      "tooling": {
+        "median": 0.1483687536590022,
+        "ci95": [
+          -0.05805274907228207,
+          0.41214014743173594
+        ]
+      },
+      "web": {
+        "median": 0.029939085837208508,
+        "ci95": [
+          -0.17656441051601413,
+          0.2581622321834214
+        ]
+      }
+    },
+    "sigma_delta": 0.599684717747802,
+    "sigma_family": 0.1659315558754903,
+    "predictor_sd": {
+      "log_age": 0.2145953872808996,
+      "log_size": 0.9231031018558986,
+      "dup_share": 0.027793295350910005
+    }
+  },
+  "effects_original": {
+    "g0_pct": -87.37941246537247,
+    "gamma_per_sd": {
+      "z_log_age": {
+        "median": 0.45242982731279624,
+        "ci95": [
+          0.3772288099839757,
+          0.5242278521801276
+        ],
+        "p_negative": 0.0
+      },
+      "z_log_size": {
+        "median": -0.15367953884745006,
+        "ci95": [
+          -0.22064393523266362,
+          -0.08693897260397654
+        ],
+        "p_negative": 1.0
+      },
+      "z_dup_share": {
+        "median": -0.09092044523359477,
+        "ci95": [
+          -0.15721945448423774,
+          -0.02079292425755691
+        ],
+        "p_negative": 0.9935
+      }
+    },
+    "family_effect": {
+      "cloud": {
+        "median": -0.13042924293922764,
+        "ci95": [
+          -0.4383917100008492,
+          0.10323205732074466
+        ]
+      },
+      "concept": {
+        "median": -0.17777759657454306,
+        "ci95": [
+          -0.38165892003896135,
+          0.01397890826742625
+        ]
+      },
+      "data_ml": {
+        "median": -0.1904752131528596,
+        "ci95": [
+          -0.43743817289352144,
+          0.014231123321224719
+        ]
+      },
+      "database": {
+        "median": -0.056755721406341414,
+        "ci95": [
+          -0.29329681405225827,
+          0.16366379507468223
+        ]
+      },
+      "devops": {
+        "median": 0.025025869730085748,
+        "ci95": [
+          -0.21676715915322556,
+          0.2822508041590141
+        ]
+      },
+      "framework": {
+        "median": 0.030582555026903407,
+        "ci95": [
+          -0.13898132856021947,
+          0.20980608690561336
+        ]
+      },
+      "language": {
+        "median": 0.1829194365981408,
+        "ci95": [
+          -0.013200666426214359,
+          0.4192763073913674
+        ]
+      },
+      "mobile": {
+        "median": 0.1002297570281947,
+        "ci95": [
+          -0.11795531853634643,
+          0.3521506700445843
+        ]
+      },
+      "office": {
+        "median": 0.03084298464536004,
+        "ci95": [
+          -0.25638493042635363,
+          0.33965441735605595
+        ]
+      },
+      "tooling": {
+        "median": 0.14940964764458825,
+        "ci95": [
+          -0.061796130480168715,
+          0.3971461696322829
+        ]
+      },
+      "web": {
+        "median": 0.0039995229632884335,
+        "ci95": [
+          -0.20451547531387906,
+          0.2160340990836403
+        ]
+      }
+    },
+    "sigma_delta": 0.5344407420287962,
+    "sigma_family": 0.17465297854099565,
+    "predictor_sd": {
+      "log_age": 0.2145953872808996,
+      "log_size": 0.9231031018558986,
+      "dup_share": 0.027793295350910005
+    }
+  },
+  "rank_corr_negbin_vs_original": 0.9715930177001967,
+  "shrinkage": {
+    "sd_raw_pct_points": 13.070743865371565,
+    "sd_pooled_pct_points": 9.673733216472458,
+    "corr_raw_pooled": 0.7526963918924484,
+    "median_abs_shift_log": 0.07436099517422967
+  },
+  "family_median_pct": {
+    "data_ml": {
+      "median": -90.1,
+      "size": 23
+    },
+    "cloud": {
+      "median": -89.3,
+      "size": 11
+    },
+    "office": {
+      "median": -88.8,
+      "size": 6
+    },
+    "mobile": {
+      "median": -88.3,
+      "size": 17
+    },
+    "framework": {
+      "median": -88.1,
+      "size": 72
+    },
+    "devops": {
+      "median": -87.3,
+      "size": 13
+    },
+    "concept": {
+      "median": -86.9,
+      "size": 58
+    },
+    "database": {
+      "median": -84.4,
+      "size": 17
+    },
+    "web": {
+      "median": -82.4,
+      "size": 27
+    },
+    "language": {
+      "median": -79.8,
+      "size": 33
+    },
+    "tooling": {
+      "median": -79.4,
+      "size": 23
+    }
+  },
+  "bottom_15": [
+    {
+      "tag": "flutter-layout",
+      "family": "mobile",
+      "pct": -100.0,
+      "pct_low": -100.0,
+      "pct_high": -99.9
+    },
+    {
+      "tag": "discord.js",
+      "family": "framework",
+      "pct": -99.1,
+      "pct_low": -99.4,
+      "pct_high": -98.6
+    },
+    {
+      "tag": "discord.py",
+      "family": "framework",
+      "pct": -99.0,
+      "pct_low": -99.4,
+      "pct_high": -98.4
+    },
+    {
+      "tag": "discord",
+      "family": "framework",
+      "pct": -98.8,
+      "pct_low": -99.1,
+      "pct_high": -98.3
+    },
+    {
+      "tag": "dart",
+      "family": "language",
+      "pct": -97.9,
+      "pct_low": -98.5,
+      "pct_high": -96.9
+    },
+    {
+      "tag": "flutter",
+      "family": "mobile",
+      "pct": -97.8,
+      "pct_low": -98.7,
+      "pct_high": -96.3
+    },
+    {
+      "tag": "next.js",
+      "family": "framework",
+      "pct": -97.2,
+      "pct_low": -98.0,
+      "pct_high": -96.3
+    },
+    {
+      "tag": "react-hooks",
+      "family": "framework",
+      "pct": -97.0,
+      "pct_low": -98.0,
+      "pct_high": -95.2
+    },
+    {
+      "tag": "axios",
+      "family": "framework",
+      "pct": -97.0,
+      "pct_low": -97.6,
+      "pct_high": -96.2
+    },
+    {
+      "tag": "material-ui",
+      "family": "framework",
+      "pct": -96.9,
+      "pct_low": -97.4,
+      "pct_high": -96.2
+    },
+    {
+      "tag": "excel-vba",
+      "family": "office",
+      "pct": -96.6,
+      "pct_low": -98.9,
+      "pct_high": -89.6
+    },
+    {
+      "tag": "dataframe",
+      "family": "data_ml",
+      "pct": -96.5,
+      "pct_low": -97.0,
+      "pct_high": -96.1
+    },
+    {
+      "tag": "pandas",
+      "family": "data_ml",
+      "pct": -96.4,
+      "pct_low": -96.8,
+      "pct_high": -95.9
+    },
+    {
+      "tag": "pytorch",
+      "family": "data_ml",
+      "pct": -96.3,
+      "pct_low": -97.4,
+      "pct_high": -94.8
+    },
+    {
+      "tag": "bootstrap-4",
+      "family": "web",
+      "pct": -96.3,
+      "pct_low": -97.5,
+      "pct_high": -94.3
+    }
+  ],
+  "top_15": [
+    {
+      "tag": "windows",
+      "family": "tooling",
+      "pct": -67.0,
+      "pct_low": -70.6,
+      "pct_high": -63.1
+    },
+    {
+      "tag": "debugging",
+      "family": "tooling",
+      "pct": -67.0,
+      "pct_low": -70.9,
+      "pct_high": -62.9
+    },
+    {
+      "tag": "symfony",
+      "family": "framework",
+      "pct": -67.0,
+      "pct_low": -71.4,
+      "pct_high": -62.2
+    },
+    {
+      "tag": "maven",
+      "family": "tooling",
+      "pct": -66.8,
+      "pct_low": -69.9,
+      "pct_high": -63.4
+    },
+    {
+      "tag": ".net",
+      "family": "framework",
+      "pct": -66.5,
+      "pct_low": -72.2,
+      "pct_high": -60.2
+    },
+    {
+      "tag": "perl",
+      "family": "language",
+      "pct": -65.6,
+      "pct_low": -69.3,
+      "pct_high": -61.3
+    },
+    {
+      "tag": "asp.net",
+      "family": "framework",
+      "pct": -64.4,
+      "pct_low": -69.2,
+      "pct_high": -59.2
+    },
+    {
+      "tag": "gcc",
+      "family": "tooling",
+      "pct": -62.9,
+      "pct_low": -67.1,
+      "pct_high": -58.2
+    },
+    {
+      "tag": "javafx",
+      "family": "framework",
+      "pct": -57.6,
+      "pct_low": -64.3,
+      "pct_high": -50.3
+    },
+    {
+      "tag": "ios",
+      "family": "mobile",
+      "pct": -57.5,
+      "pct_low": -62.7,
+      "pct_high": -51.7
+    },
+    {
+      "tag": "xaml",
+      "family": "framework",
+      "pct": -56.9,
+      "pct_low": -62.5,
+      "pct_high": -51.2
+    },
+    {
+      "tag": "eclipse",
+      "family": "tooling",
+      "pct": -55.7,
+      "pct_low": -60.6,
+      "pct_high": -50.3
+    },
+    {
+      "tag": "spring-mvc",
+      "family": "framework",
+      "pct": -53.9,
+      "pct_low": -59.9,
+      "pct_high": -47.0
+    },
+    {
+      "tag": "objective-c",
+      "family": "language",
+      "pct": -45.0,
+      "pct_low": -53.1,
+      "pct_high": -36.1
+    },
+    {
+      "tag": "angularjs",
+      "family": "framework",
+      "pct": -28.9,
+      "pct_low": -42.3,
+      "pct_high": -13.0
+    }
+  ],
+  "total_seconds": 400.64425129204756
+}

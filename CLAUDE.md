@@ -66,7 +66,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P14: Exploratory analysis.** *Done 2026-10-21: SO pre-trend −7.8%/yr inside the donor range (−31% to +2%); declines sped up after COVID everywhere → exploratory post-COVID ITS sensitivity added; strong weekday and Christmas effects on SO.* In `notebooks/01_eda.ipynb`: long-run trends (indexed to 2019 = 100) for each site group, seasonality (weekday, holidays, academic calendar), the pre-2022 slope for each site, and how the comparison sites tracked SO before 2022. Stay descriptive, with no causal claims yet. **Findings:** 4–6 charts, the pre-trend picture, and whether the comparison sites look usable.
 
-### Phase 3: Headline effect
+### Phase 3: Headline effect ✅ DONE
 
 - [x] **P15: Interrupted time series.** *Done 2026-10-21: gap vs own trend −83% (2017 trend) / −79% (post-COVID trend) over 2022-12..2026-09, widening each year (−40% 2023 → −98% 2026); level/slope terms not interpretable separately (article: lead with yearly gaps, show ±5–7% one-year holdout error).* Fit a segmented regression on log weekly SO questions: trend, Fourier seasonality, holiday dummies, a level and slope break at 2022-11-28, and HAC (Newey–West) standard errors. Check autocorrelation in the residuals, and report the level and slope changes and the cumulative % gap with 95% intervals. **Findings:** the estimates table, a fitted vs actual chart, and diagnostics.
 
@@ -74,7 +74,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P17: Synthetic control.** *Done 2026-10-21: ATT −72% (monthly conformal −76% to −68%; 42/46 months exclude 0), SO ranks 1/16 (p = 0.0625), time placebos +15–24%, pre-fit OK; programming-specific (donor gap 0.21× SO's); SO vs ru −21%; H1 supported under the monthly-interval reading (deviation, decided after results).* Use augmented synthetic control on log weekly or monthly questions with the comparison pool as donors. Report the donor weights and pre-period fit (RMSPE). Run placebos in space (each donor treated as if it were SO) and in time (fake break dates in 2019–2021), and give the permutation p-value. Check sensitivity with and without Mathematics, and with the tech sites added as donors. Add a separate difference-in-differences of SO vs ru.stackoverflow. **Findings:** the gap estimate, donor weights, the placebo chart, p-value, and the sensitivity table.
 
-- [ ] **P18: Robustness.** Alternative break dates (Copilot GA 2022-06, GPT-4 2023-03); excluding the June–Aug 2023 strike; adding the deleted-post correction from P09; monthly vs weekly data; answers and new users as outcomes. **Findings:** a forest plot of all the estimates, and which conclusions hold up.
+- [x] **P18: Robustness.** *Done 2026-10-21: all 15 pre-registered variants keep H1 (synthetic control −60% to −74%; supporting −79% to −83%); no pre-fit failures; no drop at the Copilot date; deleted posts don't change the estimate.* Alternative break dates (Copilot GA 2022-06, GPT-4 2023-03); excluding the June–Aug 2023 strike; adding the deleted-post correction from P09; monthly vs weekly data; answers and new users as outcomes. **Findings:** a forest plot of all the estimates, and which conclusions hold up.
 
 ### Phase 4: Who, what and which tags
 
