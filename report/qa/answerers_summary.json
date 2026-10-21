@@ -1,0 +1,532 @@
+{
+  "so_cohorts": [
+    {
+      "window": "2014-16",
+      "end": 2016,
+      "distance": 1,
+      "year": 2017,
+      "core": 10590,
+      "active": 9096,
+      "share": 0.8589
+    },
+    {
+      "window": "2014-16",
+      "end": 2016,
+      "distance": 2,
+      "year": 2018,
+      "core": 10590,
+      "active": 8008,
+      "share": 0.7562
+    },
+    {
+      "window": "2014-16",
+      "end": 2016,
+      "distance": 3,
+      "year": 2019,
+      "core": 10590,
+      "active": 7233,
+      "share": 0.683
+    },
+    {
+      "window": "2015-17",
+      "end": 2017,
+      "distance": 1,
+      "year": 2018,
+      "core": 11157,
+      "active": 9291,
+      "share": 0.8328
+    },
+    {
+      "window": "2015-17",
+      "end": 2017,
+      "distance": 2,
+      "year": 2019,
+      "core": 11157,
+      "active": 8319,
+      "share": 0.7456
+    },
+    {
+      "window": "2015-17",
+      "end": 2017,
+      "distance": 3,
+      "year": 2020,
+      "core": 11157,
+      "active": 7263,
+      "share": 0.651
+    },
+    {
+      "window": "2016-18",
+      "end": 2018,
+      "distance": 1,
+      "year": 2019,
+      "core": 11239,
+      "active": 9332,
+      "share": 0.8303
+    },
+    {
+      "window": "2016-18",
+      "end": 2018,
+      "distance": 2,
+      "year": 2020,
+      "core": 11239,
+      "active": 8114,
+      "share": 0.722
+    },
+    {
+      "window": "2016-18",
+      "end": 2018,
+      "distance": 3,
+      "year": 2021,
+      "core": 11239,
+      "active": 6911,
+      "share": 0.6149
+    },
+    {
+      "window": "2017-19",
+      "end": 2019,
+      "distance": 1,
+      "year": 2020,
+      "core": 11128,
+      "active": 9055,
+      "share": 0.8137
+    },
+    {
+      "window": "2017-19",
+      "end": 2019,
+      "distance": 2,
+      "year": 2021,
+      "core": 11128,
+      "active": 7712,
+      "share": 0.693
+    },
+    {
+      "window": "2017-19",
+      "end": 2019,
+      "distance": 3,
+      "year": 2022,
+      "core": 11128,
+      "active": 6805,
+      "share": 0.6115
+    },
+    {
+      "window": "2018-20",
+      "end": 2020,
+      "distance": 1,
+      "year": 2021,
+      "core": 11257,
+      "active": 8889,
+      "share": 0.7896
+    },
+    {
+      "window": "2018-20",
+      "end": 2020,
+      "distance": 2,
+      "year": 2022,
+      "core": 11257,
+      "active": 7754,
+      "share": 0.6888
+    },
+    {
+      "window": "2018-20",
+      "end": 2020,
+      "distance": 3,
+      "year": 2023,
+      "core": 11257,
+      "active": 6348,
+      "share": 0.5639
+    },
+    {
+      "window": "2019-21",
+      "end": 2021,
+      "distance": 1,
+      "year": 2022,
+      "core": 11156,
+      "active": 8590,
+      "share": 0.77
+    },
+    {
+      "window": "2019-21",
+      "end": 2021,
+      "distance": 2,
+      "year": 2023,
+      "core": 11156,
+      "active": 6997,
+      "share": 0.6272
+    },
+    {
+      "window": "2019-21",
+      "end": 2021,
+      "distance": 3,
+      "year": 2024,
+      "core": 11156,
+      "active": 5384,
+      "share": 0.4826
+    },
+    {
+      "window": "2020-22",
+      "end": 2022,
+      "distance": 1,
+      "year": 2023,
+      "core": 10962,
+      "active": 7798,
+      "share": 0.7114
+    },
+    {
+      "window": "2020-22",
+      "end": 2022,
+      "distance": 2,
+      "year": 2024,
+      "core": 10962,
+      "active": 6013,
+      "share": 0.5485
+    },
+    {
+      "window": "2020-22",
+      "end": 2022,
+      "distance": 3,
+      "year": 2025,
+      "core": 10962,
+      "active": 3809,
+      "share": 0.3475
+    },
+    {
+      "window": "2021-23",
+      "end": 2023,
+      "distance": 1,
+      "year": 2024,
+      "core": 9662,
+      "active": 6202,
+      "share": 0.6419
+    },
+    {
+      "window": "2021-23",
+      "end": 2023,
+      "distance": 2,
+      "year": 2025,
+      "core": 9662,
+      "active": 3985,
+      "share": 0.4124
+    }
+  ],
+  "h5_test": {
+    "distance_2": {
+      "treated_share": 0.627196127644317,
+      "reference_min": 0.6930265995686556,
+      "reference_max": 0.7561850802644003,
+      "below_range": true
+    },
+    "distance_3": {
+      "treated_share": 0.482610254571531,
+      "reference_min": 0.6115204888569374,
+      "reference_max": 0.6830028328611898,
+      "below_range": true
+    },
+    "supported": true
+  },
+  "h5_supported": true,
+  "original_version": {
+    "share_by_year": {
+      "2017": 0.5216923628540696,
+      "2018": 0.6362495518106849,
+      "2019": 0.8158838293295088,
+      "2020": 0.9212083183936894,
+      "2021": 0.8884008605234851,
+      "2022": 0.769989243456436,
+      "2023": 0.627196127644317,
+      "2024": 0.482610254571531,
+      "2025": 0.30826461097167446
+    },
+    "post": {
+      "2023": {
+        "share": 0.627196127644317,
+        "trend": 1.1640372893509152,
+        "pi_low": 0.8010492565267868,
+        "below_pi": true
+      },
+      "2024": {
+        "share": 0.482610254571531,
+        "trend": 1.2658748655431111,
+        "pi_low": 0.848607755862067,
+        "below_pi": true
+      },
+      "2025": {
+        "share": 0.30826461097167446,
+        "trend": 1.3677124417352786,
+        "pi_low": 0.892449545513896,
+        "below_pi": true
+      }
+    },
+    "supported": true
+  },
+  "donors_supported_count": 2,
+  "distance3_ratio_2019_21_vs_reference_mean": {
+    "stackoverflow": 0.7539556730261607,
+    "donor_median": 1.0405054087603551,
+    "math": 0.8864295410969558,
+    "physics": 0.9931254361057176
+  },
+  "core_activity": [
+    {
+      "year": 2008,
+      "answerers": 15649,
+      "answers": 198054,
+      "core_answerers_active": 185,
+      "core_answer_share": 0.0636,
+      "answers_per_active_core": 68.1297,
+      "gini": 0.7063,
+      "top1pct_share": 0.1916
+    },
+    {
+      "year": 2009,
+      "answerers": 55546,
+      "answers": 890660,
+      "core_answerers_active": 517,
+      "core_answer_share": 0.0748,
+      "answers_per_active_core": 128.8491,
+      "gini": 0.7944,
+      "top1pct_share": 0.2926
+    },
+    {
+      "year": 2010,
+      "answerers": 124112,
+      "answers": 1426905,
+      "core_answerers_active": 870,
+      "core_answer_share": 0.093,
+      "answers_per_active_core": 152.4724,
+      "gini": 0.8181,
+      "top1pct_share": 0.3668
+    },
+    {
+      "year": 2011,
+      "answerers": 204685,
+      "answers": 2223475,
+      "core_answerers_active": 1336,
+      "core_answer_share": 0.1,
+      "answers_per_active_core": 166.5045,
+      "gini": 0.8098,
+      "top1pct_share": 0.3559
+    },
+    {
+      "year": 2012,
+      "answerers": 299786,
+      "answers": 2776296,
+      "core_answerers_active": 1926,
+      "core_answer_share": 0.1105,
+      "answers_per_active_core": 159.3536,
+      "gini": 0.7908,
+      "top1pct_share": 0.3517
+    },
+    {
+      "year": 2013,
+      "answerers": 398269,
+      "answers": 3255373,
+      "core_answerers_active": 2632,
+      "core_answer_share": 0.1184,
+      "answers_per_active_core": 146.4818,
+      "gini": 0.7772,
+      "top1pct_share": 0.3571
+    },
+    {
+      "year": 2014,
+      "answerers": 450148,
+      "answers": 3143410,
+      "core_answerers_active": 3282,
+      "core_answer_share": 0.1378,
+      "answers_per_active_core": 132.0219,
+      "gini": 0.7561,
+      "top1pct_share": 0.3505
+    },
+    {
+      "year": 2015,
+      "answerers": 493057,
+      "answers": 3086931,
+      "core_answerers_active": 4018,
+      "core_answer_share": 0.1537,
+      "answers_per_active_core": 118.0508,
+      "gini": 0.7405,
+      "top1pct_share": 0.3377
+    },
+    {
+      "year": 2016,
+      "answerers": 517407,
+      "answers": 3017844,
+      "core_answerers_active": 4865,
+      "core_answer_share": 0.18,
+      "answers_per_active_core": 111.6752,
+      "gini": 0.7298,
+      "top1pct_share": 0.3354
+    },
+    {
+      "year": 2017,
+      "answerers": 523377,
+      "answers": 2850260,
+      "core_answerers_active": 5820,
+      "core_answer_share": 0.2154,
+      "answers_per_active_core": 105.5058,
+      "gini": 0.7227,
+      "top1pct_share": 0.3432
+    },
+    {
+      "year": 2018,
+      "answerers": 497028,
+      "answers": 2505058,
+      "core_answerers_active": 7098,
+      "core_answer_share": 0.285,
+      "answers_per_active_core": 100.5688,
+      "gini": 0.7138,
+      "top1pct_share": 0.3518
+    },
+    {
+      "year": 2019,
+      "answerers": 488956,
+      "answers": 2357172,
+      "core_answerers_active": 9102,
+      "core_answer_share": 0.3953,
+      "answers_per_active_core": 102.3818,
+      "gini": 0.7076,
+      "top1pct_share": 0.3527
+    },
+    {
+      "year": 2020,
+      "answerers": 520374,
+      "answers": 2399776,
+      "core_answerers_active": 10277,
+      "core_answer_share": 0.4239,
+      "answers_per_active_core": 98.9934,
+      "gini": 0.7058,
+      "top1pct_share": 0.3765
+    },
+    {
+      "year": 2021,
+      "answerers": 466933,
+      "answers": 1959972,
+      "core_answerers_active": 9911,
+      "core_answer_share": 0.4122,
+      "answers_per_active_core": 81.5174,
+      "gini": 0.6902,
+      "top1pct_share": 0.3782
+    },
+    {
+      "year": 2022,
+      "answerers": 444417,
+      "answers": 1696372,
+      "core_answerers_active": 8590,
+      "core_answer_share": 0.3008,
+      "answers_per_active_core": 59.4073,
+      "gini": 0.6717,
+      "top1pct_share": 0.3753
+    },
+    {
+      "year": 2023,
+      "answerers": 331525,
+      "answers": 1017027,
+      "core_answerers_active": 6997,
+      "core_answer_share": 0.2627,
+      "answers_per_active_core": 38.1867,
+      "gini": 0.6192,
+      "top1pct_share": 0.3579
+    },
+    {
+      "year": 2024,
+      "answerers": 220947,
+      "answers": 563260,
+      "core_answerers_active": 5384,
+      "core_answer_share": 0.2343,
+      "answers_per_active_core": 24.5067,
+      "gini": 0.5613,
+      "top1pct_share": 0.3248
+    },
+    {
+      "year": 2025,
+      "answerers": 86467,
+      "answers": 187379,
+      "core_answerers_active": 3439,
+      "core_answer_share": 0.2386,
+      "answers_per_active_core": 13.0012,
+      "gini": 0.4991,
+      "top1pct_share": 0.2744
+    },
+    {
+      "year": 2026,
+      "answerers": 18418,
+      "answers": 39901,
+      "core_answerers_active": 1614,
+      "core_answer_share": 0.3367,
+      "answers_per_active_core": 8.3228,
+      "gini": 0.4993,
+      "top1pct_share": 0.2446
+    }
+  ],
+  "emerging_top_answerers": [
+    {
+      "year": 2012,
+      "top1pct": 2998,
+      "share_recent_arrivals": 0.5921
+    },
+    {
+      "year": 2013,
+      "top1pct": 3983,
+      "share_recent_arrivals": 0.5478
+    },
+    {
+      "year": 2014,
+      "top1pct": 4502,
+      "share_recent_arrivals": 0.4671
+    },
+    {
+      "year": 2015,
+      "top1pct": 4931,
+      "share_recent_arrivals": 0.4241
+    },
+    {
+      "year": 2016,
+      "top1pct": 5175,
+      "share_recent_arrivals": 0.3992
+    },
+    {
+      "year": 2017,
+      "top1pct": 5234,
+      "share_recent_arrivals": 0.3575
+    },
+    {
+      "year": 2018,
+      "top1pct": 4971,
+      "share_recent_arrivals": 0.3186
+    },
+    {
+      "year": 2019,
+      "top1pct": 4890,
+      "share_recent_arrivals": 0.3213
+    },
+    {
+      "year": 2020,
+      "top1pct": 5204,
+      "share_recent_arrivals": 0.3278
+    },
+    {
+      "year": 2021,
+      "top1pct": 4670,
+      "share_recent_arrivals": 0.3075
+    },
+    {
+      "year": 2022,
+      "top1pct": 4445,
+      "share_recent_arrivals": 0.2846
+    },
+    {
+      "year": 2023,
+      "top1pct": 3316,
+      "share_recent_arrivals": 0.2177
+    },
+    {
+      "year": 2024,
+      "top1pct": 2210,
+      "share_recent_arrivals": 0.1674
+    },
+    {
+      "year": 2025,
+      "top1pct": 865,
+      "share_recent_arrivals": 0.104
+    }
+  ]
+}
