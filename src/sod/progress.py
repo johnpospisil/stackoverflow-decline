@@ -114,8 +114,11 @@ def render(job_dir: Path, detail: bool = False) -> tuple[str, bool]:
                 pass
 
     total = sum(tasks.values())
+    # Each task's fraction done, weighted by its size in the manifest (tasks may count
+    # progress in bytes or in steps; the manifest weight is what makes them comparable).
     done = sum(
-        s["total_bytes"] if s["status"] == "done" else s["done_bytes"] for s in states.values()
+        tasks[n] * (1.0 if s["status"] == "done" else s["done_bytes"] / max(s["total_bytes"], 1))
+        for n, s in states.items()
     )
     n_done = sum(1 for s in states.values() if s["status"] == "done")
     failed = [n for n, s in states.items() if s["status"] == "failed"]
