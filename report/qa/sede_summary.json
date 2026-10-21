@@ -1,0 +1,252 @@
+{
+  "sites_matched": 27,
+  "sites_missing": [],
+  "by_site": {
+    "askubuntu.com": {
+      "group": "tech_exposed",
+      "deleted_share_pre": 0.4697,
+      "deleted_share_post": 0.4906,
+      "deleted_share_last12": 0.3455,
+      "dump_vs_sede_not_deleted_max_abs_pct": 2.033,
+      "log_change_dump": -2.033,
+      "log_change_incl_deleted": -2.094
+    },
+    "bicycles.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.1114,
+      "deleted_share_post": 0.1235,
+      "deleted_share_last12": 0.1511,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -1.272,
+      "log_change_incl_deleted": -1.344
+    },
+    "biology.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.4484,
+      "deleted_share_post": 0.4815,
+      "deleted_share_last12": 0.4302,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -1.528,
+      "log_change_incl_deleted": -1.508
+    },
+    "chemistry.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.533,
+      "deleted_share_post": 0.5391,
+      "deleted_share_last12": 0.4564,
+      "dump_vs_sede_not_deleted_max_abs_pct": 13.793,
+      "log_change_dump": -1.801,
+      "log_change_incl_deleted": -1.957
+    },
+    "cooking.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.1936,
+      "deleted_share_post": 0.2332,
+      "deleted_share_last12": 0.2525,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -1.692,
+      "log_change_incl_deleted": -1.507
+    },
+    "dba.stackexchange.com": {
+      "group": "tech_exposed",
+      "deleted_share_pre": 0.3309,
+      "deleted_share_post": 0.2922,
+      "deleted_share_last12": 0.1402,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -2.296,
+      "log_change_incl_deleted": -2.492
+    },
+    "diy.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.1514,
+      "deleted_share_post": 0.2378,
+      "deleted_share_last12": 0.276,
+      "dump_vs_sede_not_deleted_max_abs_pct": 2.222,
+      "log_change_dump": -1.854,
+      "log_change_incl_deleted": -1.681
+    },
+    "english.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.4775,
+      "deleted_share_post": 0.447,
+      "deleted_share_last12": 0.3856,
+      "dump_vs_sede_not_deleted_max_abs_pct": 2.381,
+      "log_change_dump": -2.145,
+      "log_change_incl_deleted": -2.499
+    },
+    "es.stackoverflow.com": {
+      "group": "so_language",
+      "deleted_share_pre": 0.4126,
+      "deleted_share_post": 0.4734,
+      "deleted_share_last12": 0.3787,
+      "dump_vs_sede_not_deleted_max_abs_pct": 4.762,
+      "log_change_dump": -4.605,
+      "log_change_incl_deleted": -4.579
+    },
+    "gaming.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.3429,
+      "deleted_share_post": 0.2265,
+      "deleted_share_last12": 0.1211,
+      "dump_vs_sede_not_deleted_max_abs_pct": 1.613,
+      "log_change_dump": -1.078,
+      "log_change_incl_deleted": -1.281
+    },
+    "history.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.359,
+      "deleted_share_post": 0.4233,
+      "deleted_share_last12": 0.4,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -1.88,
+      "log_change_incl_deleted": -1.815
+    },
+    "ja.stackoverflow.com": {
+      "group": "so_language",
+      "deleted_share_pre": 0.3223,
+      "deleted_share_post": 0.3967,
+      "deleted_share_last12": 0.2958,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -4.417,
+      "log_change_incl_deleted": -4.152
+    },
+    "math.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.3164,
+      "deleted_share_post": 0.404,
+      "deleted_share_last12": 0.307,
+      "dump_vs_sede_not_deleted_max_abs_pct": 3.063,
+      "log_change_dump": -2.306,
+      "log_change_incl_deleted": -2.451
+    },
+    "meta.stackoverflow.com": {
+      "group": "context",
+      "deleted_share_pre": null,
+      "deleted_share_post": null,
+      "deleted_share_last12": null,
+      "dump_vs_sede_not_deleted_max_abs_pct": NaN,
+      "log_change_dump": -1.296,
+      "log_change_incl_deleted": null
+    },
+    "movies.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.3888,
+      "deleted_share_post": 0.2952,
+      "deleted_share_last12": 0.2239,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -0.477,
+      "log_change_incl_deleted": -0.716
+    },
+    "philosophy.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.2942,
+      "deleted_share_post": 0.2469,
+      "deleted_share_last12": 0.2328,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -0.093,
+      "log_change_incl_deleted": -0.316
+    },
+    "physics.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.377,
+      "deleted_share_post": 0.4054,
+      "deleted_share_last12": 0.4281,
+      "dump_vs_sede_not_deleted_max_abs_pct": 3.54,
+      "log_change_dump": -1.92,
+      "log_change_incl_deleted": -1.859
+    },
+    "pt.stackoverflow.com": {
+      "group": "so_language",
+      "deleted_share_pre": 0.5784,
+      "deleted_share_post": 0.905,
+      "deleted_share_last12": 0.9629,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.067,
+      "log_change_dump": -5.161,
+      "log_change_incl_deleted": -4.843
+    },
+    "rpg.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.1196,
+      "deleted_share_post": 0.1097,
+      "deleted_share_last12": 0.1091,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -1.475,
+      "log_change_incl_deleted": -1.503
+    },
+    "ru.stackoverflow.com": {
+      "group": "so_language",
+      "deleted_share_pre": 0.3663,
+      "deleted_share_post": 0.4718,
+      "deleted_share_last12": 0.2877,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -4.196,
+      "log_change_incl_deleted": -4.452
+    },
+    "scifi.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.1594,
+      "deleted_share_post": 0.163,
+      "deleted_share_last12": 0.1453,
+      "dump_vs_sede_not_deleted_max_abs_pct": 1.25,
+      "log_change_dump": -1.104,
+      "log_change_incl_deleted": -1.13
+    },
+    "serverfault.com": {
+      "group": "tech_exposed",
+      "deleted_share_pre": 0.4349,
+      "deleted_share_post": 0.6288,
+      "deleted_share_last12": 0.373,
+      "dump_vs_sede_not_deleted_max_abs_pct": 8.0,
+      "log_change_dump": -2.647,
+      "log_change_incl_deleted": -2.799
+    },
+    "softwareengineering.stackexchange.com": {
+      "group": "tech_exposed",
+      "deleted_share_pre": 0.5497,
+      "deleted_share_post": 0.5128,
+      "deleted_share_last12": 0.4765,
+      "dump_vs_sede_not_deleted_max_abs_pct": 0.0,
+      "log_change_dump": -2.254,
+      "log_change_incl_deleted": -2.554
+    },
+    "stackoverflow.com": {
+      "group": "treated",
+      "deleted_share_pre": 0.3783,
+      "deleted_share_post": 0.4794,
+      "deleted_share_last12": 0.512,
+      "dump_vs_sede_not_deleted_max_abs_pct": 6.769,
+      "log_change_dump": -4.587,
+      "log_change_incl_deleted": -4.329
+    },
+    "superuser.com": {
+      "group": "tech_exposed",
+      "deleted_share_pre": 0.4632,
+      "deleted_share_post": 0.6285,
+      "deleted_share_last12": 0.4636,
+      "dump_vs_sede_not_deleted_max_abs_pct": 2.206,
+      "log_change_dump": -2.501,
+      "log_change_incl_deleted": -2.254
+    },
+    "travel.stackexchange.com": {
+      "group": "donor",
+      "deleted_share_pre": 0.265,
+      "deleted_share_post": 0.4769,
+      "deleted_share_last12": 0.5178,
+      "dump_vs_sede_not_deleted_max_abs_pct": 16.667,
+      "log_change_dump": -1.992,
+      "log_change_incl_deleted": -1.025
+    },
+    "unix.stackexchange.com": {
+      "group": "tech_exposed",
+      "deleted_share_pre": 0.3175,
+      "deleted_share_post": 0.288,
+      "deleted_share_last12": 0.1286,
+      "dump_vs_sede_not_deleted_max_abs_pct": 2.439,
+      "log_change_dump": -2.679,
+      "log_change_incl_deleted": -2.819
+    }
+  },
+  "so_deleted_qa_sede": 10808454,
+  "so_deleted_posts_via_votes": 8176207,
+  "so_votes_coverage_of_sede_deleted": 0.756
+}

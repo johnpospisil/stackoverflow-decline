@@ -92,7 +92,7 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 
 ## 2. Known gaps and caveats
 
-- **Deleted posts are missing.** The dump excludes deleted posts and many deleted users. If deletion rates changed after 2022, declines may be slightly understated. Compare against SEDE where possible.
+- **Deleted posts are missing, and the deleted share is rising (P09).** Per SEDE `PostsWithDeleted` (snapshot 2026-10-17), the share of each year's Stack Overflow questions deleted since then rose from 33.5% (2017) to 43.4% (2022) to 52.9% (2026), and of answers from about 16% (2017–2022) to 47% (2026). The rise started before ChatGPT and continued after it. As a result the dump slightly **overstates** Stack Overflow's decline: Sep–Nov 2022 → Jul–Sep 2026 is −4.59 log points in the dump vs −4.33 counting deleted questions (donor median −1.69 vs −1.51). Monthly counts including deleted questions for all 27 sites are in `data/reference/sede/` for pre-registered robustness check 8. Votes on deleted posts recover 76% of SEDE's deleted Stack Overflow posts.
 - **Integrity check (P01, 2026-10-19): passed.** SHA-256 hashes of all 27 archives ([data/reference/dump_checksums.csv](data/reference/dump_checksums.csv)) match the community-generated list for the 2026-09-30 dump ([data/reference/community_sha256_2026-09-30.txt](data/reference/community_sha256_2026-09-30.txt), from LunarWatcher/se-data-dump-transformer `docs/meta/Hashes.md`, citing meta.stackexchange.com/revisions/402072/22). Stack Exchange had not posted official checksums for this release on the date checked (Meta could not be fetched automatically; re-check by hand before publishing).
 - **Watermarking (P01): none found.** The only documented watermark ("v1", 2025-06-30 dumps only) added fake posts with IDs 1000000001 (question) and 1000000010 (answer), owned by user -1 and missing from PostHistory. The community "Known watermarks" list records no watermarks in any later dump. A full scan of `Posts.xml` for the 26 smaller sites found no IDs ≥ 1,000,000,000. Questions or answers owned by user -1: 0 on 25 sites and 12 on Meta Stack Overflow (about one a year since 2013, legitimate community posts). **P05 full scan of all 27 sites (73.1M posts, including all 60.3M Stack Overflow posts): 0 rows with Id ≥ 1,000,000,000 and 0 Stack Overflow questions or answers owned by user -1.**
 - **Rows are not in ID order.** In 26 of 27 sites (all except Mathematics), `Posts.xml` rows are not sorted by `Id` or by date (no duplicate IDs; checked on Cooking). This doesn't affect analysis, which keys on IDs and dates, but never treat the last row of a file as the newest post.
@@ -113,7 +113,7 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 ## 3. Reconciliation checks (to do)
 
 - [x] Data-quality profile (P08): see [report/qa/quality.json](report/qa/quality.json) and `tests/test_data_quality.py`
-- [ ] Monthly question counts for SO compared with SEDE for overlapping months
+- [x] Monthly question counts compared with SEDE (P09; SEDE snapshot 2026-10-17): median difference 0.001% for Stack Overflow; only 8 of 3,042 site-months with ≥ 50 questions differ by more than 2%. The Sep 2026 gap (6.8%) is posts deleted after the dump date
 - [x] Max `CreationDate` over all rows matches the stated cut-off (P05: every site's latest question is between 2026-09-21 and 2026-09-30; Stack Overflow 2026-09-30T22:40)
 - [x] No duplicate `Post.Id` values within any site (P05)
 - [x] All XML files complete (closing root tag present)
