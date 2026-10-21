@@ -49,10 +49,11 @@ TABLES = config.REPO_ROOT / "report" / "tables"
 
 def wilson(k: np.ndarray, n: np.ndarray, z: float = 1.96) -> tuple[np.ndarray, np.ndarray]:
     n = np.asarray(n, float)
-    p = np.divide(k, n, out=np.full(len(n), np.nan), where=n > 0)
-    denom = 1 + z**2 / n
-    centre = (p + z**2 / (2 * n)) / denom
-    half = z * np.sqrt(p * (1 - p) / n + z**2 / (4 * n**2)) / denom
+    with np.errstate(divide="ignore", invalid="ignore"):  # empty weeks give NaN
+        p = np.divide(k, n, out=np.full(len(n), np.nan), where=n > 0)
+        denom = 1 + z**2 / n
+        centre = (p + z**2 / (2 * n)) / denom
+        half = z * np.sqrt(p * (1 - p) / n + z**2 / (4 * n**2)) / denom
     return centre - half, centre + half
 
 
