@@ -3,7 +3,7 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts models figures report test lint clean-processed
+.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels models figures report test lint clean-processed
 
 all: check-env ingest build models figures report
 
@@ -26,14 +26,16 @@ ingest-posthistory: check-env
 progress:
 	@$(PY) -m sod.progress $(JOB) $(if $(DETAIL),--detail,)
 
-build: build-questions build-tags build-cohorts
-	@echo "build: panels not yet implemented (P13)"
+build: build-questions build-tags build-cohorts build-panels
 
 build-tags:
 	$(PY) -m sod.build.tag_taxonomy
 
 build-cohorts:
 	$(PY) -m sod.build.cohorts
+
+build-panels:
+	$(PY) -m sod.build.panels
 
 build-questions:
 	$(PY) -m sod.build.questions
