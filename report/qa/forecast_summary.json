@@ -1,0 +1,283 @@
+{
+  "train": [
+    "2017-01-01",
+    "2022-11-01"
+  ],
+  "post": [
+    "2022-12-01",
+    "2026-09-01"
+  ],
+  "models": {
+    "ets": {
+      "trend": "additive",
+      "aicc": {
+        "none": -224.40688645722366,
+        "additive": -225.05931346450538,
+        "damped": -219.07647299176588
+      },
+      "gaps": {
+        "all_post": {
+          "months": 46,
+          "mean_gap_pct": -82.71720504122807,
+          "mean_gap_pct_ci": [
+            -85.04606003211057,
+            -79.93279273427613
+          ],
+          "cumulative_gap_pct": -66.46827869735917,
+          "cumulative_gap_pct_ci": [
+            -70.91262098565275,
+            -61.37481818315067
+          ],
+          "counterfactual_questions_median": 4205578.912195925,
+          "actual_questions": 1410203.0
+        },
+        "2022": {
+          "months": 1,
+          "mean_gap_pct": -1.3438336690166142,
+          "mean_gap_pct_ci": [
+            -7.9524811106916005,
+            5.65360841127065
+          ],
+          "cumulative_gap_pct": -1.3438336525355976,
+          "cumulative_gap_pct_ci": [
+            -7.952481102755421,
+            5.653609005420607
+          ],
+          "counterfactual_questions_median": 97474.90054847574,
+          "actual_questions": 96165.0
+        },
+        "2023": {
+          "months": 12,
+          "mean_gap_pct": -37.48748132225466,
+          "mean_gap_pct_ci": [
+            -42.92151656432724,
+            -31.386759069309058
+          ],
+          "cumulative_gap_pct": -35.83414806444339,
+          "cumulative_gap_pct_ci": [
+            -41.34632379356396,
+            -29.702180333885092
+          ],
+          "counterfactual_questions_median": 1227442.5987818367,
+          "actual_questions": 787599.0
+        },
+        "2024": {
+          "months": 12,
+          "mean_gap_pct": -66.17920640122212,
+          "mean_gap_pct_ci": [
+            -71.04725225342155,
+            -60.63960915410496
+          ],
+          "cumulative_gap_pct": -64.53813165115518,
+          "cumulative_gap_pct_ci": [
+            -69.63440659840995,
+            -58.7376470555272
+          ],
+          "counterfactual_questions_median": 1123361.567277195,
+          "actual_questions": 398365.0
+        },
+        "2025": {
+          "months": 12,
+          "mean_gap_pct": -90.63716238120286,
+          "mean_gap_pct_ci": [
+            -92.3354666662353,
+            -88.57532323804347
+          ],
+          "cumulative_gap_pct": -89.41942666942045,
+          "cumulative_gap_pct_ci": [
+            -91.33445147070724,
+            -87.10319120487658
+          ],
+          "counterfactual_questions_median": 1030501.83580983,
+          "actual_questions": 109033.0
+        },
+        "2026": {
+          "months": 9,
+          "mean_gap_pct": -97.61917143586916,
+          "mean_gap_pct_ci": [
+            -98.11165252516885,
+            -96.98666694961152
+          ],
+          "cumulative_gap_pct": -97.36826720636546,
+          "cumulative_gap_pct_ci": [
+            -97.91178494707687,
+            -96.66831413535958
+          ],
+          "counterfactual_questions_median": 723515.7985174465,
+          "actual_questions": 19041.0
+        },
+        "to_2025_09": {
+          "months": 34,
+          "mean_gap_pct": -67.91740585319579,
+          "mean_gap_pct_ci": [
+            -71.6835089119148,
+            -63.494693613610934
+          ],
+          "cumulative_gap_pct": -57.459195536620875,
+          "cumulative_gap_pct_ci": [
+            -62.40598501151086,
+            -51.77838175323413
+          ],
+          "counterfactual_questions_median": 3235434.874598479,
+          "actual_questions": 1376380.0
+        }
+      },
+      "backtest": {
+        "all": {
+          "months": 36,
+          "mean_error_pct": -10.729440918404709,
+          "mape_pct": 14.368151374618604,
+          "rmse_log": 0.1856106036434336,
+          "coverage_95": 0.5,
+          "last_12_mean_error_pct": -23.005934204285882
+        },
+        "excl_covid": {
+          "months": 32,
+          "mean_error_pct": -13.431334911047788,
+          "mape_pct": 14.106334033128467,
+          "rmse_log": 0.1880916910832324,
+          "coverage_95": 0.53125,
+          "last_12_mean_error_pct": -23.005934204285882
+        },
+        "mean_error_pct_by_horizon_year": {
+          "1": 4.636381125553335,
+          "2": -11.695100804227565,
+          "3": -23.005934204285882
+        },
+        "trend": "none"
+      }
+    },
+    "prophet": {
+      "gaps": {
+        "all_post": {
+          "months": 46,
+          "mean_gap_pct": -81.08003004953885,
+          "mean_gap_pct_ci": [
+            -86.10364729227709,
+            -74.44004783931453
+          ],
+          "cumulative_gap_pct": -63.48613579783514,
+          "cumulative_gap_pct_ci": [
+            -73.041502267362,
+            -53.17531342359083
+          ],
+          "counterfactual_questions_median": 3862102.878934505,
+          "actual_questions": 1410203.0
+        },
+        "2022": {
+          "months": 1,
+          "mean_gap_pct": 3.1173094161553117,
+          "mean_gap_pct_ci": [
+            -1.9843996625812155,
+            8.461844248791328
+          ],
+          "cumulative_gap_pct": 3.117309433293469,
+          "cumulative_gap_pct_ci": [
+            -1.9843995867655413,
+            8.461844323968128
+          ],
+          "counterfactual_questions_median": 93257.86384503607,
+          "actual_questions": 96165.0
+        },
+        "2023": {
+          "months": 12,
+          "mean_gap_pct": -34.71250868387023,
+          "mean_gap_pct_ci": [
+            -38.278464659344216,
+            -31.0024534323163
+          ],
+          "cumulative_gap_pct": -33.09136572883133,
+          "cumulative_gap_pct_ci": [
+            -36.64692860159424,
+            -29.459147385600204
+          ],
+          "counterfactual_questions_median": 1177126.1045046598,
+          "actual_questions": 787599.0
+        },
+        "2024": {
+          "months": 12,
+          "mean_gap_pct": -63.273810109887194,
+          "mean_gap_pct_ci": [
+            -70.53464520983749,
+            -54.38338131348115
+          ],
+          "cumulative_gap_pct": -61.47607282325648,
+          "cumulative_gap_pct_ci": [
+            -69.05408416437918,
+            -52.3324727673911
+          ],
+          "counterfactual_questions_median": 1034071.6255964637,
+          "actual_questions": 398365.0
+        },
+        "2025": {
+          "months": 12,
+          "mean_gap_pct": -89.5374038239365,
+          "mean_gap_pct_ci": [
+            -93.25049395466989,
+            -84.00424632792935
+          ],
+          "cumulative_gap_pct": -88.18455044929628,
+          "cumulative_gap_pct_ci": [
+            -92.36941052941835,
+            -82.02315357564888
+          ],
+          "counterfactual_questions_median": 922800.2743974759,
+          "actual_questions": 109033.0
+        },
+        "2026": {
+          "months": 9,
+          "mean_gap_pct": -97.23691520994036,
+          "mean_gap_pct_ci": [
+            -98.61311258824385,
+            -94.71733590728934
+          ],
+          "cumulative_gap_pct": -96.94616255012056,
+          "cumulative_gap_pct_ci": [
+            -98.46618046720499,
+            -94.18103944285082
+          ],
+          "counterfactual_questions_median": 623510.6953381547,
+          "actual_questions": 19041.0
+        },
+        "to_2025_09": {
+          "months": 34,
+          "mean_gap_pct": -65.46404970620259,
+          "mean_gap_pct_ci": [
+            -71.84417803837732,
+            -57.89103750608244
+          ],
+          "cumulative_gap_pct": -54.305402535277956,
+          "cumulative_gap_pct_ci": [
+            -62.62231802524509,
+            -45.73014716866764
+          ],
+          "counterfactual_questions_median": 3012128.5151457363,
+          "actual_questions": 1376380.0
+        }
+      },
+      "backtest": {
+        "all": {
+          "months": 36,
+          "mean_error_pct": -42.911280387630434,
+          "mape_pct": 39.590484380370775,
+          "rmse_log": 0.6672874949653327,
+          "coverage_95": 0.9722222222222222,
+          "last_12_mean_error_pct": -62.43638454364967
+        },
+        "excl_covid": {
+          "months": 32,
+          "mean_error_pct": -46.22845672299633,
+          "mape_pct": 43.162958856909384,
+          "rmse_log": 0.7061414346016124,
+          "coverage_95": 0.96875,
+          "last_12_mean_error_pct": -62.43638454364967
+        },
+        "mean_error_pct_by_horizon_year": {
+          "1": -13.001649399534942,
+          "2": -43.065894293733734,
+          "3": -62.43638454364967
+        }
+      }
+    }
+  }
+}

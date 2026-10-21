@@ -68,7 +68,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 ### Phase 3: Headline effect
 
-- [ ] **P15: Interrupted time series.** Fit a segmented regression on log weekly SO questions: trend, Fourier seasonality, holiday dummies, a level and slope break at 2022-11-28, and HAC (Newey–West) standard errors. Check autocorrelation in the residuals, and report the level and slope changes and the cumulative % gap with 95% intervals. **Findings:** the estimates table, a fitted vs actual chart, and diagnostics.
+- [x] **P15: Interrupted time series.** *Done 2026-10-21: gap vs own trend −83% (2017 trend) / −79% (post-COVID trend) over 2022-12..2026-09, widening each year (−40% 2023 → −98% 2026); level/slope terms not interpretable separately (article: lead with yearly gaps, show ±5–7% one-year holdout error).* Fit a segmented regression on log weekly SO questions: trend, Fourier seasonality, holiday dummies, a level and slope break at 2022-11-28, and HAC (Newey–West) standard errors. Check autocorrelation in the residuals, and report the level and slope changes and the cumulative % gap with 95% intervals. **Findings:** the estimates table, a fitted vs actual chart, and diagnostics.
 
 - [ ] **P16: Forecast counterfactual.** Fit ETS and Prophet on data up to 2022-11 and forecast to 2026-09 with prediction intervals. Backtest on pre-period holdouts (e.g. train to 2019, predict 2020–2022) so we can see how accurate the forecasts are. **Findings:** the % gap with intervals, backtest error, and how the two models compare.
 
