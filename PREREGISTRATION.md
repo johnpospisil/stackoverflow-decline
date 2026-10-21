@@ -112,3 +112,9 @@
 ## 9. Deviations
 
 *(Append dated entries here. Each entry: what changed, why, and whether it was decided before or after seeing outcome data.)*
+
+### 2026-10-20: Tag definition for H2 and tag panels (clarification)
+
+- **What:** tag-level analyses (H2, tag × week panels, the tag taxonomy) use each question's **tags at the time of asking**: the initial-tags event, PostHistory type 3. Current `Posts.Tags` is used only as a fallback for the 214 Stack Overflow questions (0.001%) without that event.
+- **Why:** questions keep being retagged for years (5.26M retag events on Stack Overflow). Older questions have had more time to be retagged than recent ones, so current tags would create a time trend in tag counts unrelated to ChatGPT.
+- **When:** decided **before any outcome data was examined**. At this point only ingest counts and missing-value rates had been computed (P05–P07); no counts by time period.
