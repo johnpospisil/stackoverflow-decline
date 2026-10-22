@@ -26,3 +26,6 @@ app/node_modules/
 # Local env
 .env
 .DS_Store
+
+# make all SAMPLE=1 output
+.sample/

@@ -3,9 +3,29 @@
 
 PY := uv run python -I
 
-.PHONY: all check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github figures report test lint clean-processed
+# Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
+unexport VIRTUAL_ENV
 
-all: check-env ingest build models figures report
+# `make all SAMPLE=1`: the whole pipeline on a small synthetic dump (sod.sample) in .sample/,
+# with fewer MCMC draws and bootstrap replicates. Never touches the real data or report/.
+ifeq ($(SAMPLE),1)
+SAMPLE_DIR ?= $(CURDIR)/.sample
+export SOD_SAMPLE := 1
+export SOD_RAW_DIR := $(SAMPLE_DIR)/raw
+export SOD_DATA_DIR := $(SAMPLE_DIR)/data
+export SOD_REFERENCE_DIR := $(SAMPLE_DIR)/reference
+export SOD_REPORT_DIR := $(SAMPLE_DIR)/report
+endif
+
+.PHONY: all sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github figures report test lint clean-processed
+
+all: $(if $(filter 1,$(SAMPLE)),sample-data) check-env ingest build models figures report
+
+# Synthetic dump for SAMPLE=1 (fresh each time; deterministic)
+sample-data:
+	@test "$(SAMPLE)" = 1 || (echo "sample-data needs SAMPLE=1"; exit 1)
+	rm -rf "$(SAMPLE_DIR)/data"
+	$(PY) -m sod.sample
 
 check-env:
 	$(PY) -m sod.check_env

@@ -31,7 +31,7 @@ from sod.db import connect  # noqa: E402
 JOB = "question_mix"
 YEARS = (2021, 2025)
 DUPLICATE_REASON = 101
-REPS = 200
+REPS = 20 if config.SAMPLE else 200
 SEED = 21
 SURVIVAL = {2021: 1 - 0.418, 2025: 1 - 0.508}  # from SEDE (P09 / site_month panel)
 QA = config.REPORT_DIR / "qa"
@@ -70,6 +70,7 @@ def load() -> pd.DataFrame:
                (Score > 0)::DOUBLE AS pos_score, asker_account_age_days
         FROM read_parquet('{config.PARQUET_DIR}/questions/*/*.parquet')
         WHERE site = '{config.TREATED}' AND year(CreationDate) IN {YEARS}
+        ORDER BY Id  -- fixed row order, so the bootstrap draws are reproducible
         """
     ).df()
     for c in ("code", "dup30", "closed30", "answered7d"):

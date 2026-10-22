@@ -145,7 +145,7 @@ def emerging(ya: pd.DataFrame) -> pd.DataFrame:
         if y < 2012 or y > LAST_FULL_YEAR:
             continue
         n = int(np.ceil(CORE_SHARE * len(g)))
-        top = g.sort_values("answers", ascending=False, kind="stable")["user_id"].iloc[:n]
+        top = g.sort_values(["answers", "user_id"], ascending=[False, True])["user_id"].iloc[:n]
         recent = (first.loc[top] >= y - 1).mean()
         rows.append({"year": int(y), "top1pct": n, "share_recent_arrivals": float(recent)})
     return pd.DataFrame(rows)

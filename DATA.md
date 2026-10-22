@@ -135,3 +135,27 @@ Extraction finished 2026-10-19 (macOS Archive Utility). Every XML file in all 27
 - [ ] Check https://meta.stackexchange.com/a/402072 for official 2026-09-30 checksums and compare with `data/reference/dump_checksums.csv`.
 - [ ] Confirm published datasets contain derived metrics only (no post text or user names).
 - [ ] Include CC BY-SA 4.0 attribution to Stack Exchange on every published dataset and chart.
+
+## 6. Reproducing the analysis
+
+Hand-made inputs (everything else is rebuilt from the raw XML):
+
+| File | What it is |
+|---|---|
+| `data/reference/tag_families.csv` | Top-300 tags and their family (P11) |
+| `data/reference/tags_new_post2021_kinds.csv` | New tags classified as new technology / version / feature (P20). A new tag missing from it stops the build. |
+| `data/reference/events.csv` | Event timeline (P02) |
+| `data/reference/sede/*.csv` | SEDE monthly counts incl. deleted posts, saved by hand (P09) |
+| `data/reference/gharchive_issue_activity_monthly.csv` | Cached BigQuery extract (P25); `python -m sod.models.github --refresh` re-queries |
+| `data/reference/so_survey_ai_use.csv` | Developer Survey AI-use shares (P25) |
+
+Full run: `make all` with the dump in `SOD_RAW_DIR`. Verified 2026-10-21 from a clean checkout into
+an empty `SOD_DATA_DIR` on an M-series MacBook Pro with an external USB drive: 2 h 27 min in
+total (ingest 1 h 45 min, build 32 min, models 10 min, figures 9 s), about 10 GB of Parquet.
+Every pinned estimate (`tests/test_pinned_estimates.py`) reproduced.
+
+Sample run: `make all SAMPLE=1` builds a synthetic dump (`sod.sample`) and runs the whole
+pipeline in about 4 minutes, in `.sample/`; this is what CI runs. Its numbers are not results.
+
+Random seeds are fixed (MCMC, bootstraps, forecast simulations) and query results are sorted
+before resampling, so a rerun gives byte-identical summaries apart from timing fields.

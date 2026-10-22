@@ -76,11 +76,9 @@ def new_tags(con) -> pd.DataFrame:
     new = _new_tag_counts(con)
     kinds = pd.read_csv(NEW_KINDS, keep_default_na=False)
     missing = sorted(set(new["tag"]) - set(kinds["tag"]))
-    if missing and not config.SAMPLE:
+    if missing:
         raise ValueError(f"classify these new tags in {NEW_KINDS.name}: {', '.join(missing)}")
-    out = new.merge(kinds, on="tag", how="left")
-    out["kind"] = out["kind"].fillna("new")  # sample data only
-    return out
+    return new.merge(kinds, on="tag", how="left")
 
 
 def _new_tag_counts(con) -> pd.DataFrame:
@@ -99,7 +97,7 @@ def _new_tag_counts(con) -> pd.DataFrame:
         SELECT f.tag, f.first_seen, n.n_questions
         FROM first_any f JOIN n USING (tag)
         WHERE f.first_seen >= '{TRAINING_CUTOFF}' AND n.n_questions >= {NEW_TAG_MIN_QUESTIONS}
-        ORDER BY n.n_questions DESC
+        ORDER BY n.n_questions DESC, f.tag
         """
     ).df()
 

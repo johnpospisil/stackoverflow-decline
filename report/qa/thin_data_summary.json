@@ -46,14 +46,14 @@
     "n_skipped": 1,
     "median_gap_pct": -49.48313611196843,
     "median_gap_pct_ci": [
-      -55.33498587141554,
+      -55.23211493402573,
       -44.25502824957535
     ],
     "top300_median_pct": -85.48800699211891,
-    "difference_log": 1.2487361772888792,
+    "difference_log": 1.2487459303802575,
     "difference_log_ci": [
-      1.1238342159728885,
-      1.3504994053916763
+      1.1308527705653777,
+      1.347837950514235
     ],
     "one_sided_p_new_not_smaller": 0.0,
     "supported": true,
@@ -65,10 +65,10 @@
     "n_new": 28,
     "version_feature_median_pct": -48.438454045456524,
     "n_vf": 38,
-    "difference_log": -0.056034634967181085,
+    "difference_log": -0.05592331680102813,
     "difference_log_ci": [
-      -0.30241335492835264,
-      0.20976293296177181
+      -0.30534288953870814,
+      0.21075086378425678
     ]
   },
   "calibration_pre_chatgpt": {

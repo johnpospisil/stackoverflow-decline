@@ -38,4 +38,4 @@ def test_new_tags_classified():
     n = pd.read_csv(config.REFERENCE_DIR / "tags_new_post2021.csv", parse_dates=["first_seen"])
     assert (n["first_seen"] >= pd.Timestamp("2021-10-01")).all()
     assert (n["n_questions"] >= 200).all()
-    assert set(n["kind"]) == {"version", "feature", "new"}
+    assert "new" in set(n["kind"]) and set(n["kind"]) <= {"version", "feature", "new"}

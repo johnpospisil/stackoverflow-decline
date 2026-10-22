@@ -1,0 +1,36 @@
+# Lint, unit tests, and the whole pipeline on the synthetic sample dump (make all SAMPLE=1).
+# The real 2026-Q3 dump (~330 GB) is not available here; real-data tests skip themselves,
+# and the pinned real estimates are checked against the committed report/qa summaries.
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen
+      - name: Lint
+        run: make lint
+      - name: Unit tests and pinned real estimates
+        run: make test
+      - name: Pipeline on the sample dump
+        run: make all SAMPLE=1
+      - name: Tests against the sample outputs (incl. pinned sample estimates)
+        run: make test SAMPLE=1
+      - name: Upload sample figures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-figures
+          path: .sample/report/figures/
+          if-no-files-found: ignore

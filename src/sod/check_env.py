@@ -7,7 +7,7 @@ import sys
 
 from sod import config
 
-MIN_FREE_GB = 100
+MIN_FREE_GB = 1 if config.SAMPLE else 100
 
 
 def main() -> int:

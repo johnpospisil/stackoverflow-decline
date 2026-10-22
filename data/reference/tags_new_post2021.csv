@@ -38,8 +38,8 @@ java-21,2023-07-06 15:33:42.940,293,version,
 amazon-opensearch,2022-04-25 18:51:52.393,292,feature,fork of Elasticsearch
 expo-router,2023-04-24 07:16:52.673,292,feature,
 odoo-16,2022-10-13 13:55:26.400,286,version,
-turborepo,2021-12-13 23:38:07.377,277,new,
 macos-ventura,2021-11-16 19:19:00.760,277,version,
+turborepo,2021-12-13 23:38:07.377,277,new,
 vector-database,2022-02-11 02:20:47.633,277,new,"new category, partly concept"
 pyscript,2022-05-02 08:39:29.353,272,new,
 flet,2022-07-15 18:39:40.650,271,new,
@@ -57,8 +57,8 @@ nuxt3,2021-10-31 07:49:50.250,231,version,
 whatsapp-cloud-api,2022-06-19 14:46:23.317,228,new,
 ionic6,2022-01-03 16:01:08.737,227,version,
 maui-windows,2022-02-18 22:28:28.493,224,feature,
-timefold,2023-05-16 06:39:39.530,219,feature,renamed OptaPlanner
 angular18,2024-02-16 15:06:17.873,219,version,
+timefold,2023-05-16 06:39:39.530,219,feature,renamed OptaPlanner
 playwright-typescript,2022-09-19 13:24:09.740,218,feature,
 polars,2022-11-13 02:22:24.363,215,new,
 python-3.12,2023-10-05 01:54:27.240,214,version,
@@ -66,5 +66,5 @@ material3,2022-07-06 01:27:11.000,210,version,new version of Material Design
 supabase-js,2023-03-15 17:39:54.510,208,new,
 openai-whisper,2022-09-23 02:15:26.453,205,new,
 angular-standalone-components,2022-06-19 11:23:01.003,202,feature,
-power-automate-desktop,2021-10-04 18:10:51.100,200,new,
 delta-live-tables,2021-10-15 18:39:51.490,200,new,
+power-automate-desktop,2021-10-04 18:10:51.100,200,new,

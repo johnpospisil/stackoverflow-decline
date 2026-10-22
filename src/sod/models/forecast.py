@@ -82,8 +82,7 @@ def fit_ets(log_y: pd.Series):
 
 def ets_paths(res, horizon: int) -> np.ndarray:
     """Simulated log paths, shape (horizon, N_PATHS)."""
-    np.random.seed(SEED)
-    sims = res.simulate(horizon, repetitions=N_PATHS, anchor="end")
+    sims = res.simulate(horizon, repetitions=N_PATHS, anchor="end", rng=np.random.default_rng(SEED))
     return np.asarray(sims)
 
 
