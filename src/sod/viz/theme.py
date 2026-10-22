@@ -86,6 +86,71 @@ GROUP_STYLE = {
     "donor": {"lw": 1.8, "ls": "-"},
 }
 
+# Tag families (P27): four validated hues + hollow grey for the rest; markers are the second cue
+# (purple/green sit in the CVD 6-8 band).  light: #0072B2 #E69F00 #009E73 #CC79A7 (pass, all pairs)
+#                                           dark:  #157BBB #C17C00 #009E73 #C673A1 (pass, all pairs)
+FAMILY_GROUP = {
+    "language": "Languages",
+    "web": "Web & frameworks",
+    "framework": "Web & frameworks",
+    "data_ml": "Data & ML",
+    "mobile": "Mobile",
+}
+FAMILY_ORDER = ["Languages", "Web & frameworks", "Data & ML", "Mobile", "Infrastructure & other"]
+FAMILY_COLORS = {
+    "light": {
+        "Languages": "#0072B2",
+        "Web & frameworks": "#E69F00",
+        "Data & ML": "#009E73",
+        "Mobile": "#CC79A7",
+        "Infrastructure & other": "#7A808A",
+    },
+    "dark": {
+        "Languages": "#157BBB",
+        "Web & frameworks": "#C17C00",
+        "Data & ML": "#009E73",
+        "Mobile": "#C673A1",
+        "Infrastructure & other": "#9AA0A8",
+    },
+}
+FAMILY_MARKER = {
+    "Languages": "o",
+    "Web & frameworks": "s",
+    "Data & ML": "^",
+    "Mobile": "D",
+    "Infrastructure & other": "o",
+}
+
+
+def family_group(family: str) -> str:
+    return FAMILY_GROUP.get(family, "Infrastructure & other")
+
+
+def family_style(group: str) -> dict:
+    """Marker kwargs: filled colour for the four hues, hollow grey ring for the rest."""
+    mode = "dark" if _current is DARK else "light"
+    c = FAMILY_COLORS[mode][group]
+    hollow = group == "Infrastructure & other"
+    return {
+        "marker": FAMILY_MARKER[group],
+        "color": c,
+        "mfc": "none" if hollow else c,
+        "mec": c,
+        "mew": 1.3,
+    }
+
+
+def sequential_cmap():
+    """One hue, light to dark (light mode) or dark to bright (dark mode), for heatmaps."""
+    from matplotlib.colors import LinearSegmentedColormap
+
+    if _current is DARK:
+        return LinearSegmentedColormap.from_list(
+            "seq", ["#1A1A19", "#1E4E78", "#5AA7E8", "#CFE6FA"]
+        )
+    return LinearSegmentedColormap.from_list("seq", ["#F4F7FA", "#9CC3E6", "#2C78BF", "#0B3A66"])
+
+
 _current = LIGHT
 
 
@@ -195,10 +260,14 @@ def event(ax, date, text: str, y: float = 0.98, span_end=None, align: str = "lef
 
 
 def title(fig, text: str, subtitle: str | None = None, x: float = 0.012) -> None:
+    """Title and subtitle at fixed distances (inches) from the top, whatever the figure height."""
     p = _current
-    fig.text(x, 0.975, text, ha="left", va="top", fontsize=15, fontweight="semibold", color=p.ink)
+    h = fig.get_figheight()
+    fig.text(
+        x, 1 - 0.16 / h, text, ha="left", va="top", fontsize=15, fontweight="semibold", color=p.ink
+    )
     if subtitle:
-        fig.text(x, 0.915, subtitle, ha="left", va="top", fontsize=10.5, color=p.ink_muted)
+        fig.text(x, 1 - 0.55 / h, subtitle, ha="left", va="top", fontsize=10.5, color=p.ink_muted)
 
 
 def source(fig, text: str, x: float = 0.012) -> None:

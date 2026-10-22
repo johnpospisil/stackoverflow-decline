@@ -94,7 +94,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 ### Phase 5: Figures and reproducibility
 
-- [ ] **P26: Visual theme and hero chart.** Build `src/sod/viz/theme.py` (palette, fonts, annotation style; colour-blind safe; light and dark). Hero chart: weekly SO questions 2008–2026 vs the synthetic-control counterfactual band, with annotated events from P02. Export as SVG and PNG. **Findings:** the chart, plus 2–3 alternative versions for the user to choose from.
+- [x] **P26: Visual theme and hero chart.** *Done 2026-10-21: validated light/dark palette (group colours by role; counterfactual in neutral ink); hero = A (`hero_history`, README/article), B (`hero_gap`, social), C (`hero_groups`, supporting).* Build `src/sod/viz/theme.py` (palette, fonts, annotation style; colour-blind safe; light and dark). Hero chart: weekly SO questions 2008–2026 vs the synthetic-control counterfactual band, with annotated events from P02. Export as SVG and PNG. **Findings:** the chart, plus 2–3 alternative versions for the user to choose from.
 
 - [ ] **P27: Remaining figures.** Charts 2–7 from the plan (tag dot plot, tag-age scatter, cohort heatmap, question-mix slope chart, comparison-site small multiples, responsiveness). **Findings:** all the charts, each with the one-sentence takeaway it supports.
 

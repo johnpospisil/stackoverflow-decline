@@ -28,11 +28,13 @@ SOURCE = (
     "Data: Stack Exchange data dump 2026-Q3 (CC BY-SA 4.0). Synthetic control: 15 "
     "non-programming Stack Exchange sites, fitted on 2017-01 to 2022-11."
 )
-EVENTS = [
-    (pd.Timestamp("2022-11-30"), "ChatGPT", None),
-    (pd.Timestamp("2023-06-05"), "Moderator\nstrike", pd.Timestamp("2023-08-02")),
-    (pd.Timestamp("2024-06-04"), "Staging Ground", None),
-    (pd.Timestamp("2025-10-01"), "Opinion questions", None),
+EVENTS = [  # (date, label, span end, label row)
+    (pd.Timestamp("2022-11-30"), "ChatGPT", None, 0),
+    (pd.Timestamp("2023-03-14"), "GPT-4", None, 1),
+    (pd.Timestamp("2023-06-05"), "Moderator\nstrike", pd.Timestamp("2023-08-02"), 2),
+    (pd.Timestamp("2024-05-06"), "OpenAI deal", None, 0),
+    (pd.Timestamp("2024-06-04"), "Staging Ground", None, 1),
+    (pd.Timestamp("2025-10-01"), "Opinion questions", None, 0),
 ]
 
 
@@ -76,8 +78,8 @@ def data() -> dict:
 
 
 def _events(ax, top: float = 0.97):
-    for i, (d, label, end) in enumerate(EVENTS):
-        theme.event(ax, d, label, y=top - 0.055 * (i % 2), span_end=end)
+    for d, label, end, row in EVENTS:
+        theme.event(ax, d, label, y=top - 0.05 * row, span_end=end)
 
 
 def hero_history(d: dict, mode: str) -> list:

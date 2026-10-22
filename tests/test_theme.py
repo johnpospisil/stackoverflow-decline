@@ -24,3 +24,12 @@ def test_use_switches_and_restores(tmp_path, monkeypatch):
     assert theme.palette() is theme.LIGHT
     assert [x.name for x in paths] == ["t_dark.png", "t_dark.svg"]
     assert all(x.exists() for x in paths)
+
+
+def test_family_groups_and_styles():
+    assert theme.family_group("data_ml") == "Data & ML"
+    assert theme.family_group("framework") == theme.family_group("web") == "Web & frameworks"
+    assert theme.family_group("devops") == "Infrastructure & other"
+    with theme.use("light"):
+        assert theme.family_style("Infrastructure & other")["mfc"] == "none"
+        assert theme.family_style("Languages")["mfc"] == theme.FAMILY_COLORS["light"]["Languages"]

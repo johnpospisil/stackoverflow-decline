@@ -92,6 +92,7 @@ models-github:
 
 figures:
 	$(PY) -m sod.viz.hero
+	$(PY) -m sod.viz.figures
 
 report:
 	@echo "report: not yet implemented (P30)"

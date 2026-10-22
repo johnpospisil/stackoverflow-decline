@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="936pt" height="360pt" viewBox="0 0 936 360" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-21T18:00:37.241073</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360 
+L 936 360 
+L 936 0 
+L 0 0 
+z
+" style="fill: #1a1a19"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 46.8 316.8 
+L 199.210619 316.8 
+L 199.210619 93.6 
+L 46.8 93.6 
+z
+" style="fill: #1a1a19"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m7126e1fb26" d="M 0 0 
+L 0 3.5 
+" style="stroke: #a3a9b1; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7126e1fb26" x="83.378549" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="83.378549" y="330.55" transform="rotate(-0 83.378549 330.55)">2021</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="144.342796" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="144.342796" y="330.55" transform="rotate(-0 144.342796 330.55)">2025</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="line2d_3">
+    <path d="M 83.378549 270.847059 
+L 144.342796 143.861821 
+" clip-path="url(#p3e6150a25b)" style="fill: none; stroke: #a3a9b1; stroke-width: 1.4; stroke-linecap: round"/>
+    <defs>
+     <path id="ma89b921fa7" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #a3a9b1"/>
+    </defs>
+    <g clip-path="url(#p3e6150a25b)">
+     <use xlink:href="#ma89b921fa7" x="83.378549" y="270.847059" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+     <use xlink:href="#ma89b921fa7" x="144.342796" y="143.861821" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+    </g>
+   </g>
+   <g id="line2d_4">
+    <path d="M 83.378549 270.847059 
+L 144.342796 139.552941 
+" clip-path="url(#p3e6150a25b)" style="fill: none; stroke: #d55e00; stroke-width: 2.4; stroke-linecap: round"/>
+    <defs>
+     <path id="m6810fcb920" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #d55e00"/>
+    </defs>
+    <g clip-path="url(#p3e6150a25b)">
+     <use xlink:href="#m6810fcb920" x="83.378549" y="270.847059" style="fill: #d55e00; stroke: #d55e00"/>
+     <use xlink:href="#m6810fcb920" x="144.342796" y="139.552941" style="fill: #d55e00; stroke: #d55e00"/>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 46.8 316.8 
+L 199.210619 316.8 
+" style="fill: none; stroke: #a3a9b1; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #ecedee" x="75.378549" y="273.097059" transform="rotate(-0 75.378549 273.097059)">1,177</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ecedee" x="152.342796" y="141.802941" transform="rotate(-0 152.342796 141.802941)">1,695</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.5px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #a3a9b1" x="152.342796" y="157.736821" transform="rotate(-0 152.342796 157.736821)">1,678 actual</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(46.8 67.6)">Median question length</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(46.8 77.6)">(characters)</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(46.8 87.6)">H3: up · as predicted</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_4">
+    <path d="M 283.03646 316.8 
+L 435.44708 316.8 
+L 435.44708 93.6 
+L 283.03646 93.6 
+z
+" style="fill: #1a1a19"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="319.615009" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="319.615009" y="330.55" transform="rotate(-0 319.615009 330.55)">2021</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="380.579257" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="380.579257" y="330.55" transform="rotate(-0 380.579257 330.55)">2025</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4"/>
+   <g id="line2d_7">
+    <path d="M 319.615009 270.847059 
+L 380.579257 202.256315 
+" clip-path="url(#pf4253ba182)" style="fill: none; stroke: #a3a9b1; stroke-width: 1.4; stroke-linecap: round"/>
+    <g clip-path="url(#pf4253ba182)">
+     <use xlink:href="#ma89b921fa7" x="319.615009" y="270.847059" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+     <use xlink:href="#ma89b921fa7" x="380.579257" y="202.256315" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+    </g>
+   </g>
+   <g id="line2d_8">
+    <path d="M 319.615009 270.847059 
+L 380.579257 139.552941 
+" clip-path="url(#pf4253ba182)" style="fill: none; stroke: #d55e00; stroke-width: 2.4; stroke-linecap: round"/>
+    <g clip-path="url(#pf4253ba182)">
+     <use xlink:href="#m6810fcb920" x="319.615009" y="270.847059" style="fill: #d55e00; stroke: #d55e00"/>
+     <use xlink:href="#m6810fcb920" x="380.579257" y="139.552941" style="fill: #d55e00; stroke: #d55e00"/>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 283.03646 316.8 
+L 435.44708 316.8 
+" style="fill: none; stroke: #a3a9b1; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #ecedee" x="311.615009" y="273.097059" transform="rotate(-0 311.615009 273.097059)">78.5%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ecedee" x="388.579257" y="141.802941" transform="rotate(-0 388.579257 141.802941)">82.7%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.5px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #a3a9b1" x="388.579257" y="204.131315" transform="rotate(-0 388.579257 204.131315)">80.7% actual</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(283.03646 77.6)">Share with a code block</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(283.03646 87.6)">H3: up · as predicted</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_6">
+    <path d="M 519.27292 316.8 
+L 671.68354 316.8 
+L 671.68354 93.6 
+L 519.27292 93.6 
+z
+" style="fill: #1a1a19"/>
+   </g>
+   <g id="matplotlib.axis_5">
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="555.851469" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="555.851469" y="330.55" transform="rotate(-0 555.851469 330.55)">2021</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="616.815717" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="616.815717" y="330.55" transform="rotate(-0 616.815717 330.55)">2025</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_6"/>
+   <g id="line2d_11">
+    <path d="M 555.851469 270.847059 
+L 616.815717 269.828604 
+" clip-path="url(#p7897cac33b)" style="fill: none; stroke: #a3a9b1; stroke-width: 1.4; stroke-linecap: round"/>
+    <g clip-path="url(#p7897cac33b)">
+     <use xlink:href="#ma89b921fa7" x="555.851469" y="270.847059" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+     <use xlink:href="#ma89b921fa7" x="616.815717" y="269.828604" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <path d="M 555.851469 270.847059 
+L 616.815717 139.552941 
+" clip-path="url(#p7897cac33b)" style="fill: none; stroke: #d55e00; stroke-width: 2.4; stroke-linecap: round"/>
+    <g clip-path="url(#p7897cac33b)">
+     <use xlink:href="#m6810fcb920" x="555.851469" y="270.847059" style="fill: #d55e00; stroke: #d55e00"/>
+     <use xlink:href="#m6810fcb920" x="616.815717" y="139.552941" style="fill: #d55e00; stroke: #d55e00"/>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 519.27292 316.8 
+L 671.68354 316.8 
+" style="fill: none; stroke: #a3a9b1; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #ecedee" x="547.851469" y="273.097059" transform="rotate(-0 547.851469 273.097059)">3.6%</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ecedee" x="624.815717" y="141.802941" transform="rotate(-0 624.815717 141.802941)">4.2%</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 7.5px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #a3a9b1" x="624.815717" y="271.703604" transform="rotate(-0 624.815717 271.703604)">3.6% actual</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(519.27292 67.6)">Closed as duplicate</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(519.27292 77.6)">within 30 days</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(519.27292 87.6)">H3: down · not as predicted</text>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g id="patch_8">
+    <path d="M 755.509381 316.8 
+L 907.92 316.8 
+L 907.92 93.6 
+L 755.509381 93.6 
+z
+" style="fill: #1a1a19"/>
+   </g>
+   <g id="matplotlib.axis_7">
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="792.087929" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="792.087929" y="330.55" transform="rotate(-0 792.087929 330.55)">2021</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m7126e1fb26" x="853.052177" y="316.8" style="fill: #a3a9b1; stroke: #a3a9b1; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #a3a9b1" x="853.052177" y="330.55" transform="rotate(-0 853.052177 330.55)">2025</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_8"/>
+   <g id="line2d_15">
+    <path d="M 792.087929 270.847059 
+L 853.052177 247.486716 
+" clip-path="url(#p9131c149c0)" style="fill: none; stroke: #a3a9b1; stroke-width: 1.4; stroke-linecap: round"/>
+    <g clip-path="url(#p9131c149c0)">
+     <use xlink:href="#ma89b921fa7" x="792.087929" y="270.847059" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+     <use xlink:href="#ma89b921fa7" x="853.052177" y="247.486716" style="fill: #a3a9b1; stroke: #a3a9b1"/>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <path d="M 792.087929 270.847059 
+L 853.052177 139.552941 
+" clip-path="url(#p9131c149c0)" style="fill: none; stroke: #d55e00; stroke-width: 2.4; stroke-linecap: round"/>
+    <g clip-path="url(#p9131c149c0)">
+     <use xlink:href="#m6810fcb920" x="792.087929" y="270.847059" style="fill: #d55e00; stroke: #d55e00"/>
+     <use xlink:href="#m6810fcb920" x="853.052177" y="139.552941" style="fill: #d55e00; stroke: #d55e00"/>
+    </g>
+   </g>
+   <g id="patch_9">
+    <path d="M 755.509381 316.8 
+L 907.92 316.8 
+" style="fill: none; stroke: #a3a9b1; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #ecedee" x="784.087929" y="273.097059" transform="rotate(-0 784.087929 273.097059)">22.5%</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ecedee" x="861.052177" y="141.802941" transform="rotate(-0 861.052177 141.802941)">23.3%</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.5px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #a3a9b1" x="861.052177" y="249.361716" transform="rotate(-0 861.052177 249.361716)">22.6% actual</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(755.509381 67.6)">From first-time</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(755.509381 77.6)">askers</text>
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; fill: #ecedee" transform="translate(755.509381 87.6)">H3: down · not as predicted</text>
+   </g>
+  </g>
+  <g id="text_25">
+   <text style="font-weight: 600; font-size: 15px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ecedee" x="11.232" y="22.77" transform="rotate(-0 11.232 22.77)">Questions got longer; little else changed the predicted way</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 10.5px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #a3a9b1" x="11.232" y="47.475" transform="rotate(-0 11.232 47.475)">Stack Overflow questions, 2021 vs 2025. Orange: 2025 with the 2021 tag mix (within-topic change); grey: actual 2025.</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 8px; font-family: 'Source Sans Pro', 'Source Sans 3', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #a3a9b1" x="11.232" y="352.6" transform="rotate(-0 11.232 352.6)">Data: Stack Exchange data dump 2026-Q3 (CC BY-SA 4.0). Deleted questions are not in the dump; only the length change survives the deletion bound.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3e6150a25b">
+   <rect x="46.8" y="93.6" width="152.410619" height="223.2"/>
+  </clipPath>
+  <clipPath id="pf4253ba182">
+   <rect x="283.03646" y="93.6" width="152.410619" height="223.2"/>
+  </clipPath>
+  <clipPath id="p7897cac33b">
+   <rect x="519.27292" y="93.6" width="152.410619" height="223.2"/>
+  </clipPath>
+  <clipPath id="p9131c149c0">
+   <rect x="755.509381" y="93.6" width="152.410619" height="223.2"/>
+  </clipPath>
+ </defs>
+</svg>
