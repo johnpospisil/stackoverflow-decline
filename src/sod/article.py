@@ -125,6 +125,9 @@ def numbers() -> dict[str, str]:
         "new_kind": pct(td["secondary_kind"]["new_median_pct"]),
         "vf_kind": pct(td["secondary_kind"]["version_feature_median_pct"]),
         "calib": pct(td["calibration_pre_chatgpt"]["median_gap_pct"]),
+        "tag_rank_rho": f"{v['tag_rank_check']['spearman_all']:.1f}",
+        "tag_raw_p10": pct(v["tag_rank_check"]["raw_pct_quantiles"]["0.1"]),
+        "tag_raw_p90": pct(v["tag_rank_check"]["raw_pct_quantiles"]["0.9"]),
         # H3
         **_h3(qm),
         # H4

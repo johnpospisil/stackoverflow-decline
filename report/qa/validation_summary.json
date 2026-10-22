@@ -289,5 +289,46 @@
       "joint_fit_mean_gap_pct": -79.26309741560682,
       "joint_fit_cumulative_gap_pct": -60.353158732985875
     }
+  },
+  "tag_rank_check": {
+    "spearman_all": 0.5965326217004069,
+    "spearman_top50": 0.6145978391356542,
+    "raw_pct_quantiles": {
+      "0.1": -97.76734104767945,
+      "0.5": -94.33019976498237,
+      "0.9": -89.07904194758997
+    },
+    "top50_fell_most_raw": {
+      "list": -98.3,
+      "jquery": -98.2,
+      "pandas": -97.7,
+      "arrays": -97.6,
+      "dataframe": -97.6,
+      "mysql": -97.1
+    },
+    "top50_fell_least_raw": {
+      "azure": -86.2,
+      "ios": -88.2,
+      "spring-boot": -89.1,
+      "kotlin": -90.0,
+      "c++": -90.1,
+      "excel": -90.7
+    },
+    "top50_fell_most_model": {
+      "dart": -97.7,
+      "flutter": -97.5,
+      "dataframe": -96.5,
+      "pandas": -96.4,
+      "list": -95.8,
+      "reactjs": -95.4
+    },
+    "top50_fell_least_model": {
+      "ios": -57.7,
+      "android": -71.3,
+      "swift": -73.1,
+      "excel": -75.5,
+      "c#": -75.9,
+      "spring": -76.1
+    }
   }
 }

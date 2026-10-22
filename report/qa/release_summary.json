@@ -1,0 +1,43 @@
+{
+  "dir": "/Volumes/Drive3/sod/release/stackoverflow-decline-panels-2026q3",
+  "files": {
+    "site_week": {
+      "rows": 22718,
+      "columns": 21,
+      "periods": [
+        "2008-07-28",
+        "2026-09-28"
+      ]
+    },
+    "site_month": {
+      "rows": 5231,
+      "columns": 22,
+      "periods": [
+        "2008-07-01",
+        "2026-09-01"
+      ]
+    },
+    "tag_week": {
+      "rows": 269365,
+      "columns": 19,
+      "periods": [
+        "2008-07-28",
+        "2026-09-28"
+      ]
+    },
+    "tag_month": {
+      "rows": 62012,
+      "columns": 19,
+      "periods": [
+        "2008-07-01",
+        "2026-09-01"
+      ]
+    },
+    "tag_estimates": {
+      "rows": 297,
+      "columns": 10,
+      "periods": null
+    }
+  },
+  "total_mb": 44.9
+}

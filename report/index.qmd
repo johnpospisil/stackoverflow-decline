@@ -108,7 +108,9 @@ Stack Overflow's Russian-language site is a useful extra check, because ChatGPT 
 
 ## Which technologies fell most?
 
-Each of the top 300 Stack Overflow tags of 2019–21 was compared with its own pre-2022 trend in a hierarchical model, which pulls small, noisy tags toward the average. `{python} N["n_tags"]` tags remain after excluding three that Stack Overflow retired or merged. **Every one fell, and every interval is below zero.** Flutter and Dart, pandas, and the front-end frameworks fell most. iOS, Android and Swift fell least.
+Each of the top 300 Stack Overflow tags of 2019–21 was compared with its own pre-2022 trend in a hierarchical model, which pulls small, noisy tags toward the average. `{python} N["n_tags"]` tags remain after excluding three that Stack Overflow retired or merged. **Every one fell, and every interval is below zero.** Data tags (pandas, dataframe) were among those that fell most, and mobile and enterprise tags (iOS, Android, Kotlin, Spring Boot) among those that fell least.
+
+Take the exact ranking with care. The model extends each tag's 2017–22 trend four years forward, so a tag that was growing fast before ChatGPT (Flutter, Next.js, PyTorch) gets a steeply rising "expected" line, and its fall looks bigger. In plain counts, with no trend assumed, most large tags fell between `{python} N["tag_raw_p90"]` and `{python} N["tag_raw_p10"]` from 2021 to 2025. The two rankings agree only moderately (rank correlation `{python} N["tag_rank_rho"]`). On plain counts, the basic, well-documented topics (list, arrays, jQuery, MySQL) fell most. The [tag lookup](https://github.com/johnpospisil/stackoverflow-decline/tree/main/app) shows both numbers for every tag.
 
 ::: {.column-page-inset-right}
 ![](figures/fig2_tags.png){.light-content fig-alt="Dot plot of the 50 largest tags, percent change against each tag's own trend with intervals; all between about minus 58 percent (iOS) and minus 98 percent (Dart)."}

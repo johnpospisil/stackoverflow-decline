@@ -220,12 +220,40 @@ def its_pre_only() -> dict:
     return out
 
 
+# --- 5. tag rankings vs plain counts (found in P31) ---------------------------------------
+
+
+def tag_rank_check() -> dict:
+    """The tag model extends each tag's own 2017-22 trend four years forward, so fast-growing
+    tags get steep counterfactuals. Compare its ranking with the plain 2021 -> 2025 change."""
+    t = pd.read_csv(TABLES / "tag_effects.csv")
+    m = pd.read_parquet(
+        config.PANEL_DIR / "tag_month.parquet", columns=["period", "tag", "questions"]
+    )
+    m = m[m["tag"].isin(t["tag"])]
+    y = m.assign(y=m["period"].dt.year).groupby(["tag", "y"])["questions"].sum().unstack()
+    raw = (100 * (y[2025] / y[2021] - 1)).rename("plain_pct")
+    d = t.set_index("tag").join(raw)
+    top = d.nlargest(50, "size_2019_2021")
+    rho = lambda x: float(x[["pct", "plain_pct"]].corr(method="spearman").iloc[0, 1])  # noqa: E731
+    return {
+        "spearman_all": rho(d),
+        "spearman_top50": rho(top),
+        "raw_pct_quantiles": {str(q): float(d["plain_pct"].quantile(q)) for q in (0.1, 0.5, 0.9)},
+        "top50_fell_most_raw": top["plain_pct"].nsmallest(6).round(1).to_dict(),
+        "top50_fell_least_raw": top["plain_pct"].nlargest(6).round(1).to_dict(),
+        "top50_fell_most_model": top["pct"].nsmallest(6).round(1).to_dict(),
+        "top50_fell_least_model": top["pct"].nlargest(6).round(1).to_dict(),
+    }
+
+
 def run() -> dict:
     summary = {
         "missing_questions": missing_questions("questions"),
         "missing_questions_incl_deleted": missing_questions("questions_incl_deleted"),
         "multiplicity": family_pvalues(),
         "its_pre_only": its_pre_only(),
+        "tag_rank_check": tag_rank_check(),
     }
     (QA / "validation_summary.json").write_text(json.dumps(summary, indent=2, default=float))
     return summary

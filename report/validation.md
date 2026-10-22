@@ -24,6 +24,7 @@ Numbers come from `report/qa/*_summary.json`; the new checks are in `sod.models.
 | 13 | Low | **Other platform changes** confound late months: opinion questions (2025-10), AI Assist (2025-12), read-only period (2026-08) | The pre-registered late-period check (to 2025-09) gives −60%, still far beyond −10%. Acceptance series break at 2025-10 (E1). | Report both, as pre-registered |
 | 14 | Low | **Developer Survey respondents are self-selected Stack Overflow visitors** (about 90k → 34k), and 2025 asks about frequency | AI-use shares describe survey respondents, not all developers; 2026 is not comparable. | Article wording |
 | 15 | Low | **The ru.stackoverflow difference-in-differences** (−21%, interval −33% to −7%) | Lower exposure, not zero: ChatGPT was reachable from Russia via VPN, so this is a lower bound on the contrast. | Article wording |
+| 16 | **Medium** | **Tag rankings depend on trend extrapolation** (found in P31) | The tag model extends each tag's 2017–22 trend four years forward; fast-growing tags get steep counterfactuals (Flutter ×7.6, Next.js ×22 from 2022 to 2026). Rank correlation with the plain 2021 → 2025 count change: 0.60 (top 50: 0.61). Robust to both: data tags (pandas, dataframe) fell most, mobile/enterprise (iOS, Kotlin, Spring Boot) least. Not robust: "Flutter and front-end fell most". On plain counts, basic topics (list, arrays, jQuery, MySQL) fell most. | fig2 title and article softened; the app shows both numbers (option A, user decision 2026-10-22) |
 
 ## Claim → estimate table (for P30)
 
@@ -36,7 +37,7 @@ Every headline claim and the estimate behind it. Anything not here needs an esti
 | About 1.6 million fewer questions than expected | 1.57 M (1.21–1.99 M); 3.06 M (2.45–3.75 M) counting deleted questions | validation_summary |
 | Every method agrees | Synthetic-control variants −60% to −74%; ITS −83% / −79%; ETS −83%; Prophet −81% | robustness_summary, its, forecast |
 | Programming Q&A fell furthest | Donor median own-trend gap −31% vs Stack Overflow −84% (ratio 0.21) | synth_summary `platform_wide` |
-| Every one of the 297 tags fell against its own trend | All 297 intervals below 0; median −86% (iOS −58% to Dart −98% among the top 50) | tags_summary, tag_effects.csv |
+| Every one of the 297 tags fell against its own trend | All 297 intervals below 0; median −85% (iOS −58% to Dart −98% among the top 50). Ranking depends on the trend assumption (issue 16): plain 2021 → 2025 change −89% to −98% (10th–90th percentile) | tags_summary, tag_effects.csv, validation_summary |
 | Tags created after the first ChatGPT training cut-off held up better | −49% (−55% to −44%) vs top-300 median −85% | thin_data_summary |
 | Older tags fell *less* (opposite to H2) | Age slope +0.41 per SD (+0.34 to +0.48) | thin_data_summary |
 | Questions got longer within topic | Median body +518 characters (+507 to +529); Lee bounds +309 to +695 | question_mix_summary |

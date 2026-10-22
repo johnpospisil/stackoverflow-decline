@@ -17,7 +17,7 @@ export SOD_REFERENCE_DIR := $(SAMPLE_DIR)/reference
 export SOD_REPORT_DIR := $(SAMPLE_DIR)/report
 endif
 
-.PHONY: all app serve-app sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github models-validation figures report test lint clean-processed
+.PHONY: all app serve-app release sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github models-validation figures report test lint clean-processed
 
 all: $(if $(filter 1,$(SAMPLE)),sample-data) check-env ingest build models figures app report
 
@@ -125,6 +125,12 @@ app:
 
 serve-app:
 	cd app && $(PY) -m http.server 8031
+
+# P32: dataset for Hugging Face / Kaggle in $(SOD_DATA_DIR)/release (not uploaded; the card is
+# copied to docs/dataset-card.md for review)
+release:
+	$(PY) -m sod.release
+	cp "$${SOD_DATA_DIR:-/Volumes/Drive3/sod}/release/stackoverflow-decline-panels-2026q3/README.md" docs/dataset-card.md
 
 # P30: the article (report/index.html, self-contained). Numbers come from report/qa via sod.article.
 QUARTO ?= $(shell command -v quarto 2>/dev/null || echo $(HOME)/opt/quarto-1.10.19/bin/quarto)

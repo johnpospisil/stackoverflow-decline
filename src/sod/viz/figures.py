@@ -78,9 +78,9 @@ def fig2_tags(mode: str) -> list:
         _family_legend(ax, loc="upper right")
         theme.title(
             fig,
-            "Every major tag fell; Flutter, data and front-end tags fell most",
-            "The 50 largest Stack Overflow tags (2019–21). Hierarchical model; the "
-            "intervals are narrow because these tags are large.",
+            "Every major tag fell; data tags fell most, mobile least",
+            "The 50 largest Stack Overflow tags (2019–21), each against its own pre-2022 trend. "
+            "Fast-growing tags' trends rise steeply, which enlarges their gaps.",
             x=0.02,
         )
         theme.source(fig, SOURCE + " Tags at the time of asking.", x=0.02)
