@@ -1,6 +1,7 @@
 """P11: features for the top 300 Stack Overflow tags, using pre-ChatGPT data only.
 
-Inputs: data/reference/tag_families.csv (hand-classified), questions Parquet.
+Inputs: data/reference/tag_families.csv (hand-classified), questions Parquet,
+        data/reference/tags_new_post2021_kinds.csv (hand-classified: new / version / feature).
 Outputs:
   data/reference/tag_features.csv       top 300 tags (family, age, size, maturity, stock)
   data/reference/tags_new_post2021.csv  tags first used after 2021-09-30 with >= 200 questions
@@ -23,6 +24,7 @@ from sod.db import connect
 FAMILIES = config.REFERENCE_DIR / "tag_families.csv"
 FEATURES = config.REFERENCE_DIR / "tag_features.csv"
 NEW_TAGS = config.REFERENCE_DIR / "tags_new_post2021.csv"
+NEW_KINDS = config.REFERENCE_DIR / "tags_new_post2021_kinds.csv"
 TRAINING_CUTOFF = "2021-10-01"  # first ChatGPT models' training data ends 2021-09
 NEW_TAG_MIN_QUESTIONS = 200
 
@@ -69,6 +71,19 @@ def tag_features(con) -> pd.DataFrame:
 
 
 def new_tags(con) -> pd.DataFrame:
+    """New tags with their hand-assigned kind; a tag missing from the kinds file is an error,
+    so a changed dump can't silently drop or mislabel the H2 secondary split."""
+    new = _new_tag_counts(con)
+    kinds = pd.read_csv(NEW_KINDS, keep_default_na=False)
+    missing = sorted(set(new["tag"]) - set(kinds["tag"]))
+    if missing and not config.SAMPLE:
+        raise ValueError(f"classify these new tags in {NEW_KINDS.name}: {', '.join(missing)}")
+    out = new.merge(kinds, on="tag", how="left")
+    out["kind"] = out["kind"].fillna("new")  # sample data only
+    return out
+
+
+def _new_tag_counts(con) -> pd.DataFrame:
     return con.execute(
         f"""
         WITH first_any AS (
