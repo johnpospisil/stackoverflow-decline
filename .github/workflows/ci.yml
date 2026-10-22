@@ -19,6 +19,9 @@ jobs:
           enable-cache: true
       - name: Install
         run: uv sync --frozen
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.10.19
       - name: Lint
         run: make lint
       - name: Unit tests and pinned real estimates
@@ -32,5 +35,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sample-figures
-          path: .sample/report/figures/
+          path: |
+            .sample/report/figures/
+            .sample/report/index.html
           if-no-files-found: ignore

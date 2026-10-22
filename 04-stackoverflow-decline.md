@@ -132,4 +132,4 @@ stackoverflow-decline/
 ## 11. Stretch goals
 - Use embeddings (or a small classifier) to label question "difficulty" and test whether the remaining questions are harder.
 - Extend to other knowledge commons: Wikipedia edit activity, Reddit programming subreddits (if data access allows).
-- Make it a living tracker with a monthly refresh from SEDE / the API.
+- ~~Make it a living tracker with a monthly refresh from SEDE / the API.~~ Dropped 2026-10-22: the project is a fixed snapshot of the 2026-Q3 dump.

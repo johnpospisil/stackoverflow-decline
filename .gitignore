@@ -29,3 +29,7 @@ app/node_modules/
 
 # make all SAMPLE=1 output
 .sample/
+
+# Rendered article (rebuild with make report)
+report/index.html
+report/index_files/

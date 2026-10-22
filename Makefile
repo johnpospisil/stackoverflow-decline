@@ -118,8 +118,17 @@ figures:
 	$(PY) -m sod.viz.hero
 	$(PY) -m sod.viz.figures
 
+# P30: the article (report/index.html, self-contained). Numbers come from report/qa via sod.article.
+QUARTO ?= $(shell command -v quarto 2>/dev/null || echo $(HOME)/opt/quarto-1.10.19/bin/quarto)
+# With SAMPLE=1 the article is rendered from a copy in .sample/report (sample numbers and
+# figures), so the real report/index.html is never overwritten.
 report:
-	@echo "report: not yet implemented (P30)"
+ifeq ($(SAMPLE),1)
+	cp report/index.qmd report/references.bib report/article.css "$(SOD_REPORT_DIR)/"
+	QUARTO_PYTHON=$(CURDIR)/.venv/bin/python $(QUARTO) render "$(SOD_REPORT_DIR)/index.qmd"
+else
+	QUARTO_PYTHON=$(CURDIR)/.venv/bin/python $(QUARTO) render report/index.qmd
+endif
 
 test:
 	uv run pytest -q

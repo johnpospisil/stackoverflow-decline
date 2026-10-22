@@ -92,7 +92,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P25: Where did help-seeking go?** *Done 2026-10-21: no displacement to GitHub issues: flagship-repo issue activity drifted down (median index 55 by 2025-05) while SO tags fell to 9 and GitHub overall grew 40%; GH Archive unreliable after mid-2025; survey AI use 44% (2023) → 79% (2025).* (Needs a Google Cloud account with BigQuery; the free tier should cover it.) GH Archive via BigQuery: issues and Discussions opened per month for the top languages, compared with SO tag trends; plus Stack Overflow Developer Survey AI-use shares by year as context. **Findings:** whether there is evidence of displacement to GitHub, and survey AI-adoption figures.
 
-### Phase 5: Figures and reproducibility
+### Phase 5: Figures and reproducibility ✅ DONE
 
 - [x] **P26: Visual theme and hero chart.** *Done 2026-10-21: validated light/dark palette (group colours by role; counterfactual in neutral ink); hero = A (`hero_history`, README/article), B (`hero_gap`, social), C (`hero_groups`, supporting).* Build `src/sod/viz/theme.py` (palette, fonts, annotation style; colour-blind safe; light and dark). Hero chart: weekly SO questions 2008–2026 vs the synthetic-control counterfactual band, with annotated events from P02. Export as SVG and PNG. **Findings:** the chart, plus 2–3 alternative versions for the user to choose from.
 
@@ -100,7 +100,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P28: Reproducibility.** *Done 2026-10-21: full `make all` from raw XML in 2 h 27 min reproduced all 28 pins; `make all SAMPLE=1` (synthetic dump) in ~4 min; reruns byte-identical; CI green.* Get `make all` running end to end from raw XML (and a faster `make all SAMPLE=1` on fixtures). Add tests that pin the headline estimates within a tolerance, and set up CI on the sample path. **Findings:** total run time, the pinned values, and CI status.
 
-- [ ] **P29: Analysis validation.** Review the methods as an independent reviewer would: identification, leakage of post-period data into the counterfactual, multiple comparisons, the effect of the deleted-post and watermark issues on conclusions, and whether every claim in the draft has the estimate it needs. **Findings:** a list of issues by severity, with fixes applied or proposed.
+- [x] **P29: Analysis validation.** *Done 2026-10-21: Holm across H2–H5 → none survives (H5 0.024 > 0.0125, now "not confirmed"); 1.57 M fewer questions (1.21–1.99 M; 3.06 M incl. deleted; article leads with 1.6 M); donors also fell 31% vs own trend; titles fixed; report/validation.md.* Review the methods as an independent reviewer would: identification, leakage of post-period data into the counterfactual, multiple comparisons, the effect of the deleted-post and watermark issues on conclusions, and whether every claim in the draft has the estimate it needs. **Findings:** a list of issues by severity, with fixes applied or proposed.
 
 ### Phase 6: Deliverables
 
@@ -114,8 +114,4 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [ ] **P34: Launch kit.** Draft the HN title and first comment, a post for Meta Stack Overflow, r/dataisbeautiful and r/programming posts, and a LinkedIn/Bluesky thread. List the questions reviewers are likely to ask, with answers. **Findings:** the drafts; nothing is posted without the user.
 
-### Phase 7: After launch
-
-- [ ] **P35: Living tracker.** Monthly refresh from the SEDE/API to extend the weekly panels past the dump cut-off. Re-run the headline models and figures, with a scheduled job, an "updated on" stamp on the article and app, and an alert if the new data disagrees with the dump in overlapping weeks. **Findings:** the refresh run log, the updated headline number, and any differences from the dump.
-
-Out of scope for now (can be added later): a question-difficulty classifier.
+Out of scope (can be added later): a question-difficulty classifier. Dropped 2026-10-22 at the user's request: P35 (living tracker / monthly refresh after launch). The project is a fixed snapshot of the 2026-Q3 dump; nothing is refreshed after P34.
