@@ -110,7 +110,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P32: Published dataset.** *Done 2026-10-22: `make release` → 4 panels + tag estimates (Parquet+CSV, 44.9 MB), column dictionary, checksums, HF data card (docs/dataset-card.md); not uploaded; user will create a Hugging Face account and check the dump terms before launch.* Prepare the weekly site × week and tag × week panel for Hugging Face and Kaggle: data card, licence (CC BY-SA 4.0), attribution, column dictionary, and known limitations. Re-check the dump terms before uploading. **Findings:** files, sizes, and the draft data card; the user decides whether to upload.
 
-- [ ] **P33: README.** Hero chart, three bullet findings, one "what this doesn't show" line, how to reproduce, and links. **Findings:** the README.
+- [x] **P33: README.** *Done 2026-10-22: hero A (light/dark), three findings, caveat, read-more table, reproduce, MIT LICENSE; README numbers tested against the pipeline; article + app to GitHub Pages at launch (user decision).* Hero chart, three bullet findings, one "what this doesn't show" line, how to reproduce, and links. **Findings:** the README.
 
 - [ ] **P34: Launch kit.** Draft the HN title and first comment, a post for Meta Stack Overflow, r/dataisbeautiful and r/programming posts, and a LinkedIn/Bluesky thread. List the questions reviewers are likely to ask, with answers. **Findings:** the drafts; nothing is posted without the user.
 
