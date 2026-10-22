@@ -13,10 +13,19 @@ LAUNCH = config.REPO_ROOT / "docs" / "launch"
 
 def test_bluesky_posts_fit():
     text = (LAUNCH / "linkedin-bluesky.md").read_text().split("## Bluesky thread")[1]
+    text = text.split("## X thread")[0]
     posts = re.findall(r"^\d/ .+$", text, flags=re.M)
     assert len(posts) == 6
     for p in posts:
         assert len(p) <= 300, (len(p), p[:40])
+
+
+def test_x_posts_fit():
+    text = (LAUNCH / "linkedin-bluesky.md").read_text().split("## X thread")[1]
+    posts = re.findall(r"^X\d/ .+$", text, flags=re.M)
+    assert len(posts) == 6
+    for p in posts:
+        assert len(p) - 1 <= 280, (len(p), p[:40])  # "X" prefix is not posted
 
 
 def test_hacker_news_titles_fit():
