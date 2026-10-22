@@ -104,7 +104,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 ### Phase 6: Deliverables
 
-- [ ] **P30: Quarto article.** Write `report/index.qmd`: headline finding first, then method in plain English, results, what this doesn't show, and robustness. Cite del Rio-Chanona et al. (2024). Render to HTML. **Findings:** the article link, word count, and claims that are still weak.
+- [x] **P30: Quarto article.** *Done 2026-10-22: `report/index.qmd` → self-contained HTML (`make report`), 2,190 words + appendix; every number read from report/qa; Holm, deviation A, donor caveat disclosed; P35 dropped (no live tracking).* Write `report/index.qmd`: headline finding first, then method in plain English, results, what this doesn't show, and robustness. Cite del Rio-Chanona et al. (2024). Render to HTML. **Findings:** the article link, word count, and claims that are still weak.
 
 - [ ] **P31: Tag lookup app.** Build an interactive page: type a tag and see its weekly trajectory, its counterfactual, and its rank among other tags. It should be a static site (e.g. Observable Framework or a single HTML file with precomputed JSON). **Findings:** the app, the bundle size, and the tags it covers.
 
