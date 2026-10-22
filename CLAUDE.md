@@ -98,7 +98,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P27: Remaining figures.** *Done 2026-10-21: charts 2–7 (tags, thin data, retention, mix, sites, responsiveness) in light/dark PNG+SVG with one takeaway each; Philosophy (index 78) is the one site that held up.* Charts 2–7 from the plan (tag dot plot, tag-age scatter, cohort heatmap, question-mix slope chart, comparison-site small multiples, responsiveness). **Findings:** all the charts, each with the one-sentence takeaway it supports.
 
-- [ ] **P28: Reproducibility.** Get `make all` running end to end from raw XML (and a faster `make all SAMPLE=1` on fixtures). Add tests that pin the headline estimates within a tolerance, and set up CI on the sample path. **Findings:** total run time, the pinned values, and CI status.
+- [x] **P28: Reproducibility.** *Done 2026-10-21: full `make all` from raw XML in 2 h 27 min reproduced all 28 pins; `make all SAMPLE=1` (synthetic dump) in ~4 min; reruns byte-identical; CI green.* Get `make all` running end to end from raw XML (and a faster `make all SAMPLE=1` on fixtures). Add tests that pin the headline estimates within a tolerance, and set up CI on the sample path. **Findings:** total run time, the pinned values, and CI status.
 
 - [ ] **P29: Analysis validation.** Review the methods as an independent reviewer would: identification, leakage of post-period data into the counterfactual, multiple comparisons, the effect of the deleted-post and watermark issues on conclusions, and whether every claim in the draft has the estimate it needs. **Findings:** a list of issues by severity, with fixes applied or proposed.
 

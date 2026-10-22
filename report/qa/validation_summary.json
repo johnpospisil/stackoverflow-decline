@@ -1,0 +1,293 @@
+{
+  "missing_questions": {
+    "att_pct": -72.3108327428118,
+    "windows": {
+      "all_post": {
+        "actual": 1410203.0,
+        "counterfactual": 2984704.2961779274,
+        "missing": 1574501.2961779272,
+        "missing_range": [
+          1211169.3188546947,
+          1990252.9020372478
+        ],
+        "cumulative_gap_pct": -52.75233791817032
+      },
+      "2022": {
+        "actual": 96165.0,
+        "counterfactual": 95433.69357393758,
+        "missing": -731.3064260624233,
+        "missing_range": [
+          -12366.635744401283,
+          12538.613090152983
+        ],
+        "cumulative_gap_pct": 0.7662979380504087
+      },
+      "2023": {
+        "actual": 787598.9999999998,
+        "counterfactual": 1171073.9494595379,
+        "missing": 383474.9494595379,
+        "missing_range": [
+          240944.24094838425,
+          546631.8946451198
+        ],
+        "cumulative_gap_pct": -32.7455793578634
+      },
+      "2024": {
+        "actual": 398365.0,
+        "counterfactual": 971566.1525142661,
+        "missing": 573201.1525142661,
+        "missing_range": [
+          454947.14911272225,
+          708555.3381983546
+        ],
+        "cumulative_gap_pct": -58.997645299901436
+      },
+      "2025": {
+        "actual": 109033.00000000001,
+        "counterfactual": 532260.6744051755,
+        "missing": 423227.6744051755,
+        "missing_range": [
+          358400.9087376486,
+          497324.35807027284
+        ],
+        "cumulative_gap_pct": -79.5151125673808
+      },
+      "2026": {
+        "actual": 19041.000000000004,
+        "counterfactual": 214369.82622501024,
+        "missing": 195328.82622501024,
+        "missing_range": [
+          169243.65580034113,
+          225202.69803334746
+        ],
+        "cumulative_gap_pct": -91.11768650686226
+      },
+      "to_2025_09": {
+        "actual": 1376380.0,
+        "counterfactual": 2675573.9625003454,
+        "missing": 1299193.9625003454,
+        "missing_range": [
+          973483.2383864727,
+          1671873.1079151782
+        ],
+        "cumulative_gap_pct": -48.55757982060186
+      }
+    }
+  },
+  "missing_questions_incl_deleted": {
+    "att_pct": -71.52402819016876,
+    "windows": {
+      "all_post": {
+        "actual": 2708593.9999999995,
+        "counterfactual": 5770830.234801969,
+        "missing": 3062236.2348019695,
+        "missing_range": [
+          2448464.91175212,
+          3748375.643641649
+        ],
+        "cumulative_gap_pct": -53.06404988895073
+      },
+      "2022": {
+        "actual": 176015.99999999994,
+        "counterfactual": 176513.81228588763,
+        "missing": 497.81228588768863,
+        "missing_range": [
+          -18273.737173100235,
+          21487.464672771224
+        ],
+        "cumulative_gap_pct": -0.2820245506235053
+      },
+      "2023": {
+        "actual": 1481235.0,
+        "counterfactual": 2223376.270793838,
+        "missing": 742141.2707938378,
+        "missing_range": [
+          505663.8344967479,
+          1006490.209052087
+        ],
+        "cumulative_gap_pct": -33.37902272964632
+      },
+      "2024": {
+        "actual": 789451.9999999999,
+        "counterfactual": 1866129.905800433,
+        "missing": 1076677.9058004334,
+        "missing_range": [
+          878150.5703979566,
+          1298493.7378663246
+        ],
+        "cumulative_gap_pct": -57.69576396872635
+      },
+      "2025": {
+        "actual": 221753.99999999994,
+        "counterfactual": 1086388.3921657887,
+        "missing": 864634.3921657886,
+        "missing_range": [
+          749131.8289856036,
+          993857.5399255743
+        ],
+        "cumulative_gap_pct": -79.58796305270546
+      },
+      "2026": {
+        "actual": 40136.999999999985,
+        "counterfactual": 418421.85375602177,
+        "missing": 378284.85375602177,
+        "missing_range": [
+          333792.4150449128,
+          428046.6921248913
+        ],
+        "cumulative_gap_pct": -90.40752780006478
+      },
+      "to_2025_09": {
+        "actual": 2639559.9999999995,
+        "counterfactual": 5164736.313585878,
+        "missing": 2525176.313585878,
+        "missing_range": [
+          1975847.6137467944,
+          3139227.3601914034
+        ],
+        "cumulative_gap_pct": -48.892647373756205
+      }
+    }
+  },
+  "multiplicity": {
+    "parts": {
+      "H2": {
+        "a_age_slope_negative": 1.0,
+        "b_new_tags_smaller_decline": 0.00025
+      },
+      "H3": {
+        "body_length": 0.0,
+        "code_share": 0.0,
+        "dup_share": 1.0,
+        "first_time_share": 0.9999999989794321
+      },
+      "H4": {
+        "a_first_time_share_falls": 0.9889837908214422,
+        "b_return_91d_lower": 0.0,
+        "b_return_365d_lower": 0.0
+      },
+      "H5": {
+        "distance_2_level": 0.023684824461486738,
+        "distance_3_level": 0.012487859947106984
+      }
+    },
+    "family_p": {
+      "H2": 1.0,
+      "H3": 0.9999999989794321,
+      "H4": 0.9889837908214422,
+      "H5": 0.023684824461486738
+    },
+    "holm": {
+      "H5": {
+        "p": 0.023684824461486738,
+        "holm_threshold": 0.0125,
+        "holm_adjusted_p": 0.09473929784594695,
+        "reject": false
+      },
+      "H4": {
+        "p": 0.9889837908214422,
+        "holm_threshold": 0.016666666666666666,
+        "holm_adjusted_p": 1.0,
+        "reject": false
+      },
+      "H3": {
+        "p": 0.9999999989794321,
+        "holm_threshold": 0.025,
+        "holm_adjusted_p": 1.0,
+        "reject": false
+      },
+      "H2": {
+        "p": 1.0,
+        "holm_threshold": 0.05,
+        "holm_adjusted_p": 1.0,
+        "reject": false
+      }
+    },
+    "h5_cohorts": {
+      "distance_2": {
+        "treated_share": 0.627196127644317,
+        "reference_shares": [
+          0.7561850802644003,
+          0.7456305458456575,
+          0.7219503514547557,
+          0.6930265995686556
+        ],
+        "reference_trend_per_year": -0.02131556364781891,
+        "level": {
+          "expected": 0.7291981442833673,
+          "p": 0.023684824461486738
+        },
+        "trend": {
+          "expected": 0.6545936715160181,
+          "shortfall": -0.027397543871701124,
+          "p": 0.0820436126227074
+        },
+        "rank_p": 0.2
+      },
+      "distance_3": {
+        "treated_share": 0.482610254571531,
+        "reference_shares": [
+          0.6830028328611898,
+          0.650981446625437,
+          0.6149123587507785,
+          0.6115204888569374
+        ],
+        "reference_trend_per_year": -0.02505161198874585,
+        "level": {
+          "expected": 0.6401042817735857,
+          "p": 0.012487859947106984
+        },
+        "trend": {
+          "expected": 0.5524236398129929,
+          "shortfall": -0.06981338524146191,
+          "p": 0.04484318033570824
+        },
+        "rank_p": 0.2
+      }
+    },
+    "h5_alternative_family_p": {
+      "trend_extrapolation": 0.0820436126227074,
+      "exact_rank": 0.2
+    },
+    "holm_with_h5_trend": {
+      "H5": {
+        "p": 0.0820436126227074,
+        "holm_threshold": 0.0125,
+        "holm_adjusted_p": 0.3281744504908296,
+        "reject": false
+      },
+      "H4": {
+        "p": 0.9889837908214422,
+        "holm_threshold": 0.016666666666666666,
+        "holm_adjusted_p": 1.0,
+        "reject": false
+      },
+      "H3": {
+        "p": 0.9999999989794321,
+        "holm_threshold": 0.025,
+        "holm_adjusted_p": 1.0,
+        "reject": false
+      },
+      "H2": {
+        "p": 1.0,
+        "holm_threshold": 0.05,
+        "holm_adjusted_p": 1.0,
+        "reject": false
+      }
+    }
+  },
+  "its_pre_only": {
+    "preregistered": {
+      "pre_only_mean_gap_pct": -83.42198778144449,
+      "pre_only_cumulative_gap_pct": -67.87064552960733,
+      "joint_fit_mean_gap_pct": -83.39189849180381,
+      "joint_fit_cumulative_gap_pct": -67.86168232835983
+    },
+    "post_covid": {
+      "pre_only_mean_gap_pct": -79.533875592756,
+      "pre_only_cumulative_gap_pct": -60.68194750050444,
+      "joint_fit_mean_gap_pct": -79.26309741560682,
+      "joint_fit_cumulative_gap_pct": -60.353158732985875
+    }
+  }
+}

@@ -17,7 +17,7 @@ export SOD_REFERENCE_DIR := $(SAMPLE_DIR)/reference
 export SOD_REPORT_DIR := $(SAMPLE_DIR)/report
 endif
 
-.PHONY: all sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github figures report test lint clean-processed
+.PHONY: all sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github models-validation figures report test lint clean-processed
 
 all: $(if $(filter 1,$(SAMPLE)),sample-data) check-env ingest build models figures report
 
@@ -64,7 +64,7 @@ build-questions:
 eda:
 	uv run jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 
-models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github
+models: models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github models-validation
 
 # P15: interrupted time series (weekly Stack Overflow)
 models-its:
@@ -109,6 +109,10 @@ models-responsiveness:
 # P25: GitHub issue activity vs SO tags (uses the cached GH Archive extract; --refresh re-queries BigQuery)
 models-github:
 	$(PY) -m sod.models.github
+
+# P29: validation numbers (questions-not-asked range, Holm across H2-H5, leakage checks)
+models-validation:
+	$(PY) -m sod.models.validation
 
 figures:
 	$(PY) -m sod.viz.hero

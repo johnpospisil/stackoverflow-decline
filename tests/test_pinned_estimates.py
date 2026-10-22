@@ -73,6 +73,9 @@ PINS = [
         0.005,
     ),
     ("responsiveness", "by_group_and_period/treated/rate_answered_24h/2025", 0.5469, 0.5041, 0.005),
+    # P29: questions fewer than expected (synthetic control, counts) and the H5 Holm p-value
+    ("validation", "missing_questions/windows/all_post/missing", 1_574_501, 20_357, 20_000),
+    ("validation", "multiplicity/family_p/H5", 0.0237, 0.4295, 0.003),
 ]
 
 # Pre-registered verdicts: these must not flip without a logged deviation.
@@ -82,7 +85,12 @@ VERDICTS = [
     ("thin_data", "h2_supported", False, False),
     ("question_mix", "h3_supported", False, False),
     ("newcomers", "h4_supported", False, False),
-    ("answerers", "h5_supported", True, False),
+    ("answerers", "h5_supported", True, False),  # unadjusted rule (P23)
+    # P29: Holm across H2-H5 (pre-registration section 6): none survives
+    *[
+        ("validation", f"multiplicity/holm/{h}/reject", False, False)
+        for h in ("H2", "H3", "H4", "H5")
+    ],
 ]
 
 

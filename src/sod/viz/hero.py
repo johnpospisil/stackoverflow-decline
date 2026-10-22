@@ -13,6 +13,8 @@ Usage: python -m sod.viz.hero
 
 from __future__ import annotations
 
+import json
+
 import matplotlib
 
 matplotlib.use("Agg")
@@ -55,6 +57,10 @@ def data() -> dict:
     weekly_rate = m.mul(per_week, axis=0)
     post_idx = L.index[L.index > sc.PRE_END]
     missing = float((m.loc[post_idx, "cf"] - m.loc[post_idx, "actual"]).sum())
+    # Range from the per-month 95% conformal bounds, summed (conservative; see P29)
+    missing_range = [
+        float((m.loc[post_idx, c] - m.loc[post_idx, "actual"]).sum()) for c in ("cf_low", "cf_high")
+    ]
     w = pd.read_parquet(config.PANEL_DIR / "site_week.parquet")
     w = w[(w["site"] == sc.TREATED) & ~w["partial_period"]].set_index("period")["questions"]
     # group medians, index 2019 = 100
@@ -71,6 +77,7 @@ def data() -> dict:
         "weekly": w,
         "att": main["att_log"],
         "missing": missing,
+        "missing_range": missing_range,
         "groups": groups,
         "syn_index": syn_index,
         "ci_avg": (float(sc.pct(ci["lower_ci"].mean())), float(sc.pct(ci["upper_ci"].mean()))),
@@ -117,12 +124,22 @@ def hero_history(d: dict, mode: str) -> list:
         pct = sc.pct(d["att"])
         theme.title(
             fig,
-            f"Stack Overflow questions are {abs(pct):.0f}% below what comparable sites predict",
+            f"Since ChatGPT, Stack Overflow questions have averaged {abs(pct):.0f}% below what "
+            "comparable sites predict",
             "New questions per week, 2008–2026. The dashed line is a 'synthetic' Stack "
-            "Overflow built from sites ChatGPT barely touched.",
+            "Overflow built from non-programming Stack Exchange sites.",
         )
         theme.source(fig, SOURCE)
         return theme.save(fig, "hero_history", mode)
+
+
+def _deleted_note() -> str:
+    """Same estimate counting questions deleted before the dump (SEDE), from P29."""
+    path = config.REPORT_DIR / "qa" / "validation_summary.json"
+    if not path.exists():
+        return ""
+    v = json.loads(path.read_text())["missing_questions_incl_deleted"]["windows"]["all_post"]
+    return f" Counting questions later deleted: about {v['missing'] / 1e6:.1f} million."
 
 
 def hero_gap(d: dict, mode: str) -> list:
@@ -157,7 +174,9 @@ def hero_gap(d: dict, mode: str) -> list:
         theme.label_end(ax, w.index[-1], w.iloc[-1], "Stack Overflow", p.so)
         target = pd.Timestamp("2024-09-01")
         ax.annotate(
-            f"≈ {d['missing'] / 1e6:.1f} million questions not asked\nDec 2022 – Sep 2026 (shaded)",
+            f"≈ {d['missing'] / 1e6:.1f} million fewer questions than expected\n"
+            f"(range {d['missing_range'][0] / 1e6:.1f}–{d['missing_range'][1] / 1e6:.1f} million), "
+            "Dec 2022 – Sep 2026",
             xy=(target, 0.5 * (r.loc[target, "cf"] + r.loc[target, "actual"])),
             xytext=(pd.Timestamp("2023-03-01"), 4200),
             ha="center",
@@ -170,9 +189,10 @@ def hero_gap(d: dict, mode: str) -> list:
         )
         theme.title(
             fig,
-            "Since ChatGPT, millions of questions were never asked",
-            "New Stack Overflow questions per week vs the synthetic-control estimate "
-            "of what would have happened without ChatGPT.",
+            f"Since ChatGPT, Stack Overflow got about {d['missing'] / 1e6:.1f} million fewer "
+            "questions than expected",
+            "New Stack Overflow questions per week vs the synthetic-control estimate of what "
+            "would have happened without ChatGPT." + _deleted_note(),
         )
         theme.source(fig, SOURCE)
         return theme.save(fig, "hero_gap", mode)

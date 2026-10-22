@@ -194,7 +194,7 @@ def fig4_retention(mode: str, max_k: int = 24) -> list:
         cb.outline.set_visible(False)
         theme.title(
             fig,
-            "Newcomers stopped coming back",
+            "Fewer newcomers come back",
             "Stack Overflow users by month of their first question or answer: share "
             "posting again N months later.",
         )
@@ -333,7 +333,7 @@ def fig6_sites(mode: str) -> list:
         legend_ax.legend(handles=handles, loc="center left", fontsize=8.5)
         theme.title(
             fig,
-            "The collapse is specific to programming Q&A",
+            "Every site fell, but programming Q&A fell furthest",
             "Questions per month, each site indexed to its 2019 average (log scale). "
             "Number: latest level. Faint orange in every panel: Stack Overflow.",
         )
