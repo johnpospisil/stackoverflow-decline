@@ -20,7 +20,7 @@ Drafts for the launch. **Nothing is posted, uploaded or made public without John
 **Launch day**
 4. Make the GitHub repository public: Settings → General → Danger Zone → Change visibility.
 5. Turn on Pages: Settings → Pages → Source: **GitHub Actions**. Then rerun the `pages` workflow (Actions → pages → Run workflow). Check https://johnpospisil.github.io/stackoverflow-decline/ and `/app/`.
-6. Upload the dataset to Hugging Face: create a dataset repo `johnpospisil/stackoverflow-decline-panels-2026q3` and upload the folder `/Volumes/Drive3/sod/release/stackoverflow-decline-panels-2026q3/` (Drive3 must be mounted). Then add its link to the README's "Dataset" row.
+6. ~~Upload the dataset to Hugging Face~~ Done 2026-10-22: https://huggingface.co/datasets/audiofreak7/stackoverflow-decline-panels-2026q3 (public; linked from the README).
 7. Post to Hacker News (weekday, 8–10 am US Eastern), then add the first comment.
 8. Same day: Bluesky and X threads, and LinkedIn. Next day or two: Meta Stack Overflow, then Reddit (not the same day as each other).
 9. Answer comments for the first day or two; [reviewer-questions.md](reviewer-questions.md) has the short answers.

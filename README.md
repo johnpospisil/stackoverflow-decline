@@ -21,7 +21,7 @@
 |---|---|
 | **Article** | [johnpospisil.github.io/stackoverflow-decline](https://johnpospisil.github.io/stackoverflow-decline/): the full write-up, with methods, robustness and limits. Source: [report/index.qmd](report/index.qmd). |
 | **Tag lookup** | [johnpospisil.github.io/stackoverflow-decline/app](https://johnpospisil.github.io/stackoverflow-decline/app/): type a tag (python, rust, reactjs…) to see its trajectory, its expected line and its rank. Source: [app/](app/). |
-| **Dataset** | Weekly and monthly site and tag panels (CC BY-SA 4.0), built with `make release`. Data card: [docs/dataset-card.md](docs/dataset-card.md). |
+| **Dataset** | [huggingface.co/datasets/audiofreak7/stackoverflow-decline-panels-2026q3](https://huggingface.co/datasets/audiofreak7/stackoverflow-decline-panels-2026q3): weekly and monthly site and tag panels (CC BY-SA 4.0), built with `make release`. Data card: [docs/dataset-card.md](docs/dataset-card.md). |
 | **Pre-registration** | [PREREGISTRATION.md](PREREGISTRATION.md): hypotheses and decision rules locked at tag `prereg-v1`, with every later change logged and dated. |
 | **Validation** | [report/validation.md](report/validation.md): an independent-reviewer pass, listing the issues found and how each was handled. |
 | **Data sources** | [DATA.md](DATA.md): dump version, checksums, licence, access terms and known gaps. |
