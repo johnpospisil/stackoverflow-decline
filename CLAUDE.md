@@ -102,7 +102,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P29: Analysis validation.** *Done 2026-10-21: Holm across H2–H5 → none survives (H5 0.024 > 0.0125, now "not confirmed"); 1.57 M fewer questions (1.21–1.99 M; 3.06 M incl. deleted; article leads with 1.6 M); donors also fell 31% vs own trend; titles fixed; report/validation.md.* Review the methods as an independent reviewer would: identification, leakage of post-period data into the counterfactual, multiple comparisons, the effect of the deleted-post and watermark issues on conclusions, and whether every claim in the draft has the estimate it needs. **Findings:** a list of issues by severity, with fixes applied or proposed.
 
-### Phase 6: Deliverables
+### Phase 6: Deliverables ✅ DONE
 
 - [x] **P30: Quarto article.** *Done 2026-10-22: `report/index.qmd` → self-contained HTML (`make report`), 2,190 words + appendix; every number read from report/qa; Holm, deviation A, donor caveat disclosed; P35 dropped (no live tracking).* Write `report/index.qmd`: headline finding first, then method in plain English, results, what this doesn't show, and robustness. Cite del Rio-Chanona et al. (2024). Render to HTML. **Findings:** the article link, word count, and claims that are still weak.
 
@@ -112,6 +112,6 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P33: README.** *Done 2026-10-22: hero A (light/dark), three findings, caveat, read-more table, reproduce, MIT LICENSE; README numbers tested against the pipeline; article + app to GitHub Pages at launch (user decision).* Hero chart, three bullet findings, one "what this doesn't show" line, how to reproduce, and links. **Findings:** the README.
 
-- [ ] **P34: Launch kit.** Draft the HN title and first comment, a post for Meta Stack Overflow, r/dataisbeautiful and r/programming posts, and a LinkedIn/Bluesky thread. List the questions reviewers are likely to ask, with answers. **Findings:** the drafts; nothing is posted without the user.
+- [x] **P34: Launch kit.** *Done 2026-10-22: docs/launch (HN, Meta, Reddit, LinkedIn, Bluesky, X drafts; 15 reviewer Q&As; 9-step checklist); Pages workflow for article + app (runs once public); drafts length- and number-tested.* Draft the HN title and first comment, a post for Meta Stack Overflow, r/dataisbeautiful and r/programming posts, and a LinkedIn/Bluesky thread. List the questions reviewers are likely to ask, with answers. **Findings:** the drafts; nothing is posted without the user.
 
 Out of scope (can be added later): a question-difficulty classifier. Dropped 2026-10-22 at the user's request: P35 (living tracker / monthly refresh after launch). The project is a fixed snapshot of the 2026-Q3 dump; nothing is refreshed after P34.
