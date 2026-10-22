@@ -308,12 +308,10 @@ def run() -> dict:
         config.FIGURE_DIR / "forecast_backtest.png",
         "Backtest: trained to 2019-11, forecasting 2019-12 to 2022-11",
     )
-    tables = config.REPO_ROOT / "report" / "tables"
+    tables = config.REPORT_DIR / "tables"
     tables.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).round(2).to_csv(tables / "forecast_estimates.csv", index=False)
-    (config.REPO_ROOT / "report" / "qa" / "forecast_summary.json").write_text(
-        json.dumps(summary, indent=2)
-    )
+    (config.REPORT_DIR / "qa" / "forecast_summary.json").write_text(json.dumps(summary, indent=2))
     return summary
 
 

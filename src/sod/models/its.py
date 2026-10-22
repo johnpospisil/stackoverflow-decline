@@ -316,10 +316,10 @@ def run() -> dict:
             )
     fig_fit(results, y.loc["2016-01-01":], config.FIGURE_DIR / "its_fit.png")
     fig_diagnostics(*results["preregistered"][:2], config.FIGURE_DIR / "its_diagnostics.png")
-    tables = config.REPO_ROOT / "report" / "tables"
+    tables = config.REPORT_DIR / "tables"
     tables.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).round(2).to_csv(tables / "its_estimates.csv", index=False)
-    qa = config.REPO_ROOT / "report" / "qa"
+    qa = config.REPORT_DIR / "qa"
     (qa / "its_summary.json").write_text(json.dumps(summary, indent=2))
     config.MODEL_DIR.mkdir(parents=True, exist_ok=True)
     for name, (model, _, _) in results.items():
@@ -329,7 +329,7 @@ def run() -> dict:
 
 if __name__ == "__main__":
     s = run()
-    est = pd.read_csv(config.REPO_ROOT / "report" / "tables" / "its_estimates.csv")
+    est = pd.read_csv(config.REPORT_DIR / "tables" / "its_estimates.csv")
     print(est.to_string(index=False))
     for name, f in s["fits"].items():
         print(name, json.dumps(f["diagnostics"]), json.dumps(f["holdout_2021_12_to_2022_11"]))

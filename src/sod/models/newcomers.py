@@ -37,8 +37,8 @@ GROUPS = {
     "2023-01..2024-05": ("2023-01-01", "2024-06-01"),
     "2024-06..2026-09 (Staging Ground)": ("2024-06-01", "2026-10-01"),
 }
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 
 
 # --- (a) ----------------------------------------------------------------------------------

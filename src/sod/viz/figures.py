@@ -27,7 +27,7 @@ from sod import config  # noqa: E402
 from sod.models import responsiveness as resp  # noqa: E402
 from sod.viz import theme  # noqa: E402
 
-REPORT = config.REPO_ROOT / "report"
+REPORT = config.REPORT_DIR
 SOURCE = "Data: Stack Exchange data dump 2026-Q3 (CC BY-SA 4.0)."
 CHATGPT = pd.Timestamp(config.BREAK_DATE)
 OPINION = pd.Timestamp("2025-10-01")

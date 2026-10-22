@@ -50,8 +50,8 @@ COVID = (pd.Timestamp("2020-03-01"), pd.Timestamp("2020-06-01"))
 CENTRE = pd.Timestamp("2020-01-01")
 RAMP_MONTHS = 6
 DRAWS, TUNE, CHAINS, SEED = 1000, 1000, 4, 20261021
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 PREDICTORS = ["z_log_age", "z_log_size", "z_dup_share"]
 
 

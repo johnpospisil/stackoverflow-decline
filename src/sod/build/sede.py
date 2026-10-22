@@ -20,7 +20,7 @@ from sod import config
 from sod.db import connect
 
 SEDE_DIR = config.REFERENCE_DIR / "sede"
-QA_DIR = config.REPO_ROOT / "report" / "qa"
+QA_DIR = config.REPORT_DIR / "qa"
 
 DB_TO_SITE = {
     "StackOverflow": "stackoverflow.com",

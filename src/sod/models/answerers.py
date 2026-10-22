@@ -37,8 +37,8 @@ DISTANCES = (1, 2, 3)
 LAST_FULL_YEAR = 2025
 CORE_SHARE = 0.01
 COMPARE = ("math.stackexchange.com", "physics.stackexchange.com")
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 
 
 def yearly_answers(sites) -> pd.DataFrame:

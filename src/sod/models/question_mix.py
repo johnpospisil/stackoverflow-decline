@@ -34,8 +34,8 @@ DUPLICATE_REASON = 101
 REPS = 200
 SEED = 21
 SURVIVAL = {2021: 1 - 0.418, 2025: 1 - 0.508}  # from SEDE (P09 / site_month panel)
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 
 # name: (column, statistic, predicted direction for H3 or None, label)
 MEASURES = {

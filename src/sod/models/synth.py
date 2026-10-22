@@ -510,7 +510,7 @@ def run() -> dict:
         "did_ru": did,
         "platform_wide": plat,
     }
-    out = config.REPO_ROOT / "report"
+    out = config.REPORT_DIR
     ci.to_csv(out / "tables" / "synth_conformal_per_month.csv", index=False)
     ps.drop(columns="gap").round(4).to_csv(out / "tables" / "synth_placebo_space.csv", index=False)
     sens.round(4).to_csv(out / "tables" / "synth_sensitivity.csv", index=False)

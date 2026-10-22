@@ -18,7 +18,7 @@ import pandas as pd
 from sod import config, events
 from sod.db import connect
 
-QA_DIR = config.REPO_ROOT / "report" / "qa"
+QA_DIR = config.REPORT_DIR / "qa"
 EARLIEST = "2008-07-31"  # Stack Overflow's first public post
 CHART_SITES = (
     config.TREATED,

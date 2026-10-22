@@ -31,8 +31,8 @@ from sod import config, progress  # noqa: E402
 from sod.models import synth as sc  # noqa: E402
 
 JOB = "robustness"
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 STRIKE = (pd.Timestamp("2023-06-01"), pd.Timestamp("2023-08-01"))
 WEEK_COVID = (pd.Timestamp("2020-03-09"), pd.Timestamp("2020-06-29"))  # weeks overlapping
 

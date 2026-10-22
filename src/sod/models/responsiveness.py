@@ -43,8 +43,8 @@ GROUP_LABELS = {
     "tech_exposed": "Other tech sites (median)",
     "donor": "Comparison sites (median)",
 }
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 
 
 def wilson(k: np.ndarray, n: np.ndarray, z: float = 1.96) -> tuple[np.ndarray, np.ndarray]:

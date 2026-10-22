@@ -96,7 +96,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P26: Visual theme and hero chart.** *Done 2026-10-21: validated light/dark palette (group colours by role; counterfactual in neutral ink); hero = A (`hero_history`, README/article), B (`hero_gap`, social), C (`hero_groups`, supporting).* Build `src/sod/viz/theme.py` (palette, fonts, annotation style; colour-blind safe; light and dark). Hero chart: weekly SO questions 2008–2026 vs the synthetic-control counterfactual band, with annotated events from P02. Export as SVG and PNG. **Findings:** the chart, plus 2–3 alternative versions for the user to choose from.
 
-- [ ] **P27: Remaining figures.** Charts 2–7 from the plan (tag dot plot, tag-age scatter, cohort heatmap, question-mix slope chart, comparison-site small multiples, responsiveness). **Findings:** all the charts, each with the one-sentence takeaway it supports.
+- [x] **P27: Remaining figures.** *Done 2026-10-21: charts 2–7 (tags, thin data, retention, mix, sites, responsiveness) in light/dark PNG+SVG with one takeaway each; Philosophy (index 78) is the one site that held up.* Charts 2–7 from the plan (tag dot plot, tag-age scatter, cohort heatmap, question-mix slope chart, comparison-site small multiples, responsiveness). **Findings:** all the charts, each with the one-sentence takeaway it supports.
 
 - [ ] **P28: Reproducibility.** Get `make all` running end to end from raw XML (and a faster `make all SAMPLE=1` on fixtures). Add tests that pin the headline estimates within a tolerance, and set up CI on the sample path. **Findings:** total run time, the pinned values, and CI status.
 

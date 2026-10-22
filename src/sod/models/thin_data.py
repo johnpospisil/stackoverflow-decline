@@ -34,8 +34,8 @@ ANCHOR_MONTHS = (1, 2, 3)
 FIRST_GAP_MONTH = 4
 B = 4000
 SEED = 7
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 
 
 # --- data ------------------------------------------------------------------------------

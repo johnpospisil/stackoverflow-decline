@@ -36,8 +36,8 @@ from sod import config  # noqa: E402
 
 CACHE = config.REFERENCE_DIR / "gharchive_issue_activity_monthly.csv"
 MAX_BYTES = 250_000_000_000
-QA = config.REPO_ROOT / "report" / "qa"
-TABLES = config.REPO_ROOT / "report" / "tables"
+QA = config.REPORT_DIR / "qa"
+TABLES = config.REPORT_DIR / "tables"
 
 # repo id: (full name, Stack Overflow tag or None)
 REPOS = {

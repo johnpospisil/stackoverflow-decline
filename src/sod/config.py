@@ -20,8 +20,13 @@ PANEL_DIR = DATA_DIR / "panels"
 MODEL_DIR = DATA_DIR / "models"
 DUCKDB_PATH = DATA_DIR / "sod.duckdb"
 
-REFERENCE_DIR = REPO_ROOT / "data" / "reference"
-FIGURE_DIR = REPO_ROOT / "report" / "figures"
+# Overridable so the sample pipeline (make all SAMPLE=1) never touches the real outputs.
+REFERENCE_DIR = Path(os.environ.get("SOD_REFERENCE_DIR", REPO_ROOT / "data" / "reference"))
+REPORT_DIR = Path(os.environ.get("SOD_REPORT_DIR", REPO_ROOT / "report"))
+FIGURE_DIR = REPORT_DIR / "figures"
+
+# Sample mode: synthetic data, fewer MCMC draws and bootstrap replicates (CI path).
+SAMPLE = os.environ.get("SOD_SAMPLE", "") == "1"
 
 DUMP_RELEASE = "2026-Q3"
 DUMP_CUTOFF = date(2026, 9, 30)

@@ -394,7 +394,7 @@ def run() -> dict:
         .to_dict(orient="index"),
         **{k: v for k, v in tr.items() if k != "gap"},
     }
-    qa = config.REPO_ROOT / "report" / "qa"
+    qa = config.REPORT_DIR / "qa"
     qa.mkdir(parents=True, exist_ok=True)
     (qa / "eda_summary.json").write_text(json.dumps(summary, indent=2, default=float))
     return summary
