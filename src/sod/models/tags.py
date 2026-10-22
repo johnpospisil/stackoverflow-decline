@@ -257,6 +257,38 @@ def save_draws(trace, features, path) -> None:
     d.to_parquet(path, index=False)
 
 
+def save_counterfactual(trace, features, panel, path) -> None:
+    """Each tag's expected monthly questions without the post-ChatGPT terms (its own extended
+    pre-trend, seasonality and COVID term): posterior median and 95% band of exp(eta) with
+    delta and kappa set to 0. Used by the tag lookup app (P31)."""
+    off = offsets(panel, len(features))
+    a, b = posterior(trace, "a"), posterior(trace, "b")  # tags x draws
+    season, covid = posterior(trace, "season"), posterior(trace, "covid")  # 12 x draws, draws
+    rows = []
+    for i, g in panel.groupby("tag_idx"):
+        eta = (
+            off[i]
+            + a[i][None, :]
+            + np.outer(g["years"].to_numpy(), b[i])
+            + season[g["month"].to_numpy()]
+            + np.outer(g["covid"].to_numpy(), covid)
+        )  # months x draws
+        lo, med, hi = np.percentile(np.exp(eta), [2.5, 50, 97.5], axis=1)
+        rows.append(
+            pd.DataFrame(
+                {
+                    "tag": features["tag"].iloc[i],
+                    "period": g["period"].to_numpy(),
+                    "questions": g["questions"].to_numpy(),
+                    "cf_median": med,
+                    "cf_low": lo,
+                    "cf_high": hi,
+                }
+            )
+        )
+    pd.concat(rows, ignore_index=True).to_parquet(path, index=False)
+
+
 def posterior(trace, name: str) -> np.ndarray:
     v = trace.posterior[name]
     return v.stack(sample=("chain", "draw")).transpose(..., "sample").to_numpy()
@@ -464,6 +496,9 @@ def run() -> dict:
         (QA / "tags_summary.json").write_text(json.dumps(summary, indent=2))
         config.MODEL_DIR.mkdir(parents=True, exist_ok=True)
         save_draws(trace, features, config.MODEL_DIR / "tags_negbin_draws.parquet")
+        save_counterfactual(
+            trace, features, panel, config.MODEL_DIR / "tags_negbin_counterfactual.parquet"
+        )
         return summary
 
     return _step("summaries", summaries)

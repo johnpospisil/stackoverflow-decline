@@ -2,8 +2,8 @@
   "n_tags": 297,
   "n_rows": 34628,
   "sampling_seconds": {
-    "negbin_s": 336.0832322080387,
-    "original_s": 63.0529755409807
+    "negbin_s": 332.2635271670297,
+    "original_s": 61.460978624993004
   },
   "diagnostics": {
     "max_rhat": 1.0051069651786868,
@@ -580,5 +580,5 @@
       "pct_high": -14.8
     }
   ],
-  "total_seconds": 402.9746787920012
+  "total_seconds": 397.751446417009
 }

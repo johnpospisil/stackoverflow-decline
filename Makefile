@@ -17,9 +17,9 @@ export SOD_REFERENCE_DIR := $(SAMPLE_DIR)/reference
 export SOD_REPORT_DIR := $(SAMPLE_DIR)/report
 endif
 
-.PHONY: all sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github models-validation figures report test lint clean-processed
+.PHONY: all app serve-app sample-data check-env ingest ingest-posts ingest-tables ingest-posthistory progress build build-questions build-cohorts build-panels eda models models-its models-forecast models-synth models-robustness models-tags models-thin-data models-question-mix models-newcomers models-answerers models-responsiveness models-github models-validation figures report test lint clean-processed
 
-all: $(if $(filter 1,$(SAMPLE)),sample-data) check-env ingest build models figures report
+all: $(if $(filter 1,$(SAMPLE)),sample-data) check-env ingest build models figures app report
 
 # Synthetic dump for SAMPLE=1 (fresh each time; deterministic)
 sample-data:
@@ -117,6 +117,14 @@ models-validation:
 figures:
 	$(PY) -m sod.viz.hero
 	$(PY) -m sod.viz.figures
+
+# P31: tag lookup app data (app/data/tags.json; the page is app/index.html). Preview:
+# `make serve-app`, then open http://localhost:8031/#tag=python
+app:
+	$(PY) -m sod.app_data
+
+serve-app:
+	cd app && $(PY) -m http.server 8031
 
 # P30: the article (report/index.html, self-contained). Numbers come from report/qa via sod.article.
 QUARTO ?= $(shell command -v quarto 2>/dev/null || echo $(HOME)/opt/quarto-1.10.19/bin/quarto)

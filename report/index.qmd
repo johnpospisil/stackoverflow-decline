@@ -89,7 +89,8 @@ That is about **`{python} N["missing"]` fewer questions than expected** (range `
 Across `{python} N["n_variants"]` pre-registered robustness checks, the synthetic-control estimate ranges from `{python} N["rob_range"]`. The checks cover other break dates, dropping the 2023 moderator strike, a longer pre-period, weekly data, other donor sets, deleted questions included, and ending in September 2025 before Stack Overflow's own 2025 policy changes.
 
 ::: {.column-page-inset-right}
-![](figures/robustness_forest.png){fig-alt="Forest plot of 15 robustness variants and four supporting estimates, all between about minus 60 and minus 83 percent."}
+![](figures/fig8_robustness.png){.light-content fig-alt="Forest plot of 15 robustness variants and four supporting estimates, all between about minus 60 and minus 83 percent."}
+![](figures/fig8_robustness_dark.png){.dark-content fig-alt="Forest plot of robustness variants, all strongly negative."}
 :::
 
 ## Is it just programming?

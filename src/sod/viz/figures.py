@@ -401,7 +401,73 @@ def fig7_responsive(mode: str) -> list:
         return theme.save(fig, "fig7_responsive", mode)
 
 
-FIGURES = [fig2_tags, fig3_thin_data, fig4_retention, fig5_mix, fig6_sites, fig7_responsive]
+# --- 8 -----------------------------------------------------------------------------------
+
+
+def fig8_robustness(mode: str) -> list:
+    """Forest plot of the pre-registered robustness variants (P18) in the shared theme."""
+    d = pd.read_csv(REPORT / "tables" / "robustness.csv", dtype={"id": str}).iloc[::-1]
+    d = d.reset_index(drop=True)
+    with theme.use(mode) as p:
+        fig, ax = plt.subplots(figsize=(10, 0.36 * len(d) + 1.9))
+        fig.subplots_adjust(left=0.33, right=0.93, top=1 - 1.0 / fig.get_figheight(), bottom=0.12)
+        ax.axvspan(-10, 0, color=p.band, alpha=0.45, lw=0, zorder=0)
+        ax.axvline(0, color=p.ink_muted, lw=0.8)
+        primary = float(d.loc[d["id"] == "0", "att_pct"].iloc[0])
+        ax.axvline(primary, color=p.so, lw=0.9, ls=(0, (1, 2)))
+        for i, r in d.iterrows():
+            sup = r["group"] == "Supporting"
+            c = p.so if r["id"] == "0" else (p.counterfactual if sup else p.tech)
+            if pd.notna(r["low"]):
+                dotted = str(r.get("range_not_ci")) == "True"
+                ax.plot([r["low"], r["high"]], [i, i], color=c, lw=1.6, ls=":" if dotted else "-")
+            ax.plot(
+                r["att_pct"], i, "s" if sup else "o", color=c, ms=6.5 if r["id"] == "0" else 5.5
+            )
+            ax.text(
+                1.5,
+                i,
+                f"{r['att_pct']:.0f}%".replace("-", "\u2212"),
+                va="center",
+                fontsize=8.5,
+                color=p.ink,
+            )
+        ax.set_yticks(range(len(d)), d["label"], fontsize=8.5)
+        for lab, r in zip(ax.get_yticklabels(), d.itertuples(), strict=True):
+            lab.set_color(p.ink if r.id == "0" else p.ink_muted)
+        ax.set_xlim(-100, 9)
+        ax.set_ylim(-1.3, len(d) - 0.5)
+        ax.grid(axis="x", color=p.grid)
+        ax.grid(axis="y", visible=False)
+        ax.set_xlabel("Average gap vs counterfactual, Dec 2022 – Sep 2026 (%, 95% interval)")
+        ax.text(
+            -9.6,
+            -1.1,
+            "smaller than the\n\u221210% threshold",
+            fontsize=7.5,
+            color=p.ink_muted,
+            va="bottom",
+        )
+        theme.title(
+            fig,
+            "Every variant of the estimate tells the same story",
+            "Circles: synthetic-control variants (pre-registered); squares: other methods. "
+            "Dotted bar: range across 15 refits.",
+            x=0.02,
+        )
+        theme.source(fig, SOURCE, x=0.02)
+        return theme.save(fig, "fig8_robustness", mode)
+
+
+FIGURES = [
+    fig2_tags,
+    fig3_thin_data,
+    fig4_retention,
+    fig5_mix,
+    fig6_sites,
+    fig7_responsive,
+    fig8_robustness,
+]
 
 
 def run() -> list:
