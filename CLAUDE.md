@@ -108,7 +108,7 @@ Project plan: [04-stackoverflow-decline.md](04-stackoverflow-decline.md). Data p
 
 - [x] **P31: Tag lookup app.** *Done 2026-10-22: static `app/index.html` + 1.45 MB JSON, 297 modelled + 66 post-2021 tags; shows plain 2021→2025 change next to the trend-based number (tag rankings depend on trend extrapolation; rank corr 0.6) → article/fig2 softened (option A).* Build an interactive page: type a tag and see its weekly trajectory, its counterfactual, and its rank among other tags. It should be a static site (e.g. Observable Framework or a single HTML file with precomputed JSON). **Findings:** the app, the bundle size, and the tags it covers.
 
-- [ ] **P32: Published dataset.** Prepare the weekly site × week and tag × week panel for Hugging Face and Kaggle: data card, licence (CC BY-SA 4.0), attribution, column dictionary, and known limitations. Re-check the dump terms before uploading. **Findings:** files, sizes, and the draft data card; the user decides whether to upload.
+- [x] **P32: Published dataset.** *Done 2026-10-22: `make release` → 4 panels + tag estimates (Parquet+CSV, 44.9 MB), column dictionary, checksums, HF data card (docs/dataset-card.md); not uploaded; user will create a Hugging Face account and check the dump terms before launch.* Prepare the weekly site × week and tag × week panel for Hugging Face and Kaggle: data card, licence (CC BY-SA 4.0), attribution, column dictionary, and known limitations. Re-check the dump terms before uploading. **Findings:** files, sizes, and the draft data card; the user decides whether to upload.
 
 - [ ] **P33: README.** Hero chart, three bullet findings, one "what this doesn't show" line, how to reproduce, and links. **Findings:** the README.
 
